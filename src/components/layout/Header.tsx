@@ -95,12 +95,6 @@ export default function Header() {
             >
               로그인
             </Link>
-            <Link
-              href="/hospitals"
-              className="bg-blue-600 text-white text-sm px-4 py-2 rounded-md hover:bg-blue-700 font-medium"
-            >
-              상담 신청
-            </Link>
           </div>
         </div>
       </div>

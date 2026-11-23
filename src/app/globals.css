@@ -1,11 +1,156 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens — Korea Medical Match
+ * One primary hue (cobalt), warm neutral surfaces, navy-charcoal text.
+ * Personality comes from type, rules and spacing, not from color.
+ */
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  /* Text */
+  --color-ink: #161d2e;        /* headings, primary text */
+  --color-ink-2: #3b4457;      /* body */
+  --color-muted: #646d7e;      /* secondary */
+  --color-subtle: #8f96a3;     /* tertiary, placeholders */
+
+  /* Surfaces */
+  --color-canvas: #f8f7f4;     /* page background, warm white */
+  --color-surface: #ffffff;    /* raised content */
+  --color-wash: #f1f0ec;       /* hover / quiet fills */
+
+  /* Lines */
+  --color-line: #e3e4e8;
+  --color-line-strong: #c9cdd5;
+
+  /* Brand — used for actions and selection only */
+  --color-brand: #2646b0;
+  --color-brand-hover: #1e3a94;
+  --color-brand-press: #19307a;
+  --color-brand-soft: #edf0f9;
+  --color-brand-line: #c3cdee;
+
+  /* Accent — sparing: "new" markers, ratings */
+  --color-accent: #b9532f;
+  --color-accent-soft: #f8ece6;
+
+  /* Status */
+  --color-success: #1f7a52;
+  --color-success-soft: #e7f3ec;
+  --color-warning: #a2620a;
+  --color-warning-soft: #fbf1df;
+  --color-danger: #b42f2f;
+  --color-danger-soft: #f9e9e8;
+
+  /* Radius — kept tight on purpose */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --shadow-raise: 0 1px 2px rgb(22 29 46 / 0.04), 0 6px 20px -10px rgb(22 29 46 / 0.18);
+
+  /*
+   * Remap Tailwind's default scales onto the system above, so every existing
+   * screen (which uses gray-*, blue-*, rounded-2xl, shadow-xl …) inherits the
+   * new palette without touching its markup or logic.
+   */
+  --color-gray-50: #f8f7f4;
+  --color-gray-100: #f1f0ec;
+  --color-gray-200: #e3e4e8;
+  --color-gray-300: #c9cdd5;
+  --color-gray-400: #8f96a3;
+  --color-gray-500: #646d7e;
+  --color-gray-600: #4d5668;
+  --color-gray-700: #3b4457;
+  --color-gray-800: #262e40;
+  --color-gray-900: #161d2e;
+  --color-gray-950: #0e1320;
+
+  --color-blue-50: #edf0f9;
+  --color-blue-100: #dce3f4;
+  --color-blue-200: #c3cdee;
+  --color-blue-300: #9aabe0;
+  --color-blue-400: #6b82cc;
+  --color-blue-500: #3f5cbf;
+  --color-blue-600: #2646b0;
+  --color-blue-700: #1e3a94;
+  --color-blue-800: #19307a;
+  --color-blue-900: #172a62;
+  --color-blue-950: #0f1b40;
+
+  /* indigo was used as a near-duplicate of blue → fold into the brand hue */
+  --color-indigo-50: #edf0f9;
+  --color-indigo-100: #dce3f4;
+  --color-indigo-200: #c3cdee;
+  --color-indigo-300: #9aabe0;
+  --color-indigo-400: #6b82cc;
+  --color-indigo-500: #3f5cbf;
+  --color-indigo-600: #2646b0;
+  --color-indigo-700: #1e3a94;
+  --color-indigo-800: #19307a;
+  --color-indigo-900: #172a62;
+
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+
+  --shadow-xs: 0 1px 1px rgb(22 29 46 / 0.04);
+  --shadow-sm: 0 1px 2px rgb(22 29 46 / 0.05);
+  --shadow-md: 0 1px 2px rgb(22 29 46 / 0.04), 0 4px 12px -6px rgb(22 29 46 / 0.12);
+  --shadow-lg: 0 1px 2px rgb(22 29 46 / 0.04), 0 8px 24px -12px rgb(22 29 46 / 0.18);
+  --shadow-xl: 0 2px 4px rgb(22 29 46 / 0.04), 0 12px 32px -14px rgb(22 29 46 / 0.22);
+  --shadow-2xl: 0 24px 48px -20px rgb(22 29 46 / 0.3);
+}
+
 :root {
-  --background: #f9fafb;
-  --foreground: #111827;
+  --background: var(--color-canvas);
+  --foreground: var(--color-ink);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss06";
+  letter-spacing: -0.005em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+::selection {
+  background: var(--color-brand-soft);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbar on horizontal scrollers (mobile nav, chip rows) */
+.scroll-row {
+  scrollbar-width: none;
+}
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

@@ -179,7 +179,7 @@ export default function AgentMarketingToolsPage() {
             <div className="grid grid-cols-3 gap-4">
               {mockBanners.map((b) => (
                 <div key={b.id} className="border border-gray-200 rounded-xl overflow-hidden">
-                  <div className="bg-gradient-to-br from-indigo-100 to-violet-100 h-28 flex items-center justify-center">
+                  <div className="bg-wash h-28 flex items-center justify-center">
                     <span className="text-xs text-indigo-400 font-medium">{b.size}</span>
                   </div>
                   <div className="p-3">

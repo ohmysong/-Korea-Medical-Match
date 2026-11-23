@@ -1,24 +1,32 @@
 import type { Metadata } from 'next'
 import { Suspense } from 'react'
-import { Geist } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
-
-const geist = Geist({ subsets: ['latin'] })
+import { AuthProvider } from '@/lib/auth-context'
 
 export const metadata: Metadata = {
-  title: 'Korea Medical Match — 외국인 환자 의료 매칭 플랫폼',
-  description: '한국 120개 이상 병원 검색 · 질환·시술·수술 비교 · 전문 코디네이터 상담',
+  title: 'OMNI 옴니 — 일반·비즈니스 통역 매칭 플랫폼',
+  description: '언어·업무·산업·일정 조건으로 검증된 통역사를 최대 3명 추천 · 투명한 수수료 · 예약부터 정산까지',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={geist.className}>
-      <body className="min-h-screen bg-gray-50 antialiased">
-        <Suspense fallback={<div className="h-16 border-b border-gray-200 bg-white" />}>
-          <Header />
-        </Suspense>
-        <main>{children}</main>
+    <html lang="ko">
+      <head>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="min-h-screen bg-canvas text-ink antialiased">
+        <AuthProvider>
+          <Suspense fallback={<div className="h-16 border-b border-line bg-surface" />}>
+            <Header />
+          </Suspense>
+          <main>{children}</main>
+        </AuthProvider>
       </body>
     </html>
   )

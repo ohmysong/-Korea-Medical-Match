@@ -1,0 +1,8461 @@
+{
+  "version": "2026-11-20.1",
+  "locale": "ko-KR",
+  "nodes": [
+    {
+      "code": "CHEM",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "화학·정밀소재",
+      "aliases": [
+        "chemicals",
+        "화학소재"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE",
+      "parent_code": "CHEM",
+      "level": 2,
+      "label_ko": "기초화학·석유화학",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE.01",
+      "parent_code": "CHEM.BASE",
+      "level": 3,
+      "label_ko": "올레핀·기초유분",
+      "aliases": [
+        "에틸렌",
+        "프로필렌",
+        "olefin"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE.02",
+      "parent_code": "CHEM.BASE",
+      "level": 3,
+      "label_ko": "방향족 기초원료",
+      "aliases": [
+        "BTX",
+        "벤젠",
+        "톨루엔",
+        "자일렌"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE.03",
+      "parent_code": "CHEM.BASE",
+      "level": 3,
+      "label_ko": "기초 무기화학",
+      "aliases": [
+        "염소",
+        "가성소다"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE.04",
+      "parent_code": "CHEM.BASE",
+      "level": 3,
+      "label_ko": "산업가스·특수가스",
+      "aliases": [
+        "industrial gas"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE.05",
+      "parent_code": "CHEM.BASE",
+      "level": 3,
+      "label_ko": "용제·화학 중간체",
+      "aliases": [
+        "solvent"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "CHEM.BASE.06",
+      "parent_code": "CHEM.BASE",
+      "level": 3,
+      "label_ko": "비료·농화학 원료",
+      "aliases": [
+        "fertilizer"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT",
+      "parent_code": "CHEM",
+      "level": 2,
+      "label_ko": "촉매·반응공정",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT.01",
+      "parent_code": "CHEM.CAT",
+      "level": 3,
+      "label_ko": "산업용 촉매·촉매 담체",
+      "aliases": [
+        "촉매",
+        "catalyst",
+        "촉매지지체"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT.02",
+      "parent_code": "CHEM.CAT",
+      "level": 3,
+      "label_ko": "정유·석유화학 촉매",
+      "aliases": [
+        "hydrotreating catalyst",
+        "FCC catalyst"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT.03",
+      "parent_code": "CHEM.CAT",
+      "level": 3,
+      "label_ko": "환경·탈질 촉매",
+      "aliases": [
+        "SCR",
+        "선택적 촉매 환원",
+        "질소산화물 저감"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT.04",
+      "parent_code": "CHEM.CAT",
+      "level": 3,
+      "label_ko": "고분자 중합 촉매",
+      "aliases": [
+        "polymerization catalyst"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT.05",
+      "parent_code": "CHEM.CAT",
+      "level": 3,
+      "label_ko": "흡착제·분리막",
+      "aliases": [
+        "adsorbent",
+        "membrane"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "CHEM.CAT.06",
+      "parent_code": "CHEM.CAT",
+      "level": 3,
+      "label_ko": "공정 스케일업·반응기",
+      "aliases": [
+        "scale-up",
+        "reactor"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY",
+      "parent_code": "CHEM",
+      "level": 2,
+      "label_ko": "고분자·수지·복합재",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY.01",
+      "parent_code": "CHEM.POLY",
+      "level": 3,
+      "label_ko": "범용 열가소성 수지",
+      "aliases": [
+        "PE",
+        "PP",
+        "PVC"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY.02",
+      "parent_code": "CHEM.POLY",
+      "level": 3,
+      "label_ko": "엔지니어링 플라스틱",
+      "aliases": [
+        "POM",
+        "PEEK"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY.03",
+      "parent_code": "CHEM.POLY",
+      "level": 3,
+      "label_ko": "합성고무·엘라스토머",
+      "aliases": [
+        "elastomer"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY.04",
+      "parent_code": "CHEM.POLY",
+      "level": 3,
+      "label_ko": "열경화성 수지",
+      "aliases": [
+        "epoxy",
+        "에폭시"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY.05",
+      "parent_code": "CHEM.POLY",
+      "level": 3,
+      "label_ko": "탄소섬유·복합재",
+      "aliases": [
+        "CFRP"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "CHEM.POLY.06",
+      "parent_code": "CHEM.POLY",
+      "level": 3,
+      "label_ko": "바이오 기반·생분해성 수지",
+      "aliases": [
+        "PLA",
+        "PBAT"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE",
+      "parent_code": "CHEM",
+      "level": 2,
+      "label_ko": "정밀화학·기능성 소재",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE.01",
+      "parent_code": "CHEM.FINE",
+      "level": 3,
+      "label_ko": "접착제·실런트",
+      "aliases": [
+        "adhesive",
+        "sealant"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE.02",
+      "parent_code": "CHEM.FINE",
+      "level": 3,
+      "label_ko": "도료·안료·표면코팅",
+      "aliases": [
+        "paint",
+        "pigment"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE.03",
+      "parent_code": "CHEM.FINE",
+      "level": 3,
+      "label_ko": "계면활성제·첨가제",
+      "aliases": [
+        "surfactant"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE.04",
+      "parent_code": "CHEM.FINE",
+      "level": 3,
+      "label_ko": "전자급 세정·식각 약품",
+      "aliases": [
+        "전자재료",
+        "wet chemical"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE.05",
+      "parent_code": "CHEM.FINE",
+      "level": 3,
+      "label_ko": "배터리용 전해질 원료·첨가제",
+      "aliases": [
+        "전해액 첨가제"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "CHEM.FINE.06",
+      "parent_code": "CHEM.FINE",
+      "level": 3,
+      "label_ko": "고순도 시약·표준물질",
+      "aliases": [
+        "reference material"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "CHEM.OPS",
+      "parent_code": "CHEM",
+      "level": 2,
+      "label_ko": "화학 생산·제품 관리",
+      "aliases": [],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "CHEM.OPS.01",
+      "parent_code": "CHEM.OPS",
+      "level": 3,
+      "label_ko": "화학 공정 계측·제어",
+      "aliases": [
+        "process control"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "CHEM.OPS.02",
+      "parent_code": "CHEM.OPS",
+      "level": 3,
+      "label_ko": "공정 안전·위험성 평가",
+      "aliases": [
+        "HAZOP",
+        "PSM"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "CHEM.OPS.03",
+      "parent_code": "CHEM.OPS",
+      "level": 3,
+      "label_ko": "화학물질 등록·표시",
+      "aliases": [
+        "REACH",
+        "화평법",
+        "SDS"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "CHEM.OPS.04",
+      "parent_code": "CHEM.OPS",
+      "level": 3,
+      "label_ko": "성분·불순물 분석",
+      "aliases": [
+        "GC-MS",
+        "HPLC"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "CHEM.OPS.05",
+      "parent_code": "CHEM.OPS",
+      "level": 3,
+      "label_ko": "화학품 보관·취급 설비",
+      "aliases": [
+        "chemical storage"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "건설·인프라·플랜트",
+      "aliases": [
+        "건설",
+        "construction",
+        "토목"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH",
+      "parent_code": "BUILD",
+      "level": 2,
+      "label_ko": "건축·건축시공",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH.01",
+      "parent_code": "BUILD.ARCH",
+      "level": 3,
+      "label_ko": "건축설계·인허가",
+      "aliases": [
+        "architecture"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH.02",
+      "parent_code": "BUILD.ARCH",
+      "level": 3,
+      "label_ko": "골조·구조 공사",
+      "aliases": [
+        "RC",
+        "철골"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH.03",
+      "parent_code": "BUILD.ARCH",
+      "level": 3,
+      "label_ko": "외장·커튼월",
+      "aliases": [
+        "curtain wall"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH.04",
+      "parent_code": "BUILD.ARCH",
+      "level": 3,
+      "label_ko": "내장·마감",
+      "aliases": [
+        "interior fit-out"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH.05",
+      "parent_code": "BUILD.ARCH",
+      "level": 3,
+      "label_ko": "건설자재·모듈러 건축",
+      "aliases": [
+        "prefab",
+        "OSC"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD.ARCH.06",
+      "parent_code": "BUILD.ARCH",
+      "level": 3,
+      "label_ko": "리모델링·보수보강",
+      "aliases": [
+        "retrofit"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL",
+      "parent_code": "BUILD",
+      "level": 2,
+      "label_ko": "토목·사회기반시설",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.01",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "도로·고속도로",
+      "aliases": [
+        "highway"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.02",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "교량·터널",
+      "aliases": [
+        "bridge",
+        "tunnel"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.03",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "철도·도시철도 토목",
+      "aliases": [
+        "rail civil"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.04",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "항만·준설·매립",
+      "aliases": [
+        "dredging"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.05",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "공항 활주로·터미널 시공",
+      "aliases": [
+        "airfield"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.06",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "지반·기초·사면",
+      "aliases": [
+        "geotechnical"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "BUILD.CIVIL.07",
+      "parent_code": "BUILD.CIVIL",
+      "level": 3,
+      "label_ko": "댐·제방·수자원 구조물",
+      "aliases": [
+        "dam"
+      ],
+      "sort_order": 70,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT",
+      "parent_code": "BUILD",
+      "level": 2,
+      "label_ko": "산업플랜트·EPC",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT.01",
+      "parent_code": "BUILD.PLANT",
+      "level": 3,
+      "label_ko": "플랜트 설계·조달·시공",
+      "aliases": [
+        "EPC",
+        "플랜트",
+        "engineering procurement construction"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT.02",
+      "parent_code": "BUILD.PLANT",
+      "level": 3,
+      "label_ko": "기본설계·타당성",
+      "aliases": [
+        "FEED"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT.03",
+      "parent_code": "BUILD.PLANT",
+      "level": 3,
+      "label_ko": "공정배관·계장 설계",
+      "aliases": [
+        "P&ID",
+        "배관계장도"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT.04",
+      "parent_code": "BUILD.PLANT",
+      "level": 3,
+      "label_ko": "현장 설치·기계 완성",
+      "aliases": [
+        "mechanical completion"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT.05",
+      "parent_code": "BUILD.PLANT",
+      "level": 3,
+      "label_ko": "시운전·성능보증",
+      "aliases": [
+        "commissioning",
+        "시운전"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD.PLANT.06",
+      "parent_code": "BUILD.PLANT",
+      "level": 3,
+      "label_ko": "플랜트 정비·셧다운",
+      "aliases": [
+        "turnaround"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP",
+      "parent_code": "BUILD",
+      "level": 2,
+      "label_ko": "건축 기계·전기·설비",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP.01",
+      "parent_code": "BUILD.MEP",
+      "level": 3,
+      "label_ko": "공조·냉난방·환기",
+      "aliases": [
+        "HVAC"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP.02",
+      "parent_code": "BUILD.MEP",
+      "level": 3,
+      "label_ko": "급배수·위생설비",
+      "aliases": [
+        "plumbing"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP.03",
+      "parent_code": "BUILD.MEP",
+      "level": 3,
+      "label_ko": "수변전·건축전기",
+      "aliases": [
+        "MEP electrical"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP.04",
+      "parent_code": "BUILD.MEP",
+      "level": 3,
+      "label_ko": "소방·방재 설비",
+      "aliases": [
+        "fire protection"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP.05",
+      "parent_code": "BUILD.MEP",
+      "level": 3,
+      "label_ko": "승강기·수직운송",
+      "aliases": [
+        "elevator"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD.MEP.06",
+      "parent_code": "BUILD.MEP",
+      "level": 3,
+      "label_ko": "빌딩 자동제어",
+      "aliases": [
+        "건물 BMS",
+        "building management system"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE",
+      "parent_code": "BUILD",
+      "level": 2,
+      "label_ko": "건설 사업관리·디지털 시공",
+      "aliases": [],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE.01",
+      "parent_code": "BUILD.SITE",
+      "level": 3,
+      "label_ko": "공정·원가·물량 관리",
+      "aliases": [
+        "QS",
+        "quantity surveying"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE.02",
+      "parent_code": "BUILD.SITE",
+      "level": 3,
+      "label_ko": "발주·입찰·건설계약",
+      "aliases": [
+        "FIDIC"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE.03",
+      "parent_code": "BUILD.SITE",
+      "level": 3,
+      "label_ko": "건설 품질·감리",
+      "aliases": [
+        "construction supervision"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE.04",
+      "parent_code": "BUILD.SITE",
+      "level": 3,
+      "label_ko": "현장 안전·보건",
+      "aliases": [
+        "건설 HSE"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE.05",
+      "parent_code": "BUILD.SITE",
+      "level": 3,
+      "label_ko": "건축정보모델링·디지털 시공",
+      "aliases": [
+        "BIM"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BUILD.SITE.06",
+      "parent_code": "BUILD.SITE",
+      "level": 3,
+      "label_ko": "공사 클레임·공기연장",
+      "aliases": [
+        "EOT"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "METAL",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "철강·비철금속·광물",
+      "aliases": [
+        "metals",
+        "mining"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "METAL.MINE",
+      "parent_code": "METAL",
+      "level": 2,
+      "label_ko": "탐사·광산·선광",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "METAL.MINE.01",
+      "parent_code": "METAL.MINE",
+      "level": 3,
+      "label_ko": "광물 탐사·자원량 평가",
+      "aliases": [
+        "mineral exploration"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "METAL.MINE.02",
+      "parent_code": "METAL.MINE",
+      "level": 3,
+      "label_ko": "지표·지하 채광",
+      "aliases": [
+        "mining operation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "METAL.MINE.03",
+      "parent_code": "METAL.MINE",
+      "level": 3,
+      "label_ko": "선별·부유선광",
+      "aliases": [
+        "flotation"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "METAL.MINE.04",
+      "parent_code": "METAL.MINE",
+      "level": 3,
+      "label_ko": "핵심광물 조달·정제",
+      "aliases": [
+        "critical minerals"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "METAL.MINE.05",
+      "parent_code": "METAL.MINE",
+      "level": 3,
+      "label_ko": "광산 복구·폐광 관리",
+      "aliases": [
+        "mine closure"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "METAL.STEEL",
+      "parent_code": "METAL",
+      "level": 2,
+      "label_ko": "철강 제조·가공",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "METAL.STEEL.01",
+      "parent_code": "METAL.STEEL",
+      "level": 3,
+      "label_ko": "제선·제강",
+      "aliases": [
+        "제철",
+        "steelmaking"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "METAL.STEEL.02",
+      "parent_code": "METAL.STEEL",
+      "level": 3,
+      "label_ko": "전기로·저탄소 철강",
+      "aliases": [
+        "EAF"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "METAL.STEEL.03",
+      "parent_code": "METAL.STEEL",
+      "level": 3,
+      "label_ko": "압연·강판·코일",
+      "aliases": [
+        "rolling"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "METAL.STEEL.04",
+      "parent_code": "METAL.STEEL",
+      "level": 3,
+      "label_ko": "강관·형강",
+      "aliases": [
+        "steel pipe"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "METAL.STEEL.05",
+      "parent_code": "METAL.STEEL",
+      "level": 3,
+      "label_ko": "특수강·스테인리스",
+      "aliases": [
+        "stainless steel"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "METAL.NON",
+      "parent_code": "METAL",
+      "level": 2,
+      "label_ko": "비철금속·분말",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "METAL.NON.01",
+      "parent_code": "METAL.NON",
+      "level": 3,
+      "label_ko": "알루미늄 제련·압출",
+      "aliases": [
+        "aluminium extrusion"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "METAL.NON.02",
+      "parent_code": "METAL.NON",
+      "level": 3,
+      "label_ko": "구리·동박·전선재",
+      "aliases": [
+        "copper foil"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "METAL.NON.03",
+      "parent_code": "METAL.NON",
+      "level": 3,
+      "label_ko": "니켈·코발트·리튬 제련",
+      "aliases": [
+        "hydrometallurgy"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "METAL.NON.04",
+      "parent_code": "METAL.NON",
+      "level": 3,
+      "label_ko": "티타늄·특수합금",
+      "aliases": [
+        "titanium alloy"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "METAL.NON.05",
+      "parent_code": "METAL.NON",
+      "level": 3,
+      "label_ko": "금속분말·소결",
+      "aliases": [
+        "powder metallurgy"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "METAL.MAT",
+      "parent_code": "METAL",
+      "level": 2,
+      "label_ko": "무기소재·표면처리",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "METAL.MAT.01",
+      "parent_code": "METAL.MAT",
+      "level": 3,
+      "label_ko": "산업 세라믹·내화물",
+      "aliases": [
+        "ceramics"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "METAL.MAT.02",
+      "parent_code": "METAL.MAT",
+      "level": 3,
+      "label_ko": "기능성 유리·광학유리",
+      "aliases": [
+        "optical glass"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "METAL.MAT.03",
+      "parent_code": "METAL.MAT",
+      "level": 3,
+      "label_ko": "도금·아노다이징",
+      "aliases": [
+        "anodizing"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "METAL.MAT.04",
+      "parent_code": "METAL.MAT",
+      "level": 3,
+      "label_ko": "열처리·경화",
+      "aliases": [
+        "heat treatment"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "METAL.MAT.05",
+      "parent_code": "METAL.MAT",
+      "level": 3,
+      "label_ko": "비파괴·재료시험",
+      "aliases": [
+        "NDT"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENERGY",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "전력·에너지·자원",
+      "aliases": [
+        "energy",
+        "발전"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.GRID",
+      "parent_code": "ENERGY",
+      "level": 2,
+      "label_ko": "전력망·전력설비",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENERGY.GRID.01",
+      "parent_code": "ENERGY.GRID",
+      "level": 3,
+      "label_ko": "송전·변전",
+      "aliases": [
+        "substation"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENERGY.GRID.02",
+      "parent_code": "ENERGY.GRID",
+      "level": 3,
+      "label_ko": "배전·스마트그리드",
+      "aliases": [
+        "smart grid"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENERGY.GRID.03",
+      "parent_code": "ENERGY.GRID",
+      "level": 3,
+      "label_ko": "변압기·차단기",
+      "aliases": [
+        "transformer"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENERGY.GRID.04",
+      "parent_code": "ENERGY.GRID",
+      "level": 3,
+      "label_ko": "계통연계·전력품질",
+      "aliases": [
+        "grid connection"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.GRID.05",
+      "parent_code": "ENERGY.GRID",
+      "level": 3,
+      "label_ko": "전력시장·전력구매계약",
+      "aliases": [
+        "PPA"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENERGY.RENEW",
+      "parent_code": "ENERGY",
+      "level": 2,
+      "label_ko": "신재생·분산에너지",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENERGY.RENEW.01",
+      "parent_code": "ENERGY.RENEW",
+      "level": 3,
+      "label_ko": "태양광 발전·인버터",
+      "aliases": [
+        "PV"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENERGY.RENEW.02",
+      "parent_code": "ENERGY.RENEW",
+      "level": 3,
+      "label_ko": "육상·해상 풍력",
+      "aliases": [
+        "offshore wind"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENERGY.RENEW.03",
+      "parent_code": "ENERGY.RENEW",
+      "level": 3,
+      "label_ko": "수력·양수발전",
+      "aliases": [
+        "pumped hydro"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENERGY.RENEW.04",
+      "parent_code": "ENERGY.RENEW",
+      "level": 3,
+      "label_ko": "지열·지역냉난방",
+      "aliases": [
+        "geothermal"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.RENEW.05",
+      "parent_code": "ENERGY.RENEW",
+      "level": 3,
+      "label_ko": "바이오에너지·바이오가스",
+      "aliases": [
+        "biogas"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENERGY.FUEL",
+      "parent_code": "ENERGY",
+      "level": 2,
+      "label_ko": "석유·가스·열발전",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENERGY.FUEL.01",
+      "parent_code": "ENERGY.FUEL",
+      "level": 3,
+      "label_ko": "유전·가스전 개발",
+      "aliases": [
+        "upstream"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENERGY.FUEL.02",
+      "parent_code": "ENERGY.FUEL",
+      "level": 3,
+      "label_ko": "LNG 생산·터미널",
+      "aliases": [
+        "액화천연가스"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENERGY.FUEL.03",
+      "parent_code": "ENERGY.FUEL",
+      "level": 3,
+      "label_ko": "정유·석유제품 유통",
+      "aliases": [
+        "refining"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENERGY.FUEL.04",
+      "parent_code": "ENERGY.FUEL",
+      "level": 3,
+      "label_ko": "가스관·도시가스",
+      "aliases": [
+        "pipeline"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.FUEL.05",
+      "parent_code": "ENERGY.FUEL",
+      "level": 3,
+      "label_ko": "복합화력·열병합",
+      "aliases": [
+        "CCGT",
+        "CHP"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENERGY.NUC",
+      "parent_code": "ENERGY",
+      "level": 2,
+      "label_ko": "원자력·원전산업",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.NUC.01",
+      "parent_code": "ENERGY.NUC",
+      "level": 3,
+      "label_ko": "원전 주기기·보조기기",
+      "aliases": [
+        "nuclear island"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENERGY.NUC.02",
+      "parent_code": "ENERGY.NUC",
+      "level": 3,
+      "label_ko": "원전 운영·정비",
+      "aliases": [
+        "원전 O&M"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENERGY.NUC.03",
+      "parent_code": "ENERGY.NUC",
+      "level": 3,
+      "label_ko": "원전 안전·품질보증",
+      "aliases": [
+        "nuclear QA"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENERGY.NUC.04",
+      "parent_code": "ENERGY.NUC",
+      "level": 3,
+      "label_ko": "원전 해체·폐기물 관리",
+      "aliases": [
+        "decommissioning"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.NUC.05",
+      "parent_code": "ENERGY.NUC",
+      "level": 3,
+      "label_ko": "소형모듈원전",
+      "aliases": [
+        "SMR"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENERGY.HYD",
+      "parent_code": "ENERGY",
+      "level": 2,
+      "label_ko": "수소·연료전지",
+      "aliases": [],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENERGY.HYD.01",
+      "parent_code": "ENERGY.HYD",
+      "level": 3,
+      "label_ko": "수전해·그린수소",
+      "aliases": [
+        "electrolyzer"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENERGY.HYD.02",
+      "parent_code": "ENERGY.HYD",
+      "level": 3,
+      "label_ko": "수소 저장·운송",
+      "aliases": [
+        "hydrogen storage"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENERGY.HYD.03",
+      "parent_code": "ENERGY.HYD",
+      "level": 3,
+      "label_ko": "수소 충전 인프라",
+      "aliases": [
+        "HRS"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENERGY.HYD.04",
+      "parent_code": "ENERGY.HYD",
+      "level": 3,
+      "label_ko": "연료전지 시스템",
+      "aliases": [
+        "PEMFC",
+        "SOFC"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENERGY.HYD.05",
+      "parent_code": "ENERGY.HYD",
+      "level": 3,
+      "label_ko": "청정수소 인증·거래",
+      "aliases": [
+        "clean hydrogen"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENV",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "환경·물·자원순환",
+      "aliases": [
+        "environment",
+        "환경산업"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENV.WATER",
+      "parent_code": "ENV",
+      "level": 2,
+      "label_ko": "상하수·수처리",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENV.WATER.01",
+      "parent_code": "ENV.WATER",
+      "level": 3,
+      "label_ko": "정수·먹는물",
+      "aliases": [
+        "water treatment"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENV.WATER.02",
+      "parent_code": "ENV.WATER",
+      "level": 3,
+      "label_ko": "산업폐수·하폐수",
+      "aliases": [
+        "wastewater"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENV.WATER.03",
+      "parent_code": "ENV.WATER",
+      "level": 3,
+      "label_ko": "해수담수화",
+      "aliases": [
+        "desalination"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENV.WATER.04",
+      "parent_code": "ENV.WATER",
+      "level": 3,
+      "label_ko": "물 재이용·중수",
+      "aliases": [
+        "water reuse"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENV.WATER.05",
+      "parent_code": "ENV.WATER",
+      "level": 3,
+      "label_ko": "누수·수질 계측",
+      "aliases": [
+        "water monitoring"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENV.AIR",
+      "parent_code": "ENV",
+      "level": 2,
+      "label_ko": "대기·환경측정",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENV.AIR.01",
+      "parent_code": "ENV.AIR",
+      "level": 3,
+      "label_ko": "집진·배기가스 처리",
+      "aliases": [
+        "scrubber"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENV.AIR.02",
+      "parent_code": "ENV.AIR",
+      "level": 3,
+      "label_ko": "휘발성유기화합물 저감",
+      "aliases": [
+        "VOC"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENV.AIR.03",
+      "parent_code": "ENV.AIR",
+      "level": 3,
+      "label_ko": "대기질 모니터링",
+      "aliases": [
+        "air quality"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENV.AIR.04",
+      "parent_code": "ENV.AIR",
+      "level": 3,
+      "label_ko": "토양·지하수 정화",
+      "aliases": [
+        "remediation"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENV.AIR.05",
+      "parent_code": "ENV.AIR",
+      "level": 3,
+      "label_ko": "소음·진동 평가",
+      "aliases": [
+        "noise assessment"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENV.CIRC",
+      "parent_code": "ENV",
+      "level": 2,
+      "label_ko": "자원순환·폐기물",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENV.CIRC.01",
+      "parent_code": "ENV.CIRC",
+      "level": 3,
+      "label_ko": "생활·사업장 폐기물 선별",
+      "aliases": [
+        "MRF"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENV.CIRC.02",
+      "parent_code": "ENV.CIRC",
+      "level": 3,
+      "label_ko": "폐플라스틱 재활용",
+      "aliases": [
+        "chemical recycling"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENV.CIRC.03",
+      "parent_code": "ENV.CIRC",
+      "level": 3,
+      "label_ko": "전자폐기물·도시광산",
+      "aliases": [
+        "e-waste"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENV.CIRC.04",
+      "parent_code": "ENV.CIRC",
+      "level": 3,
+      "label_ko": "폐기물 에너지화",
+      "aliases": [
+        "waste to energy"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENV.CIRC.05",
+      "parent_code": "ENV.CIRC",
+      "level": 3,
+      "label_ko": "순환 포장·회수 시스템",
+      "aliases": [
+        "EPR"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM",
+      "parent_code": "ENV",
+      "level": 2,
+      "label_ko": "기후·지속가능성",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM.01",
+      "parent_code": "ENV.CLIM",
+      "level": 3,
+      "label_ko": "온실가스 인벤토리",
+      "aliases": [
+        "GHG"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM.02",
+      "parent_code": "ENV.CLIM",
+      "level": 3,
+      "label_ko": "탄소배출권·상쇄",
+      "aliases": [
+        "ETS",
+        "carbon credit"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM.03",
+      "parent_code": "ENV.CLIM",
+      "level": 3,
+      "label_ko": "탄소포집·저장·활용",
+      "aliases": [
+        "CCUS"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM.04",
+      "parent_code": "ENV.CLIM",
+      "level": 3,
+      "label_ko": "전과정평가·제품 탄소발자국",
+      "aliases": [
+        "LCA",
+        "PCF"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM.05",
+      "parent_code": "ENV.CLIM",
+      "level": 3,
+      "label_ko": "생물다양성·생태 복원",
+      "aliases": [
+        "biodiversity"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ENV.CLIM.06",
+      "parent_code": "ENV.CLIM",
+      "level": 3,
+      "label_ko": "지속가능성 공시·검증",
+      "aliases": [
+        "ESG",
+        "ISSB"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "SEMI",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "반도체·디스플레이",
+      "aliases": [
+        "semiconductor",
+        "반도체",
+        "display"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "SEMI.CHIP",
+      "parent_code": "SEMI",
+      "level": 2,
+      "label_ko": "반도체 설계·소자",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SEMI.CHIP.01",
+      "parent_code": "SEMI.CHIP",
+      "level": 3,
+      "label_ko": "메모리·고대역폭 메모리",
+      "aliases": [
+        "DRAM",
+        "NAND",
+        "HBM"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SEMI.CHIP.02",
+      "parent_code": "SEMI.CHIP",
+      "level": 3,
+      "label_ko": "시스템반도체·팹리스",
+      "aliases": [
+        "fabless",
+        "SoC"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SEMI.CHIP.03",
+      "parent_code": "SEMI.CHIP",
+      "level": 3,
+      "label_ko": "전력·화합물 반도체",
+      "aliases": [
+        "SiC",
+        "GaN"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SEMI.CHIP.04",
+      "parent_code": "SEMI.CHIP",
+      "level": 3,
+      "label_ko": "이미지센서·아날로그칩",
+      "aliases": [
+        "CIS"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SEMI.CHIP.05",
+      "parent_code": "SEMI.CHIP",
+      "level": 3,
+      "label_ko": "설계자동화·반도체 IP",
+      "aliases": [
+        "EDA"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB",
+      "parent_code": "SEMI",
+      "level": 2,
+      "label_ko": "웨이퍼·전공정",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB.01",
+      "parent_code": "SEMI.FAB",
+      "level": 3,
+      "label_ko": "웨이퍼·기판",
+      "aliases": [
+        "wafer"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB.02",
+      "parent_code": "SEMI.FAB",
+      "level": 3,
+      "label_ko": "노광·포토 공정",
+      "aliases": [
+        "EUV",
+        "리소그래피"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB.03",
+      "parent_code": "SEMI.FAB",
+      "level": 3,
+      "label_ko": "식각·세정 공정",
+      "aliases": [
+        "etching"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB.04",
+      "parent_code": "SEMI.FAB",
+      "level": 3,
+      "label_ko": "증착·확산·이온주입",
+      "aliases": [
+        "CVD",
+        "ALD"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB.05",
+      "parent_code": "SEMI.FAB",
+      "level": 3,
+      "label_ko": "연마·공정계측",
+      "aliases": [
+        "CMP",
+        "metrology"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SEMI.FAB.06",
+      "parent_code": "SEMI.FAB",
+      "level": 3,
+      "label_ko": "파운드리 생산",
+      "aliases": [
+        "foundry"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "SEMI.PACK",
+      "parent_code": "SEMI",
+      "level": 2,
+      "label_ko": "패키징·후공정",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SEMI.PACK.01",
+      "parent_code": "SEMI.PACK",
+      "level": 3,
+      "label_ko": "절단·본딩",
+      "aliases": [
+        "dicing",
+        "wire bonding"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SEMI.PACK.02",
+      "parent_code": "SEMI.PACK",
+      "level": 3,
+      "label_ko": "첨단 패키징·칩렛",
+      "aliases": [
+        "chiplet",
+        "2.5D"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SEMI.PACK.03",
+      "parent_code": "SEMI.PACK",
+      "level": 3,
+      "label_ko": "검사·프로빙·테스트",
+      "aliases": [
+        "ATE",
+        "probe"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SEMI.PACK.04",
+      "parent_code": "SEMI.PACK",
+      "level": 3,
+      "label_ko": "패키지 기판·인터포저",
+      "aliases": [
+        "interposer"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SEMI.PACK.05",
+      "parent_code": "SEMI.PACK",
+      "level": 3,
+      "label_ko": "후공정 외주·신뢰성",
+      "aliases": [
+        "OSAT"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SEMI.DISP",
+      "parent_code": "SEMI",
+      "level": 2,
+      "label_ko": "디스플레이·광전자",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SEMI.DISP.01",
+      "parent_code": "SEMI.DISP",
+      "level": 3,
+      "label_ko": "액정 패널",
+      "aliases": [
+        "LCD"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SEMI.DISP.02",
+      "parent_code": "SEMI.DISP",
+      "level": 3,
+      "label_ko": "유기발광 디스플레이",
+      "aliases": [
+        "OLED"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SEMI.DISP.03",
+      "parent_code": "SEMI.DISP",
+      "level": 3,
+      "label_ko": "마이크로 LED·미니 LED",
+      "aliases": [
+        "micro LED"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SEMI.DISP.04",
+      "parent_code": "SEMI.DISP",
+      "level": 3,
+      "label_ko": "디스플레이 모듈·구동",
+      "aliases": [
+        "DDI"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SEMI.DISP.05",
+      "parent_code": "SEMI.DISP",
+      "level": 3,
+      "label_ko": "광학필름·편광판",
+      "aliases": [
+        "polarizer"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ELEC",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "전자·전기제품·광학",
+      "aliases": [
+        "electronics",
+        "전기전자"
+      ],
+      "sort_order": 70,
+      "active": true
+    },
+    {
+      "code": "ELEC.COMP",
+      "parent_code": "ELEC",
+      "level": 2,
+      "label_ko": "전자부품·회로",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ELEC.COMP.01",
+      "parent_code": "ELEC.COMP",
+      "level": 3,
+      "label_ko": "인쇄회로기판·실장",
+      "aliases": [
+        "PCB",
+        "SMT"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ELEC.COMP.02",
+      "parent_code": "ELEC.COMP",
+      "level": 3,
+      "label_ko": "수동소자·캐패시터",
+      "aliases": [
+        "MLCC"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ELEC.COMP.03",
+      "parent_code": "ELEC.COMP",
+      "level": 3,
+      "label_ko": "커넥터·하네스",
+      "aliases": [
+        "connector"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ELEC.COMP.04",
+      "parent_code": "ELEC.COMP",
+      "level": 3,
+      "label_ko": "센서·계측 모듈",
+      "aliases": [
+        "sensor module"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ELEC.COMP.05",
+      "parent_code": "ELEC.COMP",
+      "level": 3,
+      "label_ko": "전원공급·전력변환",
+      "aliases": [
+        "SMPS"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ELEC.HOME",
+      "parent_code": "ELEC",
+      "level": 2,
+      "label_ko": "가전·소비자 전자",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ELEC.HOME.01",
+      "parent_code": "ELEC.HOME",
+      "level": 3,
+      "label_ko": "생활·주방가전",
+      "aliases": [
+        "home appliance"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ELEC.HOME.02",
+      "parent_code": "ELEC.HOME",
+      "level": 3,
+      "label_ko": "영상·음향기기",
+      "aliases": [
+        "TV",
+        "audio"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ELEC.HOME.03",
+      "parent_code": "ELEC.HOME",
+      "level": 3,
+      "label_ko": "웨어러블·스마트기기",
+      "aliases": [
+        "wearables"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ELEC.HOME.04",
+      "parent_code": "ELEC.HOME",
+      "level": 3,
+      "label_ko": "모바일 단말기",
+      "aliases": [
+        "smartphone"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ELEC.HOME.05",
+      "parent_code": "ELEC.HOME",
+      "level": 3,
+      "label_ko": "제품 인증·전자파 적합성",
+      "aliases": [
+        "EMC"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ELEC.OPT",
+      "parent_code": "ELEC",
+      "level": 2,
+      "label_ko": "광학·정밀기기",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ELEC.OPT.01",
+      "parent_code": "ELEC.OPT",
+      "level": 3,
+      "label_ko": "렌즈·이미징 모듈",
+      "aliases": [
+        "camera module"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ELEC.OPT.02",
+      "parent_code": "ELEC.OPT",
+      "level": 3,
+      "label_ko": "레이저·광원",
+      "aliases": [
+        "photonics"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ELEC.OPT.03",
+      "parent_code": "ELEC.OPT",
+      "level": 3,
+      "label_ko": "분광·분석기기",
+      "aliases": [
+        "spectrometer"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ELEC.OPT.04",
+      "parent_code": "ELEC.OPT",
+      "level": 3,
+      "label_ko": "계측기·교정 서비스",
+      "aliases": [
+        "calibration"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ELEC.OPT.05",
+      "parent_code": "ELEC.OPT",
+      "level": 3,
+      "label_ko": "정밀 시계·광학 부품",
+      "aliases": [
+        "precision optics"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BATT",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "이차전지·에너지저장",
+      "aliases": [
+        "battery",
+        "배터리",
+        "secondary battery"
+      ],
+      "sort_order": 80,
+      "active": true
+    },
+    {
+      "code": "BATT.MAT",
+      "parent_code": "BATT",
+      "level": 2,
+      "label_ko": "배터리 소재·부품",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BATT.MAT.01",
+      "parent_code": "BATT.MAT",
+      "level": 3,
+      "label_ko": "양극재·전구체",
+      "aliases": [
+        "CAM",
+        "NCM",
+        "LFP"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BATT.MAT.02",
+      "parent_code": "BATT.MAT",
+      "level": 3,
+      "label_ko": "음극재·실리콘 음극",
+      "aliases": [
+        "anode"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BATT.MAT.03",
+      "parent_code": "BATT.MAT",
+      "level": 3,
+      "label_ko": "분리막",
+      "aliases": [
+        "배터리 분리막",
+        "separator"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BATT.MAT.04",
+      "parent_code": "BATT.MAT",
+      "level": 3,
+      "label_ko": "전해액·고체전해질",
+      "aliases": [
+        "electrolyte",
+        "전해액"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BATT.MAT.05",
+      "parent_code": "BATT.MAT",
+      "level": 3,
+      "label_ko": "집전체·파우치",
+      "aliases": [
+        "current collector"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BATT.CELL",
+      "parent_code": "BATT",
+      "level": 2,
+      "label_ko": "셀·모듈·팩",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BATT.CELL.01",
+      "parent_code": "BATT.CELL",
+      "level": 3,
+      "label_ko": "전극 제조·코팅",
+      "aliases": [
+        "electrode coating"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BATT.CELL.02",
+      "parent_code": "BATT.CELL",
+      "level": 3,
+      "label_ko": "셀 조립·포메이션",
+      "aliases": [
+        "formation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BATT.CELL.03",
+      "parent_code": "BATT.CELL",
+      "level": 3,
+      "label_ko": "모듈·팩 설계",
+      "aliases": [
+        "battery pack"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BATT.CELL.04",
+      "parent_code": "BATT.CELL",
+      "level": 3,
+      "label_ko": "배터리 관리 시스템",
+      "aliases": [
+        "BMS",
+        "battery management system"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BATT.CELL.05",
+      "parent_code": "BATT.CELL",
+      "level": 3,
+      "label_ko": "열관리·안전 평가",
+      "aliases": [
+        "thermal runaway"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BATT.ESS",
+      "parent_code": "BATT",
+      "level": 2,
+      "label_ko": "저장 시스템·재사용",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BATT.ESS.01",
+      "parent_code": "BATT.ESS",
+      "level": 3,
+      "label_ko": "고정형 에너지저장장치",
+      "aliases": [
+        "ESS",
+        "BESS"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BATT.ESS.02",
+      "parent_code": "BATT.ESS",
+      "level": 3,
+      "label_ko": "저장장치 운영·전력변환",
+      "aliases": [
+        "PCS"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BATT.ESS.03",
+      "parent_code": "BATT.ESS",
+      "level": 3,
+      "label_ko": "사용후 배터리 진단·등급화",
+      "aliases": [
+        "SOH"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BATT.ESS.04",
+      "parent_code": "BATT.ESS",
+      "level": 3,
+      "label_ko": "배터리 재사용·재제조",
+      "aliases": [
+        "second life"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BATT.ESS.05",
+      "parent_code": "BATT.ESS",
+      "level": 3,
+      "label_ko": "폐배터리 회수·재활용",
+      "aliases": [
+        "black mass"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MACH",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "기계·로봇·제조자동화",
+      "aliases": [
+        "machinery",
+        "산업기계"
+      ],
+      "sort_order": 90,
+      "active": true
+    },
+    {
+      "code": "MACH.TOOL",
+      "parent_code": "MACH",
+      "level": 2,
+      "label_ko": "공작기계·생산기술",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MACH.TOOL.01",
+      "parent_code": "MACH.TOOL",
+      "level": 3,
+      "label_ko": "절삭·공작기계",
+      "aliases": [
+        "CNC"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MACH.TOOL.02",
+      "parent_code": "MACH.TOOL",
+      "level": 3,
+      "label_ko": "금형·사출성형",
+      "aliases": [
+        "injection molding"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MACH.TOOL.03",
+      "parent_code": "MACH.TOOL",
+      "level": 3,
+      "label_ko": "프레스·판금",
+      "aliases": [
+        "stamping"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MACH.TOOL.04",
+      "parent_code": "MACH.TOOL",
+      "level": 3,
+      "label_ko": "용접·접합",
+      "aliases": [
+        "welding"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MACH.TOOL.05",
+      "parent_code": "MACH.TOOL",
+      "level": 3,
+      "label_ko": "적층제조·산업용 3D프린팅",
+      "aliases": [
+        "additive manufacturing"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO",
+      "parent_code": "MACH",
+      "level": 2,
+      "label_ko": "로봇·공장자동화",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO.01",
+      "parent_code": "MACH.ROBO",
+      "level": 3,
+      "label_ko": "산업용·협동로봇",
+      "aliases": [
+        "cobot"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO.02",
+      "parent_code": "MACH.ROBO",
+      "level": 3,
+      "label_ko": "이동·물류로봇",
+      "aliases": [
+        "AMR",
+        "AGV"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO.03",
+      "parent_code": "MACH.ROBO",
+      "level": 3,
+      "label_ko": "PLC·산업제어",
+      "aliases": [
+        "SCADA"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO.04",
+      "parent_code": "MACH.ROBO",
+      "level": 3,
+      "label_ko": "머신비전·검사",
+      "aliases": [
+        "machine vision"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO.05",
+      "parent_code": "MACH.ROBO",
+      "level": 3,
+      "label_ko": "스마트공장·생산관리",
+      "aliases": [
+        "MES"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MACH.ROBO.06",
+      "parent_code": "MACH.ROBO",
+      "level": 3,
+      "label_ko": "설비 예지보전",
+      "aliases": [
+        "predictive maintenance"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "MACH.HEAVY",
+      "parent_code": "MACH",
+      "level": 2,
+      "label_ko": "산업설비·중장비",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MACH.HEAVY.01",
+      "parent_code": "MACH.HEAVY",
+      "level": 3,
+      "label_ko": "펌프·밸브·압축기",
+      "aliases": [
+        "pump",
+        "valve"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MACH.HEAVY.02",
+      "parent_code": "MACH.HEAVY",
+      "level": 3,
+      "label_ko": "유압·공압",
+      "aliases": [
+        "hydraulics"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MACH.HEAVY.03",
+      "parent_code": "MACH.HEAVY",
+      "level": 3,
+      "label_ko": "크레인·건설기계",
+      "aliases": [
+        "excavator"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MACH.HEAVY.04",
+      "parent_code": "MACH.HEAVY",
+      "level": 3,
+      "label_ko": "베어링·기어·구동",
+      "aliases": [
+        "power transmission"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MACH.HEAVY.05",
+      "parent_code": "MACH.HEAVY",
+      "level": 3,
+      "label_ko": "포장·충전 기계",
+      "aliases": [
+        "filling machine"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MACH.QUAL",
+      "parent_code": "MACH",
+      "level": 2,
+      "label_ko": "제조운영·산업안전",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MACH.QUAL.01",
+      "parent_code": "MACH.QUAL",
+      "level": 3,
+      "label_ko": "품질경영·공급사 심사",
+      "aliases": [
+        "QMS",
+        "ISO 9001"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MACH.QUAL.02",
+      "parent_code": "MACH.QUAL",
+      "level": 3,
+      "label_ko": "린 생산·공정 개선",
+      "aliases": [
+        "lean",
+        "Kaizen"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MACH.QUAL.03",
+      "parent_code": "MACH.QUAL",
+      "level": 3,
+      "label_ko": "작업자 안전·보호구",
+      "aliases": [
+        "PPE"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MACH.QUAL.04",
+      "parent_code": "MACH.QUAL",
+      "level": 3,
+      "label_ko": "설비 인수·공장검사",
+      "aliases": [
+        "FAT",
+        "SAT"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MACH.QUAL.05",
+      "parent_code": "MACH.QUAL",
+      "level": 3,
+      "label_ko": "산업 시험·인증",
+      "aliases": [
+        "conformity assessment"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "AUTO",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "자동차·도로 모빌리티",
+      "aliases": [
+        "automotive",
+        "차량"
+      ],
+      "sort_order": 100,
+      "active": true
+    },
+    {
+      "code": "AUTO.VEH",
+      "parent_code": "AUTO",
+      "level": 2,
+      "label_ko": "차량·완성차",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AUTO.VEH.01",
+      "parent_code": "AUTO.VEH",
+      "level": 3,
+      "label_ko": "승용차·상용차",
+      "aliases": [
+        "OEM"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AUTO.VEH.02",
+      "parent_code": "AUTO.VEH",
+      "level": 3,
+      "label_ko": "전기차·하이브리드",
+      "aliases": [
+        "BEV",
+        "HEV"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AUTO.VEH.03",
+      "parent_code": "AUTO.VEH",
+      "level": 3,
+      "label_ko": "특장차·작업차",
+      "aliases": [
+        "special vehicle"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AUTO.VEH.04",
+      "parent_code": "AUTO.VEH",
+      "level": 3,
+      "label_ko": "이륜차·마이크로모빌리티",
+      "aliases": [
+        "e-bike"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "AUTO.VEH.05",
+      "parent_code": "AUTO.VEH",
+      "level": 3,
+      "label_ko": "신차 개발·양산 준비",
+      "aliases": [
+        "SOP"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "AUTO.PART",
+      "parent_code": "AUTO",
+      "level": 2,
+      "label_ko": "동력·차체·부품",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AUTO.PART.01",
+      "parent_code": "AUTO.PART",
+      "level": 3,
+      "label_ko": "엔진·변속기",
+      "aliases": [
+        "powertrain"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AUTO.PART.02",
+      "parent_code": "AUTO.PART",
+      "level": 3,
+      "label_ko": "전기구동·인버터",
+      "aliases": [
+        "e-axle"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AUTO.PART.03",
+      "parent_code": "AUTO.PART",
+      "level": 3,
+      "label_ko": "차체·섀시·제동",
+      "aliases": [
+        "chassis"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AUTO.PART.04",
+      "parent_code": "AUTO.PART",
+      "level": 3,
+      "label_ko": "내외장·시트",
+      "aliases": [
+        "trim"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "AUTO.PART.05",
+      "parent_code": "AUTO.PART",
+      "level": 3,
+      "label_ko": "차량용 전장·하네스",
+      "aliases": [
+        "automotive electronics"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "AUTO.TECH",
+      "parent_code": "AUTO",
+      "level": 2,
+      "label_ko": "미래차·차량 서비스",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AUTO.TECH.01",
+      "parent_code": "AUTO.TECH",
+      "level": 3,
+      "label_ko": "자율주행·운전자 보조",
+      "aliases": [
+        "ADAS"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AUTO.TECH.02",
+      "parent_code": "AUTO.TECH",
+      "level": 3,
+      "label_ko": "차량 소프트웨어·인포테인먼트",
+      "aliases": [
+        "SDV",
+        "IVI"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AUTO.TECH.03",
+      "parent_code": "AUTO.TECH",
+      "level": 3,
+      "label_ko": "전기차 충전·운영",
+      "aliases": [
+        "EVSE"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AUTO.TECH.04",
+      "parent_code": "AUTO.TECH",
+      "level": 3,
+      "label_ko": "차량 인증·안전·시험",
+      "aliases": [
+        "homologation"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "AUTO.TECH.05",
+      "parent_code": "AUTO.TECH",
+      "level": 3,
+      "label_ko": "차량 정비·애프터마켓",
+      "aliases": [
+        "aftermarket"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRANS",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "조선·철도·항공우주",
+      "aliases": [
+        "shipbuilding",
+        "rail",
+        "aerospace"
+      ],
+      "sort_order": 110,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP",
+      "parent_code": "TRANS",
+      "level": 2,
+      "label_ko": "조선·해양기자재",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP.01",
+      "parent_code": "TRANS.SHIP",
+      "level": 3,
+      "label_ko": "상선 설계·건조",
+      "aliases": [
+        "shipyard"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP.02",
+      "parent_code": "TRANS.SHIP",
+      "level": 3,
+      "label_ko": "선박 추진·엔진",
+      "aliases": [
+        "marine propulsion"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP.03",
+      "parent_code": "TRANS.SHIP",
+      "level": 3,
+      "label_ko": "항해·선박 전장",
+      "aliases": [
+        "marine navigation"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP.04",
+      "parent_code": "TRANS.SHIP",
+      "level": 3,
+      "label_ko": "해양구조물·부유식 설비",
+      "aliases": [
+        "offshore platform"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP.05",
+      "parent_code": "TRANS.SHIP",
+      "level": 3,
+      "label_ko": "선급·선박검사",
+      "aliases": [
+        "class society"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRANS.SHIP.06",
+      "parent_code": "TRANS.SHIP",
+      "level": 3,
+      "label_ko": "선박 수리·개조",
+      "aliases": [
+        "ship retrofit"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "TRANS.RAIL",
+      "parent_code": "TRANS",
+      "level": 2,
+      "label_ko": "철도차량·운영기술",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRANS.RAIL.01",
+      "parent_code": "TRANS.RAIL",
+      "level": 3,
+      "label_ko": "철도차량·대차",
+      "aliases": [
+        "rolling stock"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRANS.RAIL.02",
+      "parent_code": "TRANS.RAIL",
+      "level": 3,
+      "label_ko": "신호·열차제어",
+      "aliases": [
+        "CBTC",
+        "ETCS"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRANS.RAIL.03",
+      "parent_code": "TRANS.RAIL",
+      "level": 3,
+      "label_ko": "전철전력·전차선",
+      "aliases": [
+        "catenary"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRANS.RAIL.04",
+      "parent_code": "TRANS.RAIL",
+      "level": 3,
+      "label_ko": "차량 정비·기지",
+      "aliases": [
+        "rail depot"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRANS.RAIL.05",
+      "parent_code": "TRANS.RAIL",
+      "level": 3,
+      "label_ko": "도시철도 운영·역무",
+      "aliases": [
+        "metro operations"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRANS.AIR",
+      "parent_code": "TRANS",
+      "level": 2,
+      "label_ko": "항공기·항공정비",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRANS.AIR.01",
+      "parent_code": "TRANS.AIR",
+      "level": 3,
+      "label_ko": "민간 항공기 제작",
+      "aliases": [
+        "airframe"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRANS.AIR.02",
+      "parent_code": "TRANS.AIR",
+      "level": 3,
+      "label_ko": "항공엔진·부품",
+      "aliases": [
+        "aero engine"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRANS.AIR.03",
+      "parent_code": "TRANS.AIR",
+      "level": 3,
+      "label_ko": "항공정비·감항",
+      "aliases": [
+        "MRO",
+        "airworthiness"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRANS.AIR.04",
+      "parent_code": "TRANS.AIR",
+      "level": 3,
+      "label_ko": "항공교통·공항 운영",
+      "aliases": [
+        "ATM"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRANS.AIR.05",
+      "parent_code": "TRANS.AIR",
+      "level": 3,
+      "label_ko": "민간 드론·도심항공",
+      "aliases": [
+        "UAM",
+        "UAS"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRANS.SPACE",
+      "parent_code": "TRANS",
+      "level": 2,
+      "label_ko": "우주·위성 서비스",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRANS.SPACE.01",
+      "parent_code": "TRANS.SPACE",
+      "level": 3,
+      "label_ko": "위성 본체·탑재체",
+      "aliases": [
+        "satellite payload"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRANS.SPACE.02",
+      "parent_code": "TRANS.SPACE",
+      "level": 3,
+      "label_ko": "위성통신·지상국",
+      "aliases": [
+        "ground station"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRANS.SPACE.03",
+      "parent_code": "TRANS.SPACE",
+      "level": 3,
+      "label_ko": "지구관측·공간영상",
+      "aliases": [
+        "earth observation"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRANS.SPACE.04",
+      "parent_code": "TRANS.SPACE",
+      "level": 3,
+      "label_ko": "민간 발사 서비스",
+      "aliases": [
+        "launch service"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRANS.SPACE.05",
+      "parent_code": "TRANS.SPACE",
+      "level": 3,
+      "label_ko": "우주환경 시험·인증",
+      "aliases": [
+        "space qualification"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SW",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "소프트웨어·데이터·인공지능",
+      "aliases": [
+        "software",
+        "IT",
+        "AI",
+        "정보기술"
+      ],
+      "sort_order": 120,
+      "active": true
+    },
+    {
+      "code": "SW.ENT",
+      "parent_code": "SW",
+      "level": 2,
+      "label_ko": "기업 소프트웨어",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SW.ENT.01",
+      "parent_code": "SW.ENT",
+      "level": 3,
+      "label_ko": "기업자원관리",
+      "aliases": [
+        "ERP"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SW.ENT.02",
+      "parent_code": "SW.ENT",
+      "level": 3,
+      "label_ko": "고객관계·마케팅 시스템",
+      "aliases": [
+        "CRM"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SW.ENT.03",
+      "parent_code": "SW.ENT",
+      "level": 3,
+      "label_ko": "구매·공급망 소프트웨어",
+      "aliases": [
+        "SCM"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SW.ENT.04",
+      "parent_code": "SW.ENT",
+      "level": 3,
+      "label_ko": "그룹웨어·전자결재",
+      "aliases": [
+        "groupware"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SW.ENT.05",
+      "parent_code": "SW.ENT",
+      "level": 3,
+      "label_ko": "서비스형 소프트웨어 구축",
+      "aliases": [
+        "SaaS"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SW.CLOUD",
+      "parent_code": "SW",
+      "level": 2,
+      "label_ko": "클라우드·인프라",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SW.CLOUD.01",
+      "parent_code": "SW.CLOUD",
+      "level": 3,
+      "label_ko": "퍼블릭·프라이빗 클라우드",
+      "aliases": [
+        "IaaS",
+        "PaaS"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SW.CLOUD.02",
+      "parent_code": "SW.CLOUD",
+      "level": 3,
+      "label_ko": "데이터센터 운영",
+      "aliases": [
+        "IDC"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SW.CLOUD.03",
+      "parent_code": "SW.CLOUD",
+      "level": 3,
+      "label_ko": "클라우드 전환·운영",
+      "aliases": [
+        "MSP"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SW.CLOUD.04",
+      "parent_code": "SW.CLOUD",
+      "level": 3,
+      "label_ko": "네트워크·스토리지 시스템",
+      "aliases": [
+        "SAN",
+        "NAS"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SW.CLOUD.05",
+      "parent_code": "SW.CLOUD",
+      "level": 3,
+      "label_ko": "서비스 운영·관측",
+      "aliases": [
+        "SRE",
+        "observability"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SW.AI",
+      "parent_code": "SW",
+      "level": 2,
+      "label_ko": "데이터·AI",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SW.AI.01",
+      "parent_code": "SW.AI",
+      "level": 3,
+      "label_ko": "기계학습·모델 평가",
+      "aliases": [
+        "ML"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SW.AI.02",
+      "parent_code": "SW.AI",
+      "level": 3,
+      "label_ko": "생성형 AI·언어모델",
+      "aliases": [
+        "LLM",
+        "생성 AI"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SW.AI.03",
+      "parent_code": "SW.AI",
+      "level": 3,
+      "label_ko": "음성·자연어처리",
+      "aliases": [
+        "ASR",
+        "NLP"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SW.AI.04",
+      "parent_code": "SW.AI",
+      "level": 3,
+      "label_ko": "컴퓨터비전·영상분석",
+      "aliases": [
+        "computer vision"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SW.AI.05",
+      "parent_code": "SW.AI",
+      "level": 3,
+      "label_ko": "데이터 엔지니어링·분석",
+      "aliases": [
+        "BI",
+        "ETL"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SW.AI.06",
+      "parent_code": "SW.AI",
+      "level": 3,
+      "label_ko": "AI 거버넌스·책임성",
+      "aliases": [
+        "AI governance"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "SW.SEC",
+      "parent_code": "SW",
+      "level": 2,
+      "label_ko": "정보보호·개인정보",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SW.SEC.01",
+      "parent_code": "SW.SEC",
+      "level": 3,
+      "label_ko": "엔드포인트·네트워크 보안",
+      "aliases": [
+        "EDR"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SW.SEC.02",
+      "parent_code": "SW.SEC",
+      "level": 3,
+      "label_ko": "인증·접근관리",
+      "aliases": [
+        "IAM"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SW.SEC.03",
+      "parent_code": "SW.SEC",
+      "level": 3,
+      "label_ko": "개인정보보호·영향평가",
+      "aliases": [
+        "PIA"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SW.SEC.04",
+      "parent_code": "SW.SEC",
+      "level": 3,
+      "label_ko": "보안관제·사고 대응",
+      "aliases": [
+        "SOC"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SW.SEC.05",
+      "parent_code": "SW.SEC",
+      "level": 3,
+      "label_ko": "보안 인증·감사",
+      "aliases": [
+        "ISMS",
+        "ISO 27001"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SW.PROD",
+      "parent_code": "SW",
+      "level": 2,
+      "label_ko": "디지털 제품·플랫폼",
+      "aliases": [],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SW.PROD.01",
+      "parent_code": "SW.PROD",
+      "level": 3,
+      "label_ko": "웹·모바일 앱 개발",
+      "aliases": [
+        "mobile app"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SW.PROD.02",
+      "parent_code": "SW.PROD",
+      "level": 3,
+      "label_ko": "사용자경험·서비스 디자인",
+      "aliases": [
+        "UX",
+        "UI"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SW.PROD.03",
+      "parent_code": "SW.PROD",
+      "level": 3,
+      "label_ko": "디지털 접근성",
+      "aliases": [
+        "WCAG"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SW.PROD.04",
+      "parent_code": "SW.PROD",
+      "level": 3,
+      "label_ko": "오픈소스·개발 생태계",
+      "aliases": [
+        "open source"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SW.PROD.05",
+      "parent_code": "SW.PROD",
+      "level": 3,
+      "label_ko": "공간정보·지도 플랫폼",
+      "aliases": [
+        "GIS"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TEL",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "통신·네트워크·방송기술",
+      "aliases": [
+        "telecom",
+        "ICT",
+        "통신"
+      ],
+      "sort_order": 130,
+      "active": true
+    },
+    {
+      "code": "TEL.NET",
+      "parent_code": "TEL",
+      "level": 2,
+      "label_ko": "유무선 통신망",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TEL.NET.01",
+      "parent_code": "TEL.NET",
+      "level": 3,
+      "label_ko": "이동통신망·무선접속",
+      "aliases": [
+        "5G",
+        "6G",
+        "RAN"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TEL.NET.02",
+      "parent_code": "TEL.NET",
+      "level": 3,
+      "label_ko": "광통신·전송망",
+      "aliases": [
+        "FTTH",
+        "DWDM"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TEL.NET.03",
+      "parent_code": "TEL.NET",
+      "level": 3,
+      "label_ko": "사설망·기업통신",
+      "aliases": [
+        "private 5G"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TEL.NET.04",
+      "parent_code": "TEL.NET",
+      "level": 3,
+      "label_ko": "네트워크 장비·라우팅",
+      "aliases": [
+        "router"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TEL.NET.05",
+      "parent_code": "TEL.NET",
+      "level": 3,
+      "label_ko": "전파·주파수 정책",
+      "aliases": [
+        "spectrum"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TEL.IOT",
+      "parent_code": "TEL",
+      "level": 2,
+      "label_ko": "연결기기·통신서비스",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TEL.IOT.01",
+      "parent_code": "TEL.IOT",
+      "level": 3,
+      "label_ko": "사물인터넷·엣지기기",
+      "aliases": [
+        "IoT",
+        "IIoT"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TEL.IOT.02",
+      "parent_code": "TEL.IOT",
+      "level": 3,
+      "label_ko": "스마트홈·연결 표준",
+      "aliases": [
+        "Matter"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TEL.IOT.03",
+      "parent_code": "TEL.IOT",
+      "level": 3,
+      "label_ko": "위치기반·측위 서비스",
+      "aliases": [
+        "GNSS"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TEL.IOT.04",
+      "parent_code": "TEL.IOT",
+      "level": 3,
+      "label_ko": "통신사 서비스·로밍",
+      "aliases": [
+        "MVNO"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TEL.IOT.05",
+      "parent_code": "TEL.IOT",
+      "level": 3,
+      "label_ko": "메시징·통합 커뮤니케이션",
+      "aliases": [
+        "UCaaS"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TEL.BC",
+      "parent_code": "TEL",
+      "level": 2,
+      "label_ko": "방송·영상전송 기술",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TEL.BC.01",
+      "parent_code": "TEL.BC",
+      "level": 3,
+      "label_ko": "방송 송출·중계",
+      "aliases": [
+        "broadcast transmission"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TEL.BC.02",
+      "parent_code": "TEL.BC",
+      "level": 3,
+      "label_ko": "IP 기반 방송",
+      "aliases": [
+        "IPTV"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TEL.BC.03",
+      "parent_code": "TEL.BC",
+      "level": 3,
+      "label_ko": "스트리밍 전송·인코딩",
+      "aliases": [
+        "CDN",
+        "codec"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TEL.BC.04",
+      "parent_code": "TEL.BC",
+      "level": 3,
+      "label_ko": "방송 스튜디오 장비",
+      "aliases": [
+        "broadcast equipment"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TEL.BC.05",
+      "parent_code": "TEL.BC",
+      "level": 3,
+      "label_ko": "차세대 방송 표준",
+      "aliases": [
+        "ATSC"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIO",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "제약·바이오산업",
+      "aliases": [
+        "pharma",
+        "biotech",
+        "제약"
+      ],
+      "sort_order": 140,
+      "active": true
+    },
+    {
+      "code": "BIO.DRUG",
+      "parent_code": "BIO",
+      "level": 2,
+      "label_ko": "의약품·바이오의약",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIO.DRUG.01",
+      "parent_code": "BIO.DRUG",
+      "level": 3,
+      "label_ko": "합성의약품·원료의약품",
+      "aliases": [
+        "API",
+        "원료약"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIO.DRUG.02",
+      "parent_code": "BIO.DRUG",
+      "level": 3,
+      "label_ko": "바이오의약품·바이오시밀러",
+      "aliases": [
+        "biosimilar"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIO.DRUG.03",
+      "parent_code": "BIO.DRUG",
+      "level": 3,
+      "label_ko": "희귀질환 치료제 시장",
+      "aliases": [
+        "orphan drug"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIO.DRUG.04",
+      "parent_code": "BIO.DRUG",
+      "level": 3,
+      "label_ko": "신약 기술이전·라이선스",
+      "aliases": [
+        "licensing out"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIO.DRUG.05",
+      "parent_code": "BIO.DRUG",
+      "level": 3,
+      "label_ko": "의약품 특허·약가 협상",
+      "aliases": [
+        "reimbursement"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIO.DEV",
+      "parent_code": "BIO",
+      "level": 2,
+      "label_ko": "임상개발·허가",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIO.DEV.01",
+      "parent_code": "BIO.DEV",
+      "level": 3,
+      "label_ko": "임상시험 운영·위탁연구",
+      "aliases": [
+        "CRO",
+        "GCP"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIO.DEV.02",
+      "parent_code": "BIO.DEV",
+      "level": 3,
+      "label_ko": "허가·규제업무",
+      "aliases": [
+        "RA",
+        "regulatory affairs"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIO.DEV.03",
+      "parent_code": "BIO.DEV",
+      "level": 3,
+      "label_ko": "의약품 안전성 감시",
+      "aliases": [
+        "PV",
+        "pharmacovigilance"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIO.DEV.04",
+      "parent_code": "BIO.DEV",
+      "level": 3,
+      "label_ko": "의학 학술·메디컬 어페어즈",
+      "aliases": [
+        "medical affairs"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIO.DEV.05",
+      "parent_code": "BIO.DEV",
+      "level": 3,
+      "label_ko": "임상 데이터·통계",
+      "aliases": [
+        "clinical data"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIO.PROD",
+      "parent_code": "BIO",
+      "level": 2,
+      "label_ko": "바이오 생산·품질",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIO.PROD.01",
+      "parent_code": "BIO.PROD",
+      "level": 3,
+      "label_ko": "위탁개발생산 계약",
+      "aliases": [
+        "CDMO"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIO.PROD.02",
+      "parent_code": "BIO.PROD",
+      "level": 3,
+      "label_ko": "의약품 제조 품질관리",
+      "aliases": [
+        "GMP",
+        "GxP"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIO.PROD.03",
+      "parent_code": "BIO.PROD",
+      "level": 3,
+      "label_ko": "생산시설 적격성·밸리데이션",
+      "aliases": [
+        "validation"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIO.PROD.04",
+      "parent_code": "BIO.PROD",
+      "level": 3,
+      "label_ko": "의약 포장·표시",
+      "aliases": [
+        "pharma packaging"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIO.PROD.05",
+      "parent_code": "BIO.PROD",
+      "level": 3,
+      "label_ko": "제약 유통·콜드체인 품질",
+      "aliases": [
+        "GDP"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MEDTECH",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "의료기기·헬스케어 산업",
+      "aliases": [
+        "medical devices",
+        "디지털헬스",
+        "의료기기"
+      ],
+      "sort_order": 150,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE",
+      "parent_code": "MEDTECH",
+      "level": 2,
+      "label_ko": "의료장비·소모품",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE.01",
+      "parent_code": "MEDTECH.DEVICE",
+      "level": 3,
+      "label_ko": "영상진단 장비",
+      "aliases": [
+        "MRI",
+        "CT"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE.02",
+      "parent_code": "MEDTECH.DEVICE",
+      "level": 3,
+      "label_ko": "체외진단 기기",
+      "aliases": [
+        "IVD"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE.03",
+      "parent_code": "MEDTECH.DEVICE",
+      "level": 3,
+      "label_ko": "수술·병원용 장비",
+      "aliases": [
+        "surgical device"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE.04",
+      "parent_code": "MEDTECH.DEVICE",
+      "level": 3,
+      "label_ko": "치과 장비·재료",
+      "aliases": [
+        "dental device"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE.05",
+      "parent_code": "MEDTECH.DEVICE",
+      "level": 3,
+      "label_ko": "재활·보조기기",
+      "aliases": [
+        "assistive device"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DEVICE.06",
+      "parent_code": "MEDTECH.DEVICE",
+      "level": 3,
+      "label_ko": "의료용 소모품",
+      "aliases": [
+        "medical supplies"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DIGI",
+      "parent_code": "MEDTECH",
+      "level": 2,
+      "label_ko": "디지털 헬스·병원기술",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DIGI.01",
+      "parent_code": "MEDTECH.DIGI",
+      "level": 3,
+      "label_ko": "병원정보시스템",
+      "aliases": [
+        "HIS",
+        "EMR"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DIGI.02",
+      "parent_code": "MEDTECH.DIGI",
+      "level": 3,
+      "label_ko": "의료기기 소프트웨어",
+      "aliases": [
+        "SaMD"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DIGI.03",
+      "parent_code": "MEDTECH.DIGI",
+      "level": 3,
+      "label_ko": "원격 모니터링 기술",
+      "aliases": [
+        "RPM"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DIGI.04",
+      "parent_code": "MEDTECH.DIGI",
+      "level": 3,
+      "label_ko": "헬스케어 데이터 표준",
+      "aliases": [
+        "HL7",
+        "FHIR"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.DIGI.05",
+      "parent_code": "MEDTECH.DIGI",
+      "level": 3,
+      "label_ko": "병원 설비·스마트병원 사업",
+      "aliases": [
+        "smart hospital"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.MARKET",
+      "parent_code": "MEDTECH",
+      "level": 2,
+      "label_ko": "의료기기 사업·규제",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.MARKET.01",
+      "parent_code": "MEDTECH.MARKET",
+      "level": 3,
+      "label_ko": "의료기기 허가·인증",
+      "aliases": [
+        "MDR",
+        "IVDR"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.MARKET.02",
+      "parent_code": "MEDTECH.MARKET",
+      "level": 3,
+      "label_ko": "의료기기 품질",
+      "aliases": [
+        "ISO 13485"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.MARKET.03",
+      "parent_code": "MEDTECH.MARKET",
+      "level": 3,
+      "label_ko": "의료장비 조달·도입",
+      "aliases": [
+        "hospital procurement"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.MARKET.04",
+      "parent_code": "MEDTECH.MARKET",
+      "level": 3,
+      "label_ko": "의료기기 유통·수출",
+      "aliases": [
+        "medtech distribution"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MEDTECH.MARKET.05",
+      "parent_code": "MEDTECH.MARKET",
+      "level": 3,
+      "label_ko": "의료기술 사업화·수가",
+      "aliases": [
+        "HTA"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "AGRI",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "농림축산·수산·농업기술",
+      "aliases": [
+        "agriculture",
+        "농업",
+        "fisheries"
+      ],
+      "sort_order": 160,
+      "active": true
+    },
+    {
+      "code": "AGRI.FARM",
+      "parent_code": "AGRI",
+      "level": 2,
+      "label_ko": "작물·농업기술",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AGRI.FARM.01",
+      "parent_code": "AGRI.FARM",
+      "level": 3,
+      "label_ko": "종자·육묘",
+      "aliases": [
+        "seed",
+        "seedling"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AGRI.FARM.02",
+      "parent_code": "AGRI.FARM",
+      "level": 3,
+      "label_ko": "원예·시설재배",
+      "aliases": [
+        "horticulture"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AGRI.FARM.03",
+      "parent_code": "AGRI.FARM",
+      "level": 3,
+      "label_ko": "곡물·특용작물 재배",
+      "aliases": [
+        "field crops"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AGRI.FARM.04",
+      "parent_code": "AGRI.FARM",
+      "level": 3,
+      "label_ko": "스마트팜·정밀농업",
+      "aliases": [
+        "smart farm"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "AGRI.FARM.05",
+      "parent_code": "AGRI.FARM",
+      "level": 3,
+      "label_ko": "농기계·관개",
+      "aliases": [
+        "irrigation"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "AGRI.LIVE",
+      "parent_code": "AGRI",
+      "level": 2,
+      "label_ko": "축산·동물산업",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AGRI.LIVE.01",
+      "parent_code": "AGRI.LIVE",
+      "level": 3,
+      "label_ko": "낙농·유가공 원유",
+      "aliases": [
+        "dairy farming"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AGRI.LIVE.02",
+      "parent_code": "AGRI.LIVE",
+      "level": 3,
+      "label_ko": "축산사양·사료",
+      "aliases": [
+        "animal feed"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AGRI.LIVE.03",
+      "parent_code": "AGRI.LIVE",
+      "level": 3,
+      "label_ko": "동물용 의약품·기기",
+      "aliases": [
+        "animal health"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AGRI.LIVE.04",
+      "parent_code": "AGRI.LIVE",
+      "level": 3,
+      "label_ko": "반려동물 용품·사료",
+      "aliases": [
+        "pet care"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "AGRI.LIVE.05",
+      "parent_code": "AGRI.LIVE",
+      "level": 3,
+      "label_ko": "축산물 등급·유통",
+      "aliases": [
+        "livestock grading"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "AGRI.FISH",
+      "parent_code": "AGRI",
+      "level": 2,
+      "label_ko": "수산·임업",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AGRI.FISH.01",
+      "parent_code": "AGRI.FISH",
+      "level": 3,
+      "label_ko": "양식·종묘",
+      "aliases": [
+        "aquaculture"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "AGRI.FISH.02",
+      "parent_code": "AGRI.FISH",
+      "level": 3,
+      "label_ko": "어업·수산자원 관리",
+      "aliases": [
+        "fishery management"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "AGRI.FISH.03",
+      "parent_code": "AGRI.FISH",
+      "level": 3,
+      "label_ko": "수산물 산지 유통",
+      "aliases": [
+        "seafood auction"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "AGRI.FISH.04",
+      "parent_code": "AGRI.FISH",
+      "level": 3,
+      "label_ko": "산림경영·목재 생산",
+      "aliases": [
+        "forestry"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "AGRI.FISH.05",
+      "parent_code": "AGRI.FISH",
+      "level": 3,
+      "label_ko": "임산물·산림 인증",
+      "aliases": [
+        "FSC"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FOOD",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "식품·음료·외식",
+      "aliases": [
+        "food",
+        "beverage",
+        "F&B"
+      ],
+      "sort_order": 170,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC",
+      "parent_code": "FOOD",
+      "level": 2,
+      "label_ko": "가공식품·원료",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC.01",
+      "parent_code": "FOOD.PROC",
+      "level": 3,
+      "label_ko": "곡물·면·제과제빵",
+      "aliases": [
+        "bakery"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC.02",
+      "parent_code": "FOOD.PROC",
+      "level": 3,
+      "label_ko": "유제품·유가공",
+      "aliases": [
+        "dairy"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC.03",
+      "parent_code": "FOOD.PROC",
+      "level": 3,
+      "label_ko": "육가공·수산가공",
+      "aliases": [
+        "processed seafood"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC.04",
+      "parent_code": "FOOD.PROC",
+      "level": 3,
+      "label_ko": "소스·발효식품",
+      "aliases": [
+        "fermented food"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC.05",
+      "parent_code": "FOOD.PROC",
+      "level": 3,
+      "label_ko": "유지·조미·식품첨가물",
+      "aliases": [
+        "food ingredients"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FOOD.PROC.06",
+      "parent_code": "FOOD.PROC",
+      "level": 3,
+      "label_ko": "건강기능식품·대체식품",
+      "aliases": [
+        "functional food"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "FOOD.DRINK",
+      "parent_code": "FOOD",
+      "level": 2,
+      "label_ko": "음료·주류",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FOOD.DRINK.01",
+      "parent_code": "FOOD.DRINK",
+      "level": 3,
+      "label_ko": "커피·차·카카오",
+      "aliases": [
+        "specialty coffee"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FOOD.DRINK.02",
+      "parent_code": "FOOD.DRINK",
+      "level": 3,
+      "label_ko": "생수·기능성 음료",
+      "aliases": [
+        "soft drink"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FOOD.DRINK.03",
+      "parent_code": "FOOD.DRINK",
+      "level": 3,
+      "label_ko": "맥주·양조",
+      "aliases": [
+        "brewing"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FOOD.DRINK.04",
+      "parent_code": "FOOD.DRINK",
+      "level": 3,
+      "label_ko": "와인·증류주·전통주",
+      "aliases": [
+        "spirits"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FOOD.DRINK.05",
+      "parent_code": "FOOD.DRINK",
+      "level": 3,
+      "label_ko": "음료 OEM·병입",
+      "aliases": [
+        "bottling"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FOOD.OPS",
+      "parent_code": "FOOD",
+      "level": 2,
+      "label_ko": "식품유통·외식 운영",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FOOD.OPS.01",
+      "parent_code": "FOOD.OPS",
+      "level": 3,
+      "label_ko": "식품안전·품질인증",
+      "aliases": [
+        "HACCP"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FOOD.OPS.02",
+      "parent_code": "FOOD.OPS",
+      "level": 3,
+      "label_ko": "식품 표시·수출규격",
+      "aliases": [
+        "food labeling"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FOOD.OPS.03",
+      "parent_code": "FOOD.OPS",
+      "level": 3,
+      "label_ko": "중앙주방·단체급식",
+      "aliases": [
+        "catering"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FOOD.OPS.04",
+      "parent_code": "FOOD.OPS",
+      "level": 3,
+      "label_ko": "외식 프랜차이즈",
+      "aliases": [
+        "restaurant franchise"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FOOD.OPS.05",
+      "parent_code": "FOOD.OPS",
+      "level": 3,
+      "label_ko": "신선식품 소싱·유통",
+      "aliases": [
+        "fresh produce"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BEAUTY",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "화장품·뷰티·생활용품",
+      "aliases": [
+        "beauty",
+        "cosmetics",
+        "K뷰티"
+      ],
+      "sort_order": 180,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.COS",
+      "parent_code": "BEAUTY",
+      "level": 2,
+      "label_ko": "화장품·원료",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.COS.01",
+      "parent_code": "BEAUTY.COS",
+      "level": 3,
+      "label_ko": "기초·기능성 화장품",
+      "aliases": [
+        "skincare"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.COS.02",
+      "parent_code": "BEAUTY.COS",
+      "level": 3,
+      "label_ko": "색조·메이크업",
+      "aliases": [
+        "makeup"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.COS.03",
+      "parent_code": "BEAUTY.COS",
+      "level": 3,
+      "label_ko": "화장품 원료·제형",
+      "aliases": [
+        "INCI"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.COS.04",
+      "parent_code": "BEAUTY.COS",
+      "level": 3,
+      "label_ko": "향료·조향",
+      "aliases": [
+        "fragrance"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.COS.05",
+      "parent_code": "BEAUTY.COS",
+      "level": 3,
+      "label_ko": "선케어·자외선 차단",
+      "aliases": [
+        "sun care"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.PERS",
+      "parent_code": "BEAUTY",
+      "level": 2,
+      "label_ko": "개인관리·생활용품",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.PERS.01",
+      "parent_code": "BEAUTY.PERS",
+      "level": 3,
+      "label_ko": "헤어·두피 관리제품",
+      "aliases": [
+        "haircare"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.PERS.02",
+      "parent_code": "BEAUTY.PERS",
+      "level": 3,
+      "label_ko": "구강·위생용품",
+      "aliases": [
+        "oral care"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.PERS.03",
+      "parent_code": "BEAUTY.PERS",
+      "level": 3,
+      "label_ko": "가정 세제·세정용품",
+      "aliases": [
+        "household care"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.PERS.04",
+      "parent_code": "BEAUTY.PERS",
+      "level": 3,
+      "label_ko": "뷰티 기기·살롱 장비",
+      "aliases": [
+        "beauty device"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.PERS.05",
+      "parent_code": "BEAUTY.PERS",
+      "level": 3,
+      "label_ko": "생활향·방향 제품",
+      "aliases": [
+        "home fragrance"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.BIZ",
+      "parent_code": "BEAUTY",
+      "level": 2,
+      "label_ko": "뷰티 제조·사업",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.BIZ.01",
+      "parent_code": "BEAUTY.BIZ",
+      "level": 3,
+      "label_ko": "화장품 위탁생산",
+      "aliases": [
+        "화장품 OEM",
+        "화장품 ODM"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.BIZ.02",
+      "parent_code": "BEAUTY.BIZ",
+      "level": 3,
+      "label_ko": "화장품 용기·펌프",
+      "aliases": [
+        "cosmetic packaging"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.BIZ.03",
+      "parent_code": "BEAUTY.BIZ",
+      "level": 3,
+      "label_ko": "화장품 인허가·표시",
+      "aliases": [
+        "cosmetic regulation"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.BIZ.04",
+      "parent_code": "BEAUTY.BIZ",
+      "level": 3,
+      "label_ko": "뷰티 브랜드 수출·채널 입점",
+      "aliases": [
+        "K-beauty retail"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BEAUTY.BIZ.05",
+      "parent_code": "BEAUTY.BIZ",
+      "level": 3,
+      "label_ko": "피부 적합성·제품 평가",
+      "aliases": [
+        "cosmetic testing"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "STYLE",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "섬유·패션·소비재",
+      "aliases": [
+        "textiles",
+        "fashion",
+        "lifestyle"
+      ],
+      "sort_order": 190,
+      "active": true
+    },
+    {
+      "code": "STYLE.TEXT",
+      "parent_code": "STYLE",
+      "level": 2,
+      "label_ko": "섬유·의류 제조",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "STYLE.TEXT.01",
+      "parent_code": "STYLE.TEXT",
+      "level": 3,
+      "label_ko": "원사·방적·방직",
+      "aliases": [
+        "yarn"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "STYLE.TEXT.02",
+      "parent_code": "STYLE.TEXT",
+      "level": 3,
+      "label_ko": "염색·가공",
+      "aliases": [
+        "dyeing"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "STYLE.TEXT.03",
+      "parent_code": "STYLE.TEXT",
+      "level": 3,
+      "label_ko": "기능성·산업용 섬유",
+      "aliases": [
+        "technical textile"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "STYLE.TEXT.04",
+      "parent_code": "STYLE.TEXT",
+      "level": 3,
+      "label_ko": "의류 봉제·생산",
+      "aliases": [
+        "garment manufacturing"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "STYLE.TEXT.05",
+      "parent_code": "STYLE.TEXT",
+      "level": 3,
+      "label_ko": "지속가능 섬유·재활용 원단",
+      "aliases": [
+        "recycled textile"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "STYLE.FASH",
+      "parent_code": "STYLE",
+      "level": 2,
+      "label_ko": "패션·액세서리",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "STYLE.FASH.01",
+      "parent_code": "STYLE.FASH",
+      "level": 3,
+      "label_ko": "의류 브랜드·컬렉션",
+      "aliases": [
+        "collection"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "STYLE.FASH.02",
+      "parent_code": "STYLE.FASH",
+      "level": 3,
+      "label_ko": "신발·피혁",
+      "aliases": [
+        "footwear"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "STYLE.FASH.03",
+      "parent_code": "STYLE.FASH",
+      "level": 3,
+      "label_ko": "가방·잡화",
+      "aliases": [
+        "leather goods"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "STYLE.FASH.04",
+      "parent_code": "STYLE.FASH",
+      "level": 3,
+      "label_ko": "주얼리·시계 유통",
+      "aliases": [
+        "jewelry"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "STYLE.FASH.05",
+      "parent_code": "STYLE.FASH",
+      "level": 3,
+      "label_ko": "아이웨어·안경",
+      "aliases": [
+        "eyewear"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "STYLE.HOME",
+      "parent_code": "STYLE",
+      "level": 2,
+      "label_ko": "가구·생활·디자인 상품",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "STYLE.HOME.01",
+      "parent_code": "STYLE.HOME",
+      "level": 3,
+      "label_ko": "가구·인테리어 소품",
+      "aliases": [
+        "furniture"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "STYLE.HOME.02",
+      "parent_code": "STYLE.HOME",
+      "level": 3,
+      "label_ko": "주방·테이블웨어",
+      "aliases": [
+        "tableware"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "STYLE.HOME.03",
+      "parent_code": "STYLE.HOME",
+      "level": 3,
+      "label_ko": "유아·완구",
+      "aliases": [
+        "toy",
+        "baby products"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "STYLE.HOME.04",
+      "parent_code": "STYLE.HOME",
+      "level": 3,
+      "label_ko": "문구·캐릭터 상품",
+      "aliases": [
+        "stationery"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "STYLE.HOME.05",
+      "parent_code": "STYLE.HOME",
+      "level": 3,
+      "label_ko": "아웃도어·생활 레저용품",
+      "aliases": [
+        "outdoor goods"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "PACK",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "종이·인쇄·포장",
+      "aliases": [
+        "packaging",
+        "paper",
+        "printing"
+      ],
+      "sort_order": 200,
+      "active": true
+    },
+    {
+      "code": "PACK.MAT",
+      "parent_code": "PACK",
+      "level": 2,
+      "label_ko": "포장재·용기",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "PACK.MAT.01",
+      "parent_code": "PACK.MAT",
+      "level": 3,
+      "label_ko": "골판지·종이상자",
+      "aliases": [
+        "corrugated board"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "PACK.MAT.02",
+      "parent_code": "PACK.MAT",
+      "level": 3,
+      "label_ko": "연포장·필름",
+      "aliases": [
+        "flexible packaging"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "PACK.MAT.03",
+      "parent_code": "PACK.MAT",
+      "level": 3,
+      "label_ko": "유리병·금속캔",
+      "aliases": [
+        "container packaging"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "PACK.MAT.04",
+      "parent_code": "PACK.MAT",
+      "level": 3,
+      "label_ko": "산업 수송·완충 포장",
+      "aliases": [
+        "protective packaging"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "PACK.MAT.05",
+      "parent_code": "PACK.MAT",
+      "level": 3,
+      "label_ko": "무균·차단성 포장",
+      "aliases": [
+        "aseptic packaging"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "PACK.PRINT",
+      "parent_code": "PACK",
+      "level": 2,
+      "label_ko": "인쇄·라벨·지류",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "PACK.PRINT.01",
+      "parent_code": "PACK.PRINT",
+      "level": 3,
+      "label_ko": "펄프·제지",
+      "aliases": [
+        "pulp and paper"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "PACK.PRINT.02",
+      "parent_code": "PACK.PRINT",
+      "level": 3,
+      "label_ko": "상업·디지털 인쇄",
+      "aliases": [
+        "digital printing"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "PACK.PRINT.03",
+      "parent_code": "PACK.PRINT",
+      "level": 3,
+      "label_ko": "라벨·바코드",
+      "aliases": [
+        "labels"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "PACK.PRINT.04",
+      "parent_code": "PACK.PRINT",
+      "level": 3,
+      "label_ko": "출판 인쇄·제본",
+      "aliases": [
+        "bookbinding"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "PACK.PRINT.05",
+      "parent_code": "PACK.PRINT",
+      "level": 3,
+      "label_ko": "포장 인쇄·후가공",
+      "aliases": [
+        "flexography"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "PACK.DES",
+      "parent_code": "PACK",
+      "level": 2,
+      "label_ko": "포장 설계·검증",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "PACK.DES.01",
+      "parent_code": "PACK.DES",
+      "level": 3,
+      "label_ko": "포장 구조 설계",
+      "aliases": [
+        "structural packaging"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "PACK.DES.02",
+      "parent_code": "PACK.DES",
+      "level": 3,
+      "label_ko": "포장 낙하·수송 시험",
+      "aliases": [
+        "transport testing"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "PACK.DES.03",
+      "parent_code": "PACK.DES",
+      "level": 3,
+      "label_ko": "포장 표시·추적",
+      "aliases": [
+        "serialization"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "PACK.DES.04",
+      "parent_code": "PACK.DES",
+      "level": 3,
+      "label_ko": "재사용·경량 포장 설계",
+      "aliases": [
+        "lightweight packaging"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LOG",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "물류·운송·공급망",
+      "aliases": [
+        "logistics",
+        "freight"
+      ],
+      "sort_order": 210,
+      "active": true
+    },
+    {
+      "code": "LOG.FRT",
+      "parent_code": "LOG",
+      "level": 2,
+      "label_ko": "화물운송·포워딩",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LOG.FRT.01",
+      "parent_code": "LOG.FRT",
+      "level": 3,
+      "label_ko": "해상 컨테이너·벌크",
+      "aliases": [
+        "ocean freight"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LOG.FRT.02",
+      "parent_code": "LOG.FRT",
+      "level": 3,
+      "label_ko": "항공화물·특송",
+      "aliases": [
+        "air freight"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LOG.FRT.03",
+      "parent_code": "LOG.FRT",
+      "level": 3,
+      "label_ko": "육상·철도 화물",
+      "aliases": [
+        "road freight"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LOG.FRT.04",
+      "parent_code": "LOG.FRT",
+      "level": 3,
+      "label_ko": "복합운송·포워딩",
+      "aliases": [
+        "forwarder"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LOG.FRT.05",
+      "parent_code": "LOG.FRT",
+      "level": 3,
+      "label_ko": "프로젝트·중량물 운송",
+      "aliases": [
+        "project cargo"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "LOG.WH",
+      "parent_code": "LOG",
+      "level": 2,
+      "label_ko": "창고·풀필먼트",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LOG.WH.01",
+      "parent_code": "LOG.WH",
+      "level": 3,
+      "label_ko": "일반·보세창고",
+      "aliases": [
+        "bonded warehouse"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LOG.WH.02",
+      "parent_code": "LOG.WH",
+      "level": 3,
+      "label_ko": "물류센터 자동화",
+      "aliases": [
+        "ASRS"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LOG.WH.03",
+      "parent_code": "LOG.WH",
+      "level": 3,
+      "label_ko": "이커머스 풀필먼트",
+      "aliases": [
+        "fulfillment"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LOG.WH.04",
+      "parent_code": "LOG.WH",
+      "level": 3,
+      "label_ko": "냉장·냉동 물류",
+      "aliases": [
+        "cold chain"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LOG.WH.05",
+      "parent_code": "LOG.WH",
+      "level": 3,
+      "label_ko": "라스트마일·반품 물류",
+      "aliases": [
+        "reverse logistics"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "LOG.SUP",
+      "parent_code": "LOG",
+      "level": 2,
+      "label_ko": "공급망 운영",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LOG.SUP.01",
+      "parent_code": "LOG.SUP",
+      "level": 3,
+      "label_ko": "수요·재고 계획",
+      "aliases": [
+        "S&OP"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LOG.SUP.02",
+      "parent_code": "LOG.SUP",
+      "level": 3,
+      "label_ko": "조달·공급업체 관리",
+      "aliases": [
+        "supplier management"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LOG.SUP.03",
+      "parent_code": "LOG.SUP",
+      "level": 3,
+      "label_ko": "물류 가시성·추적",
+      "aliases": [
+        "track and trace"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LOG.SUP.04",
+      "parent_code": "LOG.SUP",
+      "level": 3,
+      "label_ko": "항만·터미널 운영",
+      "aliases": [
+        "terminal operations"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LOG.SUP.05",
+      "parent_code": "LOG.SUP",
+      "level": 3,
+      "label_ko": "화물 클레임·운송서류",
+      "aliases": [
+        "bill of lading"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRADE",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "국제통상·무역·관세",
+      "aliases": [
+        "international trade",
+        "통상",
+        "무역"
+      ],
+      "sort_order": 220,
+      "active": true
+    },
+    {
+      "code": "TRADE.FTA",
+      "parent_code": "TRADE",
+      "level": 2,
+      "label_ko": "통상협정·교섭",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRADE.FTA.01",
+      "parent_code": "TRADE.FTA",
+      "level": 3,
+      "label_ko": "자유무역협정 협상",
+      "aliases": [
+        "FTA",
+        "자유무역협정",
+        "FTA 협상"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRADE.FTA.02",
+      "parent_code": "TRADE.FTA",
+      "level": 3,
+      "label_ko": "협정 이행·공동위원회",
+      "aliases": [
+        "FTA implementation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRADE.FTA.03",
+      "parent_code": "TRADE.FTA",
+      "level": 3,
+      "label_ko": "상품양허·시장접근",
+      "aliases": [
+        "market access"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRADE.FTA.04",
+      "parent_code": "TRADE.FTA",
+      "level": 3,
+      "label_ko": "서비스·투자 통상규범",
+      "aliases": [
+        "trade in services"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRADE.FTA.05",
+      "parent_code": "TRADE.FTA",
+      "level": 3,
+      "label_ko": "디지털무역·전자상거래 협정",
+      "aliases": [
+        "digital trade"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRADE.CUST",
+      "parent_code": "TRADE",
+      "level": 2,
+      "label_ko": "관세·원산지·통관",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRADE.CUST.01",
+      "parent_code": "TRADE.CUST",
+      "level": 3,
+      "label_ko": "품목분류·관세율",
+      "aliases": [
+        "HS code"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRADE.CUST.02",
+      "parent_code": "TRADE.CUST",
+      "level": 3,
+      "label_ko": "원산지 판정·검증",
+      "aliases": [
+        "rules of origin",
+        "원산지증명"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRADE.CUST.03",
+      "parent_code": "TRADE.CUST",
+      "level": 3,
+      "label_ko": "수출입 신고·통관",
+      "aliases": [
+        "customs clearance"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRADE.CUST.04",
+      "parent_code": "TRADE.CUST",
+      "level": 3,
+      "label_ko": "인증수출자·보세제도",
+      "aliases": [
+        "AEO"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRADE.CUST.05",
+      "parent_code": "TRADE.CUST",
+      "level": 3,
+      "label_ko": "관세평가·환급",
+      "aliases": [
+        "customs valuation"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TRADE.PROMO",
+      "parent_code": "TRADE",
+      "level": 2,
+      "label_ko": "무역진흥·시장개척",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRADE.PROMO.01",
+      "parent_code": "TRADE.PROMO",
+      "level": 3,
+      "label_ko": "수출지원·무역사절단",
+      "aliases": [
+        "trade mission"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TRADE.PROMO.02",
+      "parent_code": "TRADE.PROMO",
+      "level": 3,
+      "label_ko": "해외 바이어 발굴·상사",
+      "aliases": [
+        "trading company"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TRADE.PROMO.03",
+      "parent_code": "TRADE.PROMO",
+      "level": 3,
+      "label_ko": "국제입찰·수출계약 실무",
+      "aliases": [
+        "Incoterms"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TRADE.PROMO.04",
+      "parent_code": "TRADE.PROMO",
+      "level": 3,
+      "label_ko": "수출통제·비관세 장벽",
+      "aliases": [
+        "export control",
+        "TBT"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TRADE.PROMO.05",
+      "parent_code": "TRADE.PROMO",
+      "level": 3,
+      "label_ko": "무역구제·분쟁",
+      "aliases": [
+        "anti-dumping"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "RETAIL",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "유통·이커머스·브랜드",
+      "aliases": [
+        "retail",
+        "ecommerce",
+        "유통"
+      ],
+      "sort_order": 230,
+      "active": true
+    },
+    {
+      "code": "RETAIL.CHAN",
+      "parent_code": "RETAIL",
+      "level": 2,
+      "label_ko": "소매·도매 채널",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "RETAIL.CHAN.01",
+      "parent_code": "RETAIL.CHAN",
+      "level": 3,
+      "label_ko": "백화점·쇼핑몰 운영",
+      "aliases": [
+        "department store"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "RETAIL.CHAN.02",
+      "parent_code": "RETAIL.CHAN",
+      "level": 3,
+      "label_ko": "대형마트·편의점",
+      "aliases": [
+        "hypermarket"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "RETAIL.CHAN.03",
+      "parent_code": "RETAIL.CHAN",
+      "level": 3,
+      "label_ko": "전문점·편집숍",
+      "aliases": [
+        "specialty retail"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "RETAIL.CHAN.04",
+      "parent_code": "RETAIL.CHAN",
+      "level": 3,
+      "label_ko": "면세점·트래블 리테일",
+      "aliases": [
+        "duty free"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "RETAIL.CHAN.05",
+      "parent_code": "RETAIL.CHAN",
+      "level": 3,
+      "label_ko": "도매·대리점·총판",
+      "aliases": [
+        "distributor"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "RETAIL.DIG",
+      "parent_code": "RETAIL",
+      "level": 2,
+      "label_ko": "온라인 유통",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "RETAIL.DIG.01",
+      "parent_code": "RETAIL.DIG",
+      "level": 3,
+      "label_ko": "오픈마켓·입점 운영",
+      "aliases": [
+        "marketplace"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "RETAIL.DIG.02",
+      "parent_code": "RETAIL.DIG",
+      "level": 3,
+      "label_ko": "자사몰·구독커머스",
+      "aliases": [
+        "D2C"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "RETAIL.DIG.03",
+      "parent_code": "RETAIL.DIG",
+      "level": 3,
+      "label_ko": "라이브커머스",
+      "aliases": [
+        "live commerce"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "RETAIL.DIG.04",
+      "parent_code": "RETAIL.DIG",
+      "level": 3,
+      "label_ko": "크로스보더 이커머스",
+      "aliases": [
+        "cross-border commerce"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "RETAIL.DIG.05",
+      "parent_code": "RETAIL.DIG",
+      "level": 3,
+      "label_ko": "옴니채널·매장 픽업",
+      "aliases": [
+        "omnichannel"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "RETAIL.BRAND",
+      "parent_code": "RETAIL",
+      "level": 2,
+      "label_ko": "브랜드·상품 운영",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "RETAIL.BRAND.01",
+      "parent_code": "RETAIL.BRAND",
+      "level": 3,
+      "label_ko": "상품기획·머천다이징",
+      "aliases": [
+        "MD"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "RETAIL.BRAND.02",
+      "parent_code": "RETAIL.BRAND",
+      "level": 3,
+      "label_ko": "브랜드 라이선싱",
+      "aliases": [
+        "brand licensing"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "RETAIL.BRAND.03",
+      "parent_code": "RETAIL.BRAND",
+      "level": 3,
+      "label_ko": "리테일테크·매장 시스템",
+      "aliases": [
+        "POS"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "RETAIL.BRAND.04",
+      "parent_code": "RETAIL.BRAND",
+      "level": 3,
+      "label_ko": "매장 연출·공간 기획",
+      "aliases": [
+        "VMD"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "RETAIL.BRAND.05",
+      "parent_code": "RETAIL.BRAND",
+      "level": 3,
+      "label_ko": "가격·프로모션 전략",
+      "aliases": [
+        "pricing"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FIN",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "금융·투자·보험",
+      "aliases": [
+        "finance",
+        "banking",
+        "금융"
+      ],
+      "sort_order": 240,
+      "active": true
+    },
+    {
+      "code": "FIN.BANK",
+      "parent_code": "FIN",
+      "level": 2,
+      "label_ko": "은행·결제·핀테크",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FIN.BANK.01",
+      "parent_code": "FIN.BANK",
+      "level": 3,
+      "label_ko": "기업금융·여신",
+      "aliases": [
+        "corporate banking"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FIN.BANK.02",
+      "parent_code": "FIN.BANK",
+      "level": 3,
+      "label_ko": "외환·무역금융",
+      "aliases": [
+        "trade finance"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FIN.BANK.03",
+      "parent_code": "FIN.BANK",
+      "level": 3,
+      "label_ko": "지급결제·카드",
+      "aliases": [
+        "payments",
+        "PG"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FIN.BANK.04",
+      "parent_code": "FIN.BANK",
+      "level": 3,
+      "label_ko": "오픈뱅킹·핀테크",
+      "aliases": [
+        "open banking"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FIN.BANK.05",
+      "parent_code": "FIN.BANK",
+      "level": 3,
+      "label_ko": "자금세탁방지·고객확인",
+      "aliases": [
+        "AML",
+        "KYC"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FIN.INV",
+      "parent_code": "FIN",
+      "level": 2,
+      "label_ko": "자본시장·투자",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FIN.INV.01",
+      "parent_code": "FIN.INV",
+      "level": 3,
+      "label_ko": "주식·채권 발행",
+      "aliases": [
+        "ECM",
+        "DCM"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FIN.INV.02",
+      "parent_code": "FIN.INV",
+      "level": 3,
+      "label_ko": "자산운용·펀드",
+      "aliases": [
+        "asset management"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FIN.INV.03",
+      "parent_code": "FIN.INV",
+      "level": 3,
+      "label_ko": "벤처투자·사모투자",
+      "aliases": [
+        "VC",
+        "PE"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FIN.INV.04",
+      "parent_code": "FIN.INV",
+      "level": 3,
+      "label_ko": "인수합병·기업가치 평가",
+      "aliases": [
+        "M&A",
+        "valuation"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FIN.INV.05",
+      "parent_code": "FIN.INV",
+      "level": 3,
+      "label_ko": "프로젝트 금융",
+      "aliases": [
+        "PF"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FIN.INV.06",
+      "parent_code": "FIN.INV",
+      "level": 3,
+      "label_ko": "투자자관계·상장",
+      "aliases": [
+        "IR",
+        "IPO"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "FIN.INS",
+      "parent_code": "FIN",
+      "level": 2,
+      "label_ko": "보험·연금·위험관리",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FIN.INS.01",
+      "parent_code": "FIN.INS",
+      "level": 3,
+      "label_ko": "생명·건강보험 상품",
+      "aliases": [
+        "life insurance"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FIN.INS.02",
+      "parent_code": "FIN.INS",
+      "level": 3,
+      "label_ko": "손해·해상보험",
+      "aliases": [
+        "general insurance"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FIN.INS.03",
+      "parent_code": "FIN.INS",
+      "level": 3,
+      "label_ko": "재보험",
+      "aliases": [
+        "reinsurance"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FIN.INS.04",
+      "parent_code": "FIN.INS",
+      "level": 3,
+      "label_ko": "보험 계리·위험평가",
+      "aliases": [
+        "actuarial"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FIN.INS.05",
+      "parent_code": "FIN.INS",
+      "level": 3,
+      "label_ko": "연금·퇴직연금",
+      "aliases": [
+        "pension"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "FIN.ACCT",
+      "parent_code": "FIN",
+      "level": 2,
+      "label_ko": "회계·세무·감사",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FIN.ACCT.01",
+      "parent_code": "FIN.ACCT",
+      "level": 3,
+      "label_ko": "재무보고·국제회계",
+      "aliases": [
+        "IFRS"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "FIN.ACCT.02",
+      "parent_code": "FIN.ACCT",
+      "level": 3,
+      "label_ko": "회계감사·내부통제",
+      "aliases": [
+        "audit"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "FIN.ACCT.03",
+      "parent_code": "FIN.ACCT",
+      "level": 3,
+      "label_ko": "국제조세·이전가격",
+      "aliases": [
+        "transfer pricing"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "FIN.ACCT.04",
+      "parent_code": "FIN.ACCT",
+      "level": 3,
+      "label_ko": "관리회계·원가",
+      "aliases": [
+        "management accounting"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "FIN.ACCT.05",
+      "parent_code": "FIN.ACCT",
+      "level": 3,
+      "label_ko": "지속가능성 재무공시",
+      "aliases": [
+        "sustainability reporting"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "LEGAL",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "법률·지식재산·규제",
+      "aliases": [
+        "legal",
+        "law",
+        "IP",
+        "법무"
+      ],
+      "sort_order": 250,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DEAL",
+      "parent_code": "LEGAL",
+      "level": 2,
+      "label_ko": "기업법무·계약",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DEAL.01",
+      "parent_code": "LEGAL.DEAL",
+      "level": 3,
+      "label_ko": "상사계약·거래조건",
+      "aliases": [
+        "commercial contract"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DEAL.02",
+      "parent_code": "LEGAL.DEAL",
+      "level": 3,
+      "label_ko": "합작·주주간계약",
+      "aliases": [
+        "JV",
+        "SHA"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DEAL.03",
+      "parent_code": "LEGAL.DEAL",
+      "level": 3,
+      "label_ko": "기업 지배구조",
+      "aliases": [
+        "corporate governance"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DEAL.04",
+      "parent_code": "LEGAL.DEAL",
+      "level": 3,
+      "label_ko": "고용·노동관계",
+      "aliases": [
+        "employment law"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DEAL.05",
+      "parent_code": "LEGAL.DEAL",
+      "level": 3,
+      "label_ko": "공정거래·기업결합",
+      "aliases": [
+        "antitrust"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DISP",
+      "parent_code": "LEGAL",
+      "level": 2,
+      "label_ko": "분쟁·법률절차",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DISP.01",
+      "parent_code": "LEGAL.DISP",
+      "level": 3,
+      "label_ko": "국제중재",
+      "aliases": [
+        "arbitration"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DISP.02",
+      "parent_code": "LEGAL.DISP",
+      "level": 3,
+      "label_ko": "민사·상사소송",
+      "aliases": [
+        "civil litigation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DISP.03",
+      "parent_code": "LEGAL.DISP",
+      "level": 3,
+      "label_ko": "형사·행정절차",
+      "aliases": [
+        "criminal proceedings"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DISP.04",
+      "parent_code": "LEGAL.DISP",
+      "level": 3,
+      "label_ko": "조정·합의",
+      "aliases": [
+        "mediation"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LEGAL.DISP.05",
+      "parent_code": "LEGAL.DISP",
+      "level": 3,
+      "label_ko": "증언·서면증거 검토",
+      "aliases": [
+        "deposition"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "LEGAL.RIGHT",
+      "parent_code": "LEGAL",
+      "level": 2,
+      "label_ko": "지식재산·준법",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LEGAL.RIGHT.01",
+      "parent_code": "LEGAL.RIGHT",
+      "level": 3,
+      "label_ko": "특허·기술이전 계약",
+      "aliases": [
+        "patent"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "LEGAL.RIGHT.02",
+      "parent_code": "LEGAL.RIGHT",
+      "level": 3,
+      "label_ko": "상표·디자인 보호",
+      "aliases": [
+        "trademark"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "LEGAL.RIGHT.03",
+      "parent_code": "LEGAL.RIGHT",
+      "level": 3,
+      "label_ko": "저작권·콘텐츠 권리",
+      "aliases": [
+        "copyright"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "LEGAL.RIGHT.04",
+      "parent_code": "LEGAL.RIGHT",
+      "level": 3,
+      "label_ko": "개인정보 법무·국외이전",
+      "aliases": [
+        "privacy law"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "LEGAL.RIGHT.05",
+      "parent_code": "LEGAL.RIGHT",
+      "level": 3,
+      "label_ko": "준법·반부패",
+      "aliases": [
+        "compliance"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ESTATE",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "부동산·도시개발·공간운영",
+      "aliases": [
+        "real estate",
+        "부동산"
+      ],
+      "sort_order": 260,
+      "active": true
+    },
+    {
+      "code": "ESTATE.DEV",
+      "parent_code": "ESTATE",
+      "level": 2,
+      "label_ko": "개발·도시계획",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ESTATE.DEV.01",
+      "parent_code": "ESTATE.DEV",
+      "level": 3,
+      "label_ko": "부동산 개발사업",
+      "aliases": [
+        "real estate development"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ESTATE.DEV.02",
+      "parent_code": "ESTATE.DEV",
+      "level": 3,
+      "label_ko": "도시계획·재생",
+      "aliases": [
+        "urban regeneration"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ESTATE.DEV.03",
+      "parent_code": "ESTATE.DEV",
+      "level": 3,
+      "label_ko": "산업단지·경제자유구역",
+      "aliases": [
+        "industrial park"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ESTATE.DEV.04",
+      "parent_code": "ESTATE.DEV",
+      "level": 3,
+      "label_ko": "주거·복합단지 개발",
+      "aliases": [
+        "mixed-use development"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ESTATE.DEV.05",
+      "parent_code": "ESTATE.DEV",
+      "level": 3,
+      "label_ko": "스마트시티 사업",
+      "aliases": [
+        "smart city"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ESTATE.PROP",
+      "parent_code": "ESTATE",
+      "level": 2,
+      "label_ko": "부동산 거래·운영",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ESTATE.PROP.01",
+      "parent_code": "ESTATE.PROP",
+      "level": 3,
+      "label_ko": "오피스·상업 임대차",
+      "aliases": [
+        "commercial leasing"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ESTATE.PROP.02",
+      "parent_code": "ESTATE.PROP",
+      "level": 3,
+      "label_ko": "부동산 자산관리",
+      "aliases": [
+        "property management"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ESTATE.PROP.03",
+      "parent_code": "ESTATE.PROP",
+      "level": 3,
+      "label_ko": "부동산 펀드·리츠",
+      "aliases": [
+        "REITs"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ESTATE.PROP.04",
+      "parent_code": "ESTATE.PROP",
+      "level": 3,
+      "label_ko": "감정평가·시장조사",
+      "aliases": [
+        "appraisal"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ESTATE.PROP.05",
+      "parent_code": "ESTATE.PROP",
+      "level": 3,
+      "label_ko": "시설관리·빌딩 운영",
+      "aliases": [
+        "facility management"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIZ",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "경영·전문서비스·인사",
+      "aliases": [
+        "professional services",
+        "management",
+        "컨설팅"
+      ],
+      "sort_order": 270,
+      "active": true
+    },
+    {
+      "code": "BIZ.STRAT",
+      "parent_code": "BIZ",
+      "level": 2,
+      "label_ko": "경영·시장 자문",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIZ.STRAT.01",
+      "parent_code": "BIZ.STRAT",
+      "level": 3,
+      "label_ko": "사업전략·신사업",
+      "aliases": [
+        "strategy"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIZ.STRAT.02",
+      "parent_code": "BIZ.STRAT",
+      "level": 3,
+      "label_ko": "시장조사·소비자 조사",
+      "aliases": [
+        "market research"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIZ.STRAT.03",
+      "parent_code": "BIZ.STRAT",
+      "level": 3,
+      "label_ko": "경영진단·조직개편",
+      "aliases": [
+        "management consulting"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIZ.STRAT.04",
+      "parent_code": "BIZ.STRAT",
+      "level": 3,
+      "label_ko": "스타트업 육성·액셀러레이팅",
+      "aliases": [
+        "accelerator"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIZ.STRAT.05",
+      "parent_code": "BIZ.STRAT",
+      "level": 3,
+      "label_ko": "파트너십·프랜차이즈 자문",
+      "aliases": [
+        "business development"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIZ.HR",
+      "parent_code": "BIZ",
+      "level": 2,
+      "label_ko": "인사·노무·조직",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIZ.HR.01",
+      "parent_code": "BIZ.HR",
+      "level": 3,
+      "label_ko": "채용·헤드헌팅",
+      "aliases": [
+        "recruitment"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIZ.HR.02",
+      "parent_code": "BIZ.HR",
+      "level": 3,
+      "label_ko": "직무·보상설계",
+      "aliases": [
+        "compensation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIZ.HR.03",
+      "parent_code": "BIZ.HR",
+      "level": 3,
+      "label_ko": "조직문화·리더십",
+      "aliases": [
+        "leadership"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIZ.HR.04",
+      "parent_code": "BIZ.HR",
+      "level": 3,
+      "label_ko": "기업교육·역량개발",
+      "aliases": [
+        "L&D"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIZ.HR.05",
+      "parent_code": "BIZ.HR",
+      "level": 3,
+      "label_ko": "노사협의·단체교섭",
+      "aliases": [
+        "collective bargaining"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIZ.AD",
+      "parent_code": "BIZ",
+      "level": 2,
+      "label_ko": "광고·마케팅·홍보",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIZ.AD.01",
+      "parent_code": "BIZ.AD",
+      "level": 3,
+      "label_ko": "브랜드 전략·캠페인",
+      "aliases": [
+        "branding"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIZ.AD.02",
+      "parent_code": "BIZ.AD",
+      "level": 3,
+      "label_ko": "디지털 광고·미디어 구매",
+      "aliases": [
+        "adtech"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIZ.AD.03",
+      "parent_code": "BIZ.AD",
+      "level": 3,
+      "label_ko": "기업 PR·위기소통",
+      "aliases": [
+        "public relations"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIZ.AD.04",
+      "parent_code": "BIZ.AD",
+      "level": 3,
+      "label_ko": "퍼포먼스 마케팅",
+      "aliases": [
+        "performance marketing"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIZ.AD.05",
+      "parent_code": "BIZ.AD",
+      "level": 3,
+      "label_ko": "소비자 패널·포커스그룹",
+      "aliases": [
+        "FGI"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "BIZ.LANG",
+      "parent_code": "BIZ",
+      "level": 2,
+      "label_ko": "언어·현지화 산업",
+      "aliases": [],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIZ.LANG.01",
+      "parent_code": "BIZ.LANG",
+      "level": 3,
+      "label_ko": "제품·서비스 현지화",
+      "aliases": [
+        "localization",
+        "L10n"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "BIZ.LANG.02",
+      "parent_code": "BIZ.LANG",
+      "level": 3,
+      "label_ko": "번역품질·감수",
+      "aliases": [
+        "LQA"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "BIZ.LANG.03",
+      "parent_code": "BIZ.LANG",
+      "level": 3,
+      "label_ko": "다국어 자막·접근성",
+      "aliases": [
+        "captioning"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "BIZ.LANG.04",
+      "parent_code": "BIZ.LANG",
+      "level": 3,
+      "label_ko": "언어기술·통번역 도구",
+      "aliases": [
+        "CAT tools"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "BIZ.LANG.05",
+      "parent_code": "BIZ.LANG",
+      "level": 3,
+      "label_ko": "기업 다국어 콘텐츠 운영",
+      "aliases": [
+        "multilingual content"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "GOV",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "공공행정·외교·국제협력",
+      "aliases": [
+        "government",
+        "public policy",
+        "외교"
+      ],
+      "sort_order": 280,
+      "active": true
+    },
+    {
+      "code": "GOV.POL",
+      "parent_code": "GOV",
+      "level": 2,
+      "label_ko": "행정·정책",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "GOV.POL.01",
+      "parent_code": "GOV.POL",
+      "level": 3,
+      "label_ko": "중앙·지방 행정",
+      "aliases": [
+        "public administration"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "GOV.POL.02",
+      "parent_code": "GOV.POL",
+      "level": 3,
+      "label_ko": "공공예산·재정",
+      "aliases": [
+        "public finance"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "GOV.POL.03",
+      "parent_code": "GOV.POL",
+      "level": 3,
+      "label_ko": "정부조달·공공입찰",
+      "aliases": [
+        "public procurement"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "GOV.POL.04",
+      "parent_code": "GOV.POL",
+      "level": 3,
+      "label_ko": "전자정부·디지털행정",
+      "aliases": [
+        "e-government"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "GOV.POL.05",
+      "parent_code": "GOV.POL",
+      "level": 3,
+      "label_ko": "규제정책·제도개선",
+      "aliases": [
+        "regulatory policy"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "GOV.DIP",
+      "parent_code": "GOV",
+      "level": 2,
+      "label_ko": "외교·국제기구",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "GOV.DIP.01",
+      "parent_code": "GOV.DIP",
+      "level": 3,
+      "label_ko": "정부 간 양자·다자 협의",
+      "aliases": [
+        "diplomacy"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "GOV.DIP.02",
+      "parent_code": "GOV.DIP",
+      "level": 3,
+      "label_ko": "국제기구·다자회의",
+      "aliases": [
+        "multilateral affairs"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "GOV.DIP.03",
+      "parent_code": "GOV.DIP",
+      "level": 3,
+      "label_ko": "의전·국빈방문 운영",
+      "aliases": [
+        "protocol"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "GOV.DIP.04",
+      "parent_code": "GOV.DIP",
+      "level": 3,
+      "label_ko": "지방정부·자매도시 교류",
+      "aliases": [
+        "sister city"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "GOV.DIP.05",
+      "parent_code": "GOV.DIP",
+      "level": 3,
+      "label_ko": "국제개발협력·공적개발원조",
+      "aliases": [
+        "ODA"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV",
+      "parent_code": "GOV",
+      "level": 2,
+      "label_ko": "사회·시민사회",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV.01",
+      "parent_code": "GOV.CIV",
+      "level": 3,
+      "label_ko": "사회복지·돌봄 정책",
+      "aliases": [
+        "social welfare"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV.02",
+      "parent_code": "GOV.CIV",
+      "level": 3,
+      "label_ko": "노동·이주·포용 정책",
+      "aliases": [
+        "migration policy"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV.03",
+      "parent_code": "GOV.CIV",
+      "level": 3,
+      "label_ko": "인도주의·재난구호",
+      "aliases": [
+        "humanitarian aid"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV.04",
+      "parent_code": "GOV.CIV",
+      "level": 3,
+      "label_ko": "시민단체·사회적경제",
+      "aliases": [
+        "NGO"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV.05",
+      "parent_code": "GOV.CIV",
+      "level": 3,
+      "label_ko": "재난관리·안전정책",
+      "aliases": [
+        "disaster management"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "GOV.CIV.06",
+      "parent_code": "GOV.CIV",
+      "level": 3,
+      "label_ko": "국제 보건정책·보건협력",
+      "aliases": [
+        "global health policy"
+      ],
+      "sort_order": 60,
+      "active": true
+    },
+    {
+      "code": "EDU",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "교육·학술·연구",
+      "aliases": [
+        "education",
+        "research",
+        "교육"
+      ],
+      "sort_order": 290,
+      "active": true
+    },
+    {
+      "code": "EDU.ED",
+      "parent_code": "EDU",
+      "level": 2,
+      "label_ko": "학교·교육서비스",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "EDU.ED.01",
+      "parent_code": "EDU.ED",
+      "level": 3,
+      "label_ko": "유아·초중등 교육",
+      "aliases": [
+        "K12"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "EDU.ED.02",
+      "parent_code": "EDU.ED",
+      "level": 3,
+      "label_ko": "고등교육·대학 협력",
+      "aliases": [
+        "higher education"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "EDU.ED.03",
+      "parent_code": "EDU.ED",
+      "level": 3,
+      "label_ko": "직업·기술 교육",
+      "aliases": [
+        "TVET"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "EDU.ED.04",
+      "parent_code": "EDU.ED",
+      "level": 3,
+      "label_ko": "국제교육·유학",
+      "aliases": [
+        "international education"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "EDU.ED.05",
+      "parent_code": "EDU.ED",
+      "level": 3,
+      "label_ko": "특수·평생교육",
+      "aliases": [
+        "lifelong learning"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "EDU.TECH",
+      "parent_code": "EDU",
+      "level": 2,
+      "label_ko": "교육기술·평가",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "EDU.TECH.01",
+      "parent_code": "EDU.TECH",
+      "level": 3,
+      "label_ko": "학습관리 솔루션",
+      "aliases": [
+        "LMS"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "EDU.TECH.02",
+      "parent_code": "EDU.TECH",
+      "level": 3,
+      "label_ko": "디지털 교재·콘텐츠",
+      "aliases": [
+        "digital textbook"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "EDU.TECH.03",
+      "parent_code": "EDU.TECH",
+      "level": 3,
+      "label_ko": "언어교육·평가",
+      "aliases": [
+        "language assessment"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "EDU.TECH.04",
+      "parent_code": "EDU.TECH",
+      "level": 3,
+      "label_ko": "교육측정·시험 운영",
+      "aliases": [
+        "assessment"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "EDU.TECH.05",
+      "parent_code": "EDU.TECH",
+      "level": 3,
+      "label_ko": "원격·혼합학습",
+      "aliases": [
+        "blended learning"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "EDU.RESEARCH",
+      "parent_code": "EDU",
+      "level": 2,
+      "label_ko": "연구·학술사업",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "EDU.RESEARCH.01",
+      "parent_code": "EDU.RESEARCH",
+      "level": 3,
+      "label_ko": "산학연 협력·연구사업",
+      "aliases": [
+        "R&D collaboration"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "EDU.RESEARCH.02",
+      "parent_code": "EDU.RESEARCH",
+      "level": 3,
+      "label_ko": "기초과학 연구교류",
+      "aliases": [
+        "basic science"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "EDU.RESEARCH.03",
+      "parent_code": "EDU.RESEARCH",
+      "level": 3,
+      "label_ko": "인문·사회과학 연구",
+      "aliases": [
+        "social sciences"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "EDU.RESEARCH.04",
+      "parent_code": "EDU.RESEARCH",
+      "level": 3,
+      "label_ko": "학술출판·연구윤리",
+      "aliases": [
+        "scholarly publishing"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "EDU.RESEARCH.05",
+      "parent_code": "EDU.RESEARCH",
+      "level": 3,
+      "label_ko": "연구장비·공동활용",
+      "aliases": [
+        "research infrastructure"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MEDIA",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "영상·방송·게임·디지털콘텐츠",
+      "aliases": [
+        "media",
+        "entertainment",
+        "콘텐츠"
+      ],
+      "sort_order": 300,
+      "active": true
+    },
+    {
+      "code": "MEDIA.FILM",
+      "parent_code": "MEDIA",
+      "level": 2,
+      "label_ko": "영화·방송·영상 제작",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDIA.FILM.01",
+      "parent_code": "MEDIA.FILM",
+      "level": 3,
+      "label_ko": "영화 기획·투자",
+      "aliases": [
+        "film financing"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDIA.FILM.02",
+      "parent_code": "MEDIA.FILM",
+      "level": 3,
+      "label_ko": "드라마·방송 제작",
+      "aliases": [
+        "TV production"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDIA.FILM.03",
+      "parent_code": "MEDIA.FILM",
+      "level": 3,
+      "label_ko": "촬영·조명·현장기술",
+      "aliases": [
+        "cinematography"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDIA.FILM.04",
+      "parent_code": "MEDIA.FILM",
+      "level": 3,
+      "label_ko": "편집·시각효과·후반작업",
+      "aliases": [
+        "VFX"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MEDIA.FILM.05",
+      "parent_code": "MEDIA.FILM",
+      "level": 3,
+      "label_ko": "판권·OTT 유통",
+      "aliases": [
+        "OTT distribution"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MEDIA.GAME",
+      "parent_code": "MEDIA",
+      "level": 2,
+      "label_ko": "게임·인터랙티브 콘텐츠",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDIA.GAME.01",
+      "parent_code": "MEDIA.GAME",
+      "level": 3,
+      "label_ko": "모바일·콘솔 게임 개발",
+      "aliases": [
+        "game development"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDIA.GAME.02",
+      "parent_code": "MEDIA.GAME",
+      "level": 3,
+      "label_ko": "퍼블리싱·운영",
+      "aliases": [
+        "game publishing"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDIA.GAME.03",
+      "parent_code": "MEDIA.GAME",
+      "level": 3,
+      "label_ko": "e스포츠·대회 운영",
+      "aliases": [
+        "esports"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDIA.GAME.04",
+      "parent_code": "MEDIA.GAME",
+      "level": 3,
+      "label_ko": "게임 아트·사운드",
+      "aliases": [
+        "game art"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MEDIA.GAME.05",
+      "parent_code": "MEDIA.GAME",
+      "level": 3,
+      "label_ko": "확장현실 콘텐츠",
+      "aliases": [
+        "XR",
+        "VR",
+        "AR"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MEDIA.IP",
+      "parent_code": "MEDIA",
+      "level": 2,
+      "label_ko": "출판·웹콘텐츠·캐릭터",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDIA.IP.01",
+      "parent_code": "MEDIA.IP",
+      "level": 3,
+      "label_ko": "출판·도서 판권",
+      "aliases": [
+        "publishing rights"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MEDIA.IP.02",
+      "parent_code": "MEDIA.IP",
+      "level": 3,
+      "label_ko": "웹툰·만화",
+      "aliases": [
+        "webtoon"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MEDIA.IP.03",
+      "parent_code": "MEDIA.IP",
+      "level": 3,
+      "label_ko": "애니메이션·캐릭터 IP",
+      "aliases": [
+        "animation IP"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MEDIA.IP.04",
+      "parent_code": "MEDIA.IP",
+      "level": 3,
+      "label_ko": "뉴스·저널리즘",
+      "aliases": [
+        "journalism"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MEDIA.IP.05",
+      "parent_code": "MEDIA.IP",
+      "level": 3,
+      "label_ko": "크리에이터·디지털 미디어",
+      "aliases": [
+        "creator economy"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ART",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "문화예술·공연·유산",
+      "aliases": [
+        "arts",
+        "culture",
+        "예술"
+      ],
+      "sort_order": 310,
+      "active": true
+    },
+    {
+      "code": "ART.PERF",
+      "parent_code": "ART",
+      "level": 2,
+      "label_ko": "공연·음악",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ART.PERF.01",
+      "parent_code": "ART.PERF",
+      "level": 3,
+      "label_ko": "대중음악·음반",
+      "aliases": [
+        "K-pop"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ART.PERF.02",
+      "parent_code": "ART.PERF",
+      "level": 3,
+      "label_ko": "클래식·오케스트라",
+      "aliases": [
+        "orchestra"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ART.PERF.03",
+      "parent_code": "ART.PERF",
+      "level": 3,
+      "label_ko": "연극·뮤지컬·무용",
+      "aliases": [
+        "performing arts"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ART.PERF.04",
+      "parent_code": "ART.PERF",
+      "level": 3,
+      "label_ko": "공연기획·투어 운영",
+      "aliases": [
+        "live touring"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ART.PERF.05",
+      "parent_code": "ART.PERF",
+      "level": 3,
+      "label_ko": "공연 음향·조명·무대",
+      "aliases": [
+        "stage production"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ART.VIS",
+      "parent_code": "ART",
+      "level": 2,
+      "label_ko": "미술·디자인",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ART.VIS.01",
+      "parent_code": "ART.VIS",
+      "level": 3,
+      "label_ko": "현대미술·아트페어",
+      "aliases": [
+        "art fair"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ART.VIS.02",
+      "parent_code": "ART.VIS",
+      "level": 3,
+      "label_ko": "큐레이션·전시 기획",
+      "aliases": [
+        "curation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ART.VIS.03",
+      "parent_code": "ART.VIS",
+      "level": 3,
+      "label_ko": "산업·시각 디자인",
+      "aliases": [
+        "industrial design"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ART.VIS.04",
+      "parent_code": "ART.VIS",
+      "level": 3,
+      "label_ko": "공예·공공미술",
+      "aliases": [
+        "craft"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ART.VIS.05",
+      "parent_code": "ART.VIS",
+      "level": 3,
+      "label_ko": "미술 경매·거래",
+      "aliases": [
+        "art auction"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "ART.HER",
+      "parent_code": "ART",
+      "level": 2,
+      "label_ko": "문화유산·기관",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ART.HER.01",
+      "parent_code": "ART.HER",
+      "level": 3,
+      "label_ko": "박물관·미술관 운영",
+      "aliases": [
+        "museum"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "ART.HER.02",
+      "parent_code": "ART.HER",
+      "level": 3,
+      "label_ko": "문화유산 보존·복원",
+      "aliases": [
+        "conservation"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "ART.HER.03",
+      "parent_code": "ART.HER",
+      "level": 3,
+      "label_ko": "고고학·유적 조사",
+      "aliases": [
+        "archaeology"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "ART.HER.04",
+      "parent_code": "ART.HER",
+      "level": 3,
+      "label_ko": "도서관·기록물",
+      "aliases": [
+        "archives"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "ART.HER.05",
+      "parent_code": "ART.HER",
+      "level": 3,
+      "label_ko": "문화정책·국제문화교류",
+      "aliases": [
+        "cultural exchange"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MICE",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "전시·컨벤션·이벤트 산업",
+      "aliases": [
+        "MICE",
+        "마이스",
+        "행사 산업"
+      ],
+      "sort_order": 320,
+      "active": true
+    },
+    {
+      "code": "MICE.EXPO",
+      "parent_code": "MICE",
+      "level": 2,
+      "label_ko": "전시산업·행사운영",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MICE.EXPO.01",
+      "parent_code": "MICE.EXPO",
+      "level": 3,
+      "label_ko": "전시회 주최·사무국 운영",
+      "aliases": [
+        "exhibition organizer"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MICE.EXPO.02",
+      "parent_code": "MICE.EXPO",
+      "level": 3,
+      "label_ko": "전시장·컨벤션센터 운영",
+      "aliases": [
+        "venue management"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MICE.EXPO.03",
+      "parent_code": "MICE.EXPO",
+      "level": 3,
+      "label_ko": "전시 부스 설계·시공",
+      "aliases": [
+        "stand contractor"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MICE.EXPO.04",
+      "parent_code": "MICE.EXPO",
+      "level": 3,
+      "label_ko": "참가사·바이어 프로그램",
+      "aliases": [
+        "hosted buyer"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MICE.EXPO.05",
+      "parent_code": "MICE.EXPO",
+      "level": 3,
+      "label_ko": "전시 서비스·현장 등록",
+      "aliases": [
+        "exhibitor services"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "MICE.CONF",
+      "parent_code": "MICE",
+      "level": 2,
+      "label_ko": "회의·행사 기획",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MICE.CONF.01",
+      "parent_code": "MICE.CONF",
+      "level": 3,
+      "label_ko": "국제회의 기획·운영",
+      "aliases": [
+        "PCO"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "MICE.CONF.02",
+      "parent_code": "MICE.CONF",
+      "level": 3,
+      "label_ko": "인센티브·기업행사",
+      "aliases": [
+        "incentive program"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "MICE.CONF.03",
+      "parent_code": "MICE.CONF",
+      "level": 3,
+      "label_ko": "행사 등록·티켓 기술",
+      "aliases": [
+        "event tech"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "MICE.CONF.04",
+      "parent_code": "MICE.CONF",
+      "level": 3,
+      "label_ko": "동시통역·회의 AV 장비",
+      "aliases": [
+        "conference AV"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "MICE.CONF.05",
+      "parent_code": "MICE.CONF",
+      "level": 3,
+      "label_ko": "스폰서십·행사 파트너십",
+      "aliases": [
+        "sponsorship"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TOUR",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "관광·호텔·여행서비스",
+      "aliases": [
+        "tourism",
+        "hospitality",
+        "여행"
+      ],
+      "sort_order": 330,
+      "active": true
+    },
+    {
+      "code": "TOUR.TRVL",
+      "parent_code": "TOUR",
+      "level": 2,
+      "label_ko": "여행업·목적지",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TOUR.TRVL.01",
+      "parent_code": "TOUR.TRVL",
+      "level": 3,
+      "label_ko": "인바운드·아웃바운드 여행",
+      "aliases": [
+        "DMC"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TOUR.TRVL.02",
+      "parent_code": "TOUR.TRVL",
+      "level": 3,
+      "label_ko": "여행상품 기획·랜드 운영",
+      "aliases": [
+        "tour operator"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TOUR.TRVL.03",
+      "parent_code": "TOUR.TRVL",
+      "level": 3,
+      "label_ko": "관광지 개발·지역관광",
+      "aliases": [
+        "destination management"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TOUR.TRVL.04",
+      "parent_code": "TOUR.TRVL",
+      "level": 3,
+      "label_ko": "관광 안내·문화해설 사업",
+      "aliases": [
+        "tour guiding"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TOUR.TRVL.05",
+      "parent_code": "TOUR.TRVL",
+      "level": 3,
+      "label_ko": "크루즈·해양관광",
+      "aliases": [
+        "cruise"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "TOUR.STAY",
+      "parent_code": "TOUR",
+      "level": 2,
+      "label_ko": "숙박·관광서비스",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TOUR.STAY.01",
+      "parent_code": "TOUR.STAY",
+      "level": 3,
+      "label_ko": "호텔·리조트 운영",
+      "aliases": [
+        "hotel operations"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "TOUR.STAY.02",
+      "parent_code": "TOUR.STAY",
+      "level": 3,
+      "label_ko": "숙박예약·여행 플랫폼",
+      "aliases": [
+        "OTA"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "TOUR.STAY.03",
+      "parent_code": "TOUR.STAY",
+      "level": 3,
+      "label_ko": "호텔 세일즈·연회",
+      "aliases": [
+        "hotel banquet"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "TOUR.STAY.04",
+      "parent_code": "TOUR.STAY",
+      "level": 3,
+      "label_ko": "테마파크·어트랙션",
+      "aliases": [
+        "theme park"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "TOUR.STAY.05",
+      "parent_code": "TOUR.STAY",
+      "level": 3,
+      "label_ko": "지속가능·무장애 관광",
+      "aliases": [
+        "accessible tourism"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SPORT",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "스포츠·레저 산업",
+      "aliases": [
+        "sports",
+        "레저"
+      ],
+      "sort_order": 340,
+      "active": true
+    },
+    {
+      "code": "SPORT.COMP",
+      "parent_code": "SPORT",
+      "level": 2,
+      "label_ko": "경기·스포츠 운영",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SPORT.COMP.01",
+      "parent_code": "SPORT.COMP",
+      "level": 3,
+      "label_ko": "국제대회·연맹 운영",
+      "aliases": [
+        "sports federation"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SPORT.COMP.02",
+      "parent_code": "SPORT.COMP",
+      "level": 3,
+      "label_ko": "프로구단·리그 사업",
+      "aliases": [
+        "sports league"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SPORT.COMP.03",
+      "parent_code": "SPORT.COMP",
+      "level": 3,
+      "label_ko": "스포츠 방송권·마케팅",
+      "aliases": [
+        "sports rights"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SPORT.COMP.04",
+      "parent_code": "SPORT.COMP",
+      "level": 3,
+      "label_ko": "스포츠 시설·경기장",
+      "aliases": [
+        "stadium management"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SPORT.COMP.05",
+      "parent_code": "SPORT.COMP",
+      "level": 3,
+      "label_ko": "선수 매니지먼트",
+      "aliases": [
+        "athlete management"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SPORT.GEAR",
+      "parent_code": "SPORT",
+      "level": 2,
+      "label_ko": "장비·레저 서비스",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SPORT.GEAR.01",
+      "parent_code": "SPORT.GEAR",
+      "level": 3,
+      "label_ko": "스포츠 장비·용품",
+      "aliases": [
+        "sporting goods"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SPORT.GEAR.02",
+      "parent_code": "SPORT.GEAR",
+      "level": 3,
+      "label_ko": "골프·필드 스포츠",
+      "aliases": [
+        "golf industry"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SPORT.GEAR.03",
+      "parent_code": "SPORT.GEAR",
+      "level": 3,
+      "label_ko": "피트니스·트레이닝 서비스",
+      "aliases": [
+        "fitness"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SPORT.GEAR.04",
+      "parent_code": "SPORT.GEAR",
+      "level": 3,
+      "label_ko": "수상·산악 레저",
+      "aliases": [
+        "adventure sports"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SPORT.GEAR.05",
+      "parent_code": "SPORT.GEAR",
+      "level": 3,
+      "label_ko": "스포츠 분석·웨어러블",
+      "aliases": [
+        "sports analytics"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SAFE",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "안전·재난·보안 산업",
+      "aliases": [
+        "safety",
+        "security industry"
+      ],
+      "sort_order": 350,
+      "active": true
+    },
+    {
+      "code": "SAFE.RES",
+      "parent_code": "SAFE",
+      "level": 2,
+      "label_ko": "재난대응·안전장비",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SAFE.RES.01",
+      "parent_code": "SAFE.RES",
+      "level": 3,
+      "label_ko": "화재 감지·소방 장비",
+      "aliases": [
+        "fire alarm"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SAFE.RES.02",
+      "parent_code": "SAFE.RES",
+      "level": 3,
+      "label_ko": "재난 경보·통신",
+      "aliases": [
+        "public warning"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SAFE.RES.03",
+      "parent_code": "SAFE.RES",
+      "level": 3,
+      "label_ko": "구조·응급 대응장비 산업",
+      "aliases": [
+        "rescue equipment"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SAFE.RES.04",
+      "parent_code": "SAFE.RES",
+      "level": 3,
+      "label_ko": "방재 인프라·내진 평가",
+      "aliases": [
+        "seismic assessment"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SAFE.RES.05",
+      "parent_code": "SAFE.RES",
+      "level": 3,
+      "label_ko": "훈련·안전교육 서비스",
+      "aliases": [
+        "safety training"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SAFE.PROT",
+      "parent_code": "SAFE",
+      "level": 2,
+      "label_ko": "보안·시설보호",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SAFE.PROT.01",
+      "parent_code": "SAFE.PROT",
+      "level": 3,
+      "label_ko": "출입통제·신원확인 장비",
+      "aliases": [
+        "access control"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SAFE.PROT.02",
+      "parent_code": "SAFE.PROT",
+      "level": 3,
+      "label_ko": "시설 관제·영상보안",
+      "aliases": [
+        "physical security"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SAFE.PROT.03",
+      "parent_code": "SAFE.PROT",
+      "level": 3,
+      "label_ko": "경비·행사 안전 운영",
+      "aliases": [
+        "event security"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SAFE.PROT.04",
+      "parent_code": "SAFE.PROT",
+      "level": 3,
+      "label_ko": "산업용 안전센서",
+      "aliases": [
+        "safety sensor"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SAFE.PROT.05",
+      "parent_code": "SAFE.PROT",
+      "level": 3,
+      "label_ko": "업무연속성·재해복구 자문",
+      "aliases": [
+        "BCP"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SAFE.PUBLIC",
+      "parent_code": "SAFE",
+      "level": 2,
+      "label_ko": "공공 안전·방산 사업",
+      "aliases": [],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SAFE.PUBLIC.01",
+      "parent_code": "SAFE.PUBLIC",
+      "level": 3,
+      "label_ko": "공공안전 장비 조달",
+      "aliases": [
+        "public safety procurement"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SAFE.PUBLIC.02",
+      "parent_code": "SAFE.PUBLIC",
+      "level": 3,
+      "label_ko": "방산 전시·산업협력",
+      "aliases": [
+        "defence industry"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SAFE.PUBLIC.03",
+      "parent_code": "SAFE.PUBLIC",
+      "level": 3,
+      "label_ko": "항공·방산 품질인증",
+      "aliases": [
+        "AS9100"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SAFE.PUBLIC.04",
+      "parent_code": "SAFE.PUBLIC",
+      "level": 3,
+      "label_ko": "군수 물자 조달·수명주기 관리",
+      "aliases": [
+        "life cycle support"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SAFE.PUBLIC.05",
+      "parent_code": "SAFE.PUBLIC",
+      "level": 3,
+      "label_ko": "민군 기술협력·전환",
+      "aliases": [
+        "civil military cooperation"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SOCIAL",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "돌봄·사회서비스·비영리",
+      "aliases": [
+        "social services",
+        "nonprofit"
+      ],
+      "sort_order": 360,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.CARE",
+      "parent_code": "SOCIAL",
+      "level": 2,
+      "label_ko": "돌봄·복지서비스 산업",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.CARE.01",
+      "parent_code": "SOCIAL.CARE",
+      "level": 3,
+      "label_ko": "고령자 주거·생활지원",
+      "aliases": [
+        "senior living"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.CARE.02",
+      "parent_code": "SOCIAL.CARE",
+      "level": 3,
+      "label_ko": "장애인 자립·보조서비스",
+      "aliases": [
+        "independent living"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.CARE.03",
+      "parent_code": "SOCIAL.CARE",
+      "level": 3,
+      "label_ko": "아동·청소년 복지",
+      "aliases": [
+        "child welfare"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.CARE.04",
+      "parent_code": "SOCIAL.CARE",
+      "level": 3,
+      "label_ko": "커뮤니티 케어 운영",
+      "aliases": [
+        "community care"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.CARE.05",
+      "parent_code": "SOCIAL.CARE",
+      "level": 3,
+      "label_ko": "사회서비스 기관 운영",
+      "aliases": [
+        "social service provider"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.NGO",
+      "parent_code": "SOCIAL",
+      "level": 2,
+      "label_ko": "비영리·시민교류",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.NGO.01",
+      "parent_code": "SOCIAL.NGO",
+      "level": 3,
+      "label_ko": "재단·기부·모금",
+      "aliases": [
+        "philanthropy"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.NGO.02",
+      "parent_code": "SOCIAL.NGO",
+      "level": 3,
+      "label_ko": "자원봉사·민간 국제교류",
+      "aliases": [
+        "volunteering"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.NGO.03",
+      "parent_code": "SOCIAL.NGO",
+      "level": 3,
+      "label_ko": "협동조합·사회적기업",
+      "aliases": [
+        "social enterprise"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.NGO.04",
+      "parent_code": "SOCIAL.NGO",
+      "level": 3,
+      "label_ko": "종교기관·종교문화 교류",
+      "aliases": [
+        "interfaith dialogue"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SOCIAL.NGO.05",
+      "parent_code": "SOCIAL.NGO",
+      "level": 3,
+      "label_ko": "공익 캠페인·프로그램 평가",
+      "aliases": [
+        "impact evaluation"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SCI",
+      "parent_code": null,
+      "level": 1,
+      "label_ko": "과학기술·첨단 연구산업",
+      "aliases": [
+        "science",
+        "deep tech"
+      ],
+      "sort_order": 370,
+      "active": true
+    },
+    {
+      "code": "SCI.PHYS",
+      "parent_code": "SCI",
+      "level": 2,
+      "label_ko": "물리·계측 연구산업",
+      "aliases": [],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SCI.PHYS.01",
+      "parent_code": "SCI.PHYS",
+      "level": 3,
+      "label_ko": "양자컴퓨팅·양자기술",
+      "aliases": [
+        "quantum computing"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SCI.PHYS.02",
+      "parent_code": "SCI.PHYS",
+      "level": 3,
+      "label_ko": "가속기·대형 연구시설",
+      "aliases": [
+        "synchrotron"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SCI.PHYS.03",
+      "parent_code": "SCI.PHYS",
+      "level": 3,
+      "label_ko": "나노소재·나노측정",
+      "aliases": [
+        "nanometrology"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SCI.PHYS.04",
+      "parent_code": "SCI.PHYS",
+      "level": 3,
+      "label_ko": "극저온·진공 기술",
+      "aliases": [
+        "cryogenics"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SCI.PHYS.05",
+      "parent_code": "SCI.PHYS",
+      "level": 3,
+      "label_ko": "광과학·분광 연구",
+      "aliases": [
+        "optical science"
+      ],
+      "sort_order": 50,
+      "active": true
+    },
+    {
+      "code": "SCI.EARTH",
+      "parent_code": "SCI",
+      "level": 2,
+      "label_ko": "지구·해양·기상 과학",
+      "aliases": [],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SCI.EARTH.01",
+      "parent_code": "SCI.EARTH",
+      "level": 3,
+      "label_ko": "기상 관측·예보 서비스",
+      "aliases": [
+        "meteorology"
+      ],
+      "sort_order": 10,
+      "active": true
+    },
+    {
+      "code": "SCI.EARTH.02",
+      "parent_code": "SCI.EARTH",
+      "level": 3,
+      "label_ko": "지질 조사·지구물리",
+      "aliases": [
+        "geophysics"
+      ],
+      "sort_order": 20,
+      "active": true
+    },
+    {
+      "code": "SCI.EARTH.03",
+      "parent_code": "SCI.EARTH",
+      "level": 3,
+      "label_ko": "해양 관측·계측",
+      "aliases": [
+        "oceanography"
+      ],
+      "sort_order": 30,
+      "active": true
+    },
+    {
+      "code": "SCI.EARTH.04",
+      "parent_code": "SCI.EARTH",
+      "level": 3,
+      "label_ko": "수문·유역 모델링",
+      "aliases": [
+        "hydrology"
+      ],
+      "sort_order": 40,
+      "active": true
+    },
+    {
+      "code": "SCI.EARTH.05",
+      "parent_code": "SCI.EARTH",
+      "level": 3,
+      "label_ko": "극지 연구·탐사 지원",
+      "aliases": [
+        "polar research"
+      ],
+      "sort_order": 50,
+      "active": true
+    }
+  ]
+}

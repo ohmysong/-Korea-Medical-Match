@@ -113,7 +113,7 @@ export default function AgentDashboard() {
 
       <Link
         href="/agent/marketing"
-        className="block bg-gradient-to-br from-indigo-600 to-violet-600 rounded-2xl p-6 text-white hover:shadow-lg transition-shadow"
+        className="block bg-ink rounded-lg p-6 text-white hover:bg-gray-800 transition-colors"
       >
         <div className="flex items-center justify-between">
           <div>

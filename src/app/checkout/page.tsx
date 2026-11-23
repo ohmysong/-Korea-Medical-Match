@@ -466,7 +466,7 @@ function StepPayment({ cart, setCart, total, onPay }: {
       {cart.payMethod === 'card' && (
         <div className="space-y-4">
           {/* Mock card preview */}
-          <div className="h-40 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-5 text-white relative overflow-hidden shadow-lg">
+          <div className="h-40 bg-ink rounded-lg p-5 text-white relative overflow-hidden shadow-lg">
             <div className="absolute right-5 top-5 text-2xl opacity-30 font-bold select-none">◎◎</div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-white/10 rounded-full" />
             <div className="absolute -bottom-10 -right-14 w-40 h-40 bg-white/5 rounded-full" />
@@ -718,7 +718,7 @@ function QuoteSidebar({ cart, step, onBack, onNext, canNext }: {
     <div className="w-72 flex-shrink-0">
       <div className="sticky top-24">
         <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 px-5 py-4">
+          <div className="bg-ink px-5 py-4">
             <p className="text-white font-bold text-sm">견적 요약</p>
             {hospital && <p className="text-blue-100 text-xs mt-0.5">{hospital.name}</p>}
           </div>

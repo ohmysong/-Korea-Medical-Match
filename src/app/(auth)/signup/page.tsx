@@ -2,26 +2,24 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { ApiError } from '@/lib/api/client'
+import { submitPublicApplication } from '@/lib/api/applicants'
+import AuthShell, { FieldError, FieldLabel, fieldCls } from '@/components/auth/AuthShell'
 
-type Role = 'patient' | 'agent' | 'hospital'
+type Role = 'client' | 'interpreter'
 
 const ROLES: { id: Role; label: string; desc: string }[] = [
-  { id: 'patient', label: '환자 / 보호자', desc: '병원 검색 및 상담 신청' },
-  { id: 'agent', label: '해외 에이전트', desc: '환자 의뢰 및 파트너십' },
-  { id: 'hospital', label: '병원 관계자', desc: '병원 등록 및 환자 관리' },
+  { id: 'client', label: '의뢰사 (기업·기관)', desc: '통역 의뢰 등록 · 추천 통역사 선택 · 결제' },
+  { id: 'interpreter', label: '통역사', desc: '프로필·요금표 등록 · 매칭 제안 수락 · 플랫폼 수수료 0원' },
 ]
 
 export default function SignupPage() {
-  const router = useRouter()
   const [step, setStep] = useState<1 | 2>(1)
-  const [role, setRole] = useState<Role>('patient')
+  const [role, setRole] = useState<Role>('client')
   const [form, setForm] = useState({
     name: '',
     email: '',
     phone: '',
-    password: '',
-    confirmPassword: '',
     organization: '',
     country: '',
     agreeTerms: false,
@@ -29,6 +27,8 @@ export default function SignupPage() {
   })
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [done, setDone] = useState('')
+  const [submitError, setSubmitError] = useState('')
 
   function set(field: string, value: string | boolean) {
     setForm((prev) => ({ ...prev, [field]: value }))
@@ -39,8 +39,7 @@ export default function SignupPage() {
     const e: Record<string, string> = {}
     if (!form.name) e.name = '이름을 입력해주세요'
     if (!form.email) e.email = '이메일을 입력해주세요'
-    if (!form.password || form.password.length < 8) e.password = '비밀번호는 8자 이상이어야 합니다'
-    if (form.password !== form.confirmPassword) e.confirmPassword = '비밀번호가 일치하지 않습니다'
+    if (role === 'client' && !form.organization) e.organization = '회사·기관명을 입력해주세요'
     if (!form.agreeTerms) e.agreeTerms = '이용약관에 동의해주세요'
     if (!form.agreePrivacy) e.agreePrivacy = '개인정보처리방침에 동의해주세요'
     setErrors(e)
@@ -50,232 +49,232 @@ export default function SignupPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!validate()) return
+    setSubmitError('')
+    if (role === 'client') {
+      // 기업 셀프 가입 API 가 아직 없다. 계정은 운영자가 발급한다(Admin → 기업 승인).
+      setDone('기업 계정은 현재 운영자가 승인 후 발급합니다. 담당자가 입력하신 연락처로 안내드립니다.')
+      return
+    }
     setLoading(true)
-    // Backend: POST /api/auth/signup  body: { role, ...form }
-    await new Promise((r) => setTimeout(r, 1000))
-    router.push('/login')
+    try {
+      await submitPublicApplication({
+        nameKr: form.name,
+        email: form.email,
+        phone: form.phone || null,
+        country: form.country || null,
+        agreePrivacy: form.agreePrivacy,
+        payload: { source: 'omni-signup', role: 'interpreter' },
+      })
+      setDone('통역사 지원서가 접수되었습니다. 운영자 검토·승인 후 로그인 계정이 발급되며, 이후 프로필·요금표·경력을 등록할 수 있습니다.')
+    } catch (err) {
+      setSubmitError(err instanceof ApiError ? err.message : '지원서를 제출하지 못했습니다.')
+    } finally {
+      setLoading(false)
+    }
   }
 
+  const selectedRole = ROLES.find((r) => r.id === role)!
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-10">
-      <div className="w-full max-w-md">
-        <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
-          {/* Logo */}
-          <div className="text-center mb-6">
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-              <span className="text-white font-bold">M</span>
+    <AuthShell
+      title="회원가입"
+      subtitle={step === 1 ? '어떤 목적으로 이용하시나요?' : `${selectedRole.label} 정보를 입력해주세요`}
+      footer={
+        <p className="text-[14px] text-muted">
+          이미 계정이 있으신가요?{' '}
+          <Link href="/login" className="font-semibold text-brand hover:text-brand-hover">
+            로그인
+          </Link>
+        </p>
+      }
+    >
+      {/* Step indicator */}
+      <ol className="mb-7 grid grid-cols-2 gap-2" aria-label="가입 단계">
+        {[1, 2].map((s) => {
+          const reached = step >= s
+          return (
+            <li key={s} aria-current={step === s ? 'step' : undefined}>
+              <span className={`block h-[3px] rounded-full transition-colors duration-200 ${reached ? 'bg-brand' : 'bg-line'}`} />
+              <span className={`mt-2 block text-[12px] font-medium ${reached ? 'text-ink' : 'text-subtle'}`}>
+                {s}. {s === 1 ? '역할 선택' : '정보 입력'}
+              </span>
+            </li>
+          )
+        })}
+      </ol>
+
+      {done ? (
+        <div role="status" className="rounded-md border border-success/25 bg-success-soft px-4 py-4 text-[14px] leading-relaxed text-success">
+          {done}
+          <div className="mt-4">
+            <Link href="/login" className="font-semibold text-brand hover:text-brand-hover">로그인 화면으로 →</Link>
+          </div>
+        </div>
+      ) : step === 1 ? (
+        <div>
+          <fieldset>
+            <legend className="sr-only">회원 유형을 선택해주세요</legend>
+            <div className="divide-y divide-line overflow-hidden rounded-lg border border-line">
+              {ROLES.map((r) => {
+                const on = role === r.id
+                return (
+                  <label
+                    key={r.id}
+                    className={`relative flex cursor-pointer items-center gap-3.5 px-4 py-4 transition-colors duration-150 ${
+                      on ? 'bg-brand-soft' : 'hover:bg-canvas'
+                    }`}
+                  >
+                    {on && <span aria-hidden className="absolute inset-y-0 left-0 w-[3px] bg-brand" />}
+                    <input
+                      type="radio"
+                      name="role"
+                      value={r.id}
+                      checked={on}
+                      onChange={() => setRole(r.id)}
+                      className="h-4 w-4 shrink-0 accent-brand"
+                    />
+                    <span>
+                      <span className={`block text-[15px] font-semibold ${on ? 'text-brand' : 'text-ink'}`}>{r.label}</span>
+                      <span className="mt-0.5 block text-[13px] text-muted">{r.desc}</span>
+                    </span>
+                  </label>
+                )
+              })}
             </div>
-            <h1 className="text-xl font-bold text-gray-900">회원가입</h1>
-            <p className="text-sm text-gray-500 mt-1">Korea Medical Match</p>
+          </fieldset>
+          <button
+            onClick={() => setStep(2)}
+            className="mt-6 h-12 w-full rounded-md bg-brand text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-brand-hover active:bg-brand-press"
+          >
+            다음
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="grid gap-5 sm:grid-cols-2 sm:gap-3">
+            <div>
+              <FieldLabel htmlFor="su-name" required>이름</FieldLabel>
+              <input
+                id="su-name"
+                type="text"
+                autoComplete="name"
+                value={form.name}
+                onChange={(e) => set('name', e.target.value)}
+                placeholder="홍길동"
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? 'su-name-err' : undefined}
+                className={fieldCls(!!errors.name)}
+              />
+              <FieldError id="su-name-err">{errors.name}</FieldError>
+            </div>
+            <div>
+              <FieldLabel htmlFor="su-country">국가</FieldLabel>
+              <input
+                id="su-country"
+                type="text"
+                autoComplete="country-name"
+                value={form.country}
+                onChange={(e) => set('country', e.target.value)}
+                placeholder="대한민국"
+                className={fieldCls()}
+              />
+            </div>
           </div>
 
-          {/* Step indicator */}
-          <div className="flex items-center gap-2 mb-6">
-            {[1, 2].map((s) => (
-              <div key={s} className="flex items-center gap-2 flex-1">
-                <div
-                  className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 ${
-                    step >= s ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-400'
-                  }`}
-                >
-                  {s}
-                </div>
-                <span className={`text-xs ${step >= s ? 'text-gray-700' : 'text-gray-400'}`}>
-                  {s === 1 ? '역할 선택' : '정보 입력'}
-                </span>
-                {s === 1 && <div className="flex-1 h-px bg-gray-200" />}
+          <div>
+            <FieldLabel htmlFor="su-email" required>이메일</FieldLabel>
+            <input
+              id="su-email"
+              type="email"
+              autoComplete="email"
+              value={form.email}
+              onChange={(e) => set('email', e.target.value)}
+              placeholder="email@example.com"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'su-email-err' : undefined}
+              className={fieldCls(!!errors.email)}
+            />
+            <FieldError id="su-email-err">{errors.email}</FieldError>
+          </div>
+
+          <div>
+            <FieldLabel htmlFor="su-phone">연락처</FieldLabel>
+            <input
+              id="su-phone"
+              type="tel"
+              autoComplete="tel"
+              value={form.phone}
+              onChange={(e) => set('phone', e.target.value)}
+              placeholder="+82-10-1234-5678"
+              className={fieldCls()}
+            />
+          </div>
+
+          {role === 'client' && (
+            <div>
+              <FieldLabel htmlFor="su-org" required>회사·기관명</FieldLabel>
+              <input
+                id="su-org"
+                type="text"
+                autoComplete="organization"
+                value={form.organization}
+                onChange={(e) => set('organization', e.target.value)}
+                placeholder="(주)옴니배터리"
+                aria-invalid={!!errors.organization}
+                aria-describedby={errors.organization ? 'su-org-err' : undefined}
+                className={fieldCls(!!errors.organization)}
+              />
+              <FieldError id="su-org-err">{errors.organization}</FieldError>
+            </div>
+          )}
+
+          <div className="space-y-1 rounded-md border border-line p-3">
+            {([
+              ['agreeTerms', '이용약관'],
+              ['agreePrivacy', '개인정보처리방침'],
+            ] as const).map(([key, label]) => (
+              <div key={key}>
+                <label className="flex cursor-pointer items-center gap-2.5 rounded-sm px-1 py-1.5 text-[14px] text-ink-2">
+                  <input
+                    type="checkbox"
+                    checked={form[key]}
+                    onChange={(e) => set(key, e.target.checked)}
+                    aria-invalid={!!errors[key]}
+                    className="h-4 w-4 shrink-0 accent-brand"
+                  />
+                  <span>
+                    <span className="font-medium text-ink underline decoration-line-strong underline-offset-2">{label}</span>에 동의합니다
+                    <span className="ml-1.5 text-[12px] text-subtle">필수</span>
+                  </span>
+                </label>
+                <FieldError id={`su-${key}-err`}>{errors[key]}</FieldError>
               </div>
             ))}
           </div>
 
-          {step === 1 ? (
-            <div className="space-y-3">
-              <p className="text-sm font-medium text-gray-700 mb-3">회원 유형을 선택해주세요</p>
-              {ROLES.map((r) => (
-                <label
-                  key={r.id}
-                  className={`flex items-start gap-3 p-4 border rounded-xl cursor-pointer transition-colors ${
-                    role === r.id
-                      ? 'border-blue-400 bg-blue-50'
-                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="role"
-                    value={r.id}
-                    checked={role === r.id}
-                    onChange={() => setRole(r.id)}
-                    className="mt-0.5"
-                  />
-                  <div>
-                    <p className={`font-medium text-sm ${role === r.id ? 'text-blue-700' : 'text-gray-900'}`}>
-                      {r.label}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-0.5">{r.desc}</p>
-                  </div>
-                </label>
-              ))}
-              <button
-                onClick={() => setStep(2)}
-                className="w-full bg-blue-600 text-white py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-700 mt-2"
-              >
-                다음
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    이름 <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => set('name', e.target.value)}
-                    placeholder="홍길동"
-                    className={`w-full border rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 ${errors.name ? 'border-red-300' : 'border-gray-300'}`}
-                  />
-                  {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">국가</label>
-                  <input
-                    type="text"
-                    value={form.country}
-                    onChange={(e) => set('country', e.target.value)}
-                    placeholder="Mongolia"
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  이메일 <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => set('email', e.target.value)}
-                  placeholder="email@example.com"
-                  className={`w-full border rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 ${errors.email ? 'border-red-300' : 'border-gray-300'}`}
-                />
-                {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">연락처</label>
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => set('phone', e.target.value)}
-                  placeholder="+82-10-1234-5678"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400"
-                />
-              </div>
-
-              {(role === 'agent' || role === 'hospital') && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    {role === 'agent' ? '에이전시명' : '병원명'}
-                  </label>
-                  <input
-                    type="text"
-                    value={form.organization}
-                    onChange={(e) => set('organization', e.target.value)}
-                    placeholder={role === 'agent' ? 'Beijing Health Tourism' : '세브란스병원'}
-                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400"
-                  />
-                </div>
-              )}
-
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    비밀번호 <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="password"
-                    value={form.password}
-                    onChange={(e) => set('password', e.target.value)}
-                    placeholder="8자 이상"
-                    className={`w-full border rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 ${errors.password ? 'border-red-300' : 'border-gray-300'}`}
-                  />
-                  {errors.password && <p className="text-xs text-red-500 mt-1">{errors.password}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">비밀번호 확인</label>
-                  <input
-                    type="password"
-                    value={form.confirmPassword}
-                    onChange={(e) => set('confirmPassword', e.target.value)}
-                    placeholder="••••••••"
-                    className={`w-full border rounded-lg px-3 py-2 text-sm outline-none focus:border-blue-400 ${errors.confirmPassword ? 'border-red-300' : 'border-gray-300'}`}
-                  />
-                  {errors.confirmPassword && <p className="text-xs text-red-500 mt-1">{errors.confirmPassword}</p>}
-                </div>
-              </div>
-
-              <div className="space-y-2 pt-1">
-                <label className="flex items-start gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={form.agreeTerms}
-                    onChange={(e) => set('agreeTerms', e.target.checked)}
-                    className="mt-0.5 rounded"
-                  />
-                  <span className="text-sm text-gray-600">
-                    <span className="text-blue-600 hover:underline cursor-pointer">이용약관</span>에 동의합니다{' '}
-                    <span className="text-red-500">*</span>
-                  </span>
-                </label>
-                {errors.agreeTerms && <p className="text-xs text-red-500">{errors.agreeTerms}</p>}
-
-                <label className="flex items-start gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={form.agreePrivacy}
-                    onChange={(e) => set('agreePrivacy', e.target.checked)}
-                    className="mt-0.5 rounded"
-                  />
-                  <span className="text-sm text-gray-600">
-                    <span className="text-blue-600 hover:underline cursor-pointer">개인정보처리방침</span>에 동의합니다{' '}
-                    <span className="text-red-500">*</span>
-                  </span>
-                </label>
-                {errors.agreePrivacy && <p className="text-xs text-red-500">{errors.agreePrivacy}</p>}
-              </div>
-
-              <div className="flex gap-3 pt-1">
-                <button
-                  type="button"
-                  onClick={() => setStep(1)}
-                  className="flex-1 border border-gray-300 text-gray-700 py-2.5 rounded-lg font-medium text-sm hover:bg-gray-50"
-                >
-                  이전
-                </button>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="flex-1 bg-blue-600 text-white py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-700 disabled:opacity-60"
-                >
-                  {loading ? '처리 중...' : '회원가입'}
-                </button>
-              </div>
-            </form>
+          {submitError && (
+            <div role="alert" className="rounded-md border border-danger/25 bg-danger-soft px-3.5 py-3 text-[13px] text-danger">{submitError}</div>
           )}
 
-          <p className="text-center text-sm text-gray-500 mt-5">
-            이미 계정이 있으신가요?{' '}
-            <Link href="/login" className="text-blue-600 hover:underline font-medium">
-              로그인
-            </Link>
-          </p>
-        </div>
-      </div>
-    </div>
+          <div className="flex gap-2 pt-1">
+            <button
+              type="button"
+              onClick={() => setStep(1)}
+              className="h-12 rounded-md border border-line-strong px-5 text-[15px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:bg-wash"
+            >
+              이전
+            </button>
+            <button
+              type="submit"
+              disabled={loading}
+              className="inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-md bg-brand text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-brand-hover active:bg-brand-press disabled:cursor-wait disabled:opacity-70"
+            >
+              {loading && <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />}
+              {loading ? '처리 중...' : role === 'interpreter' ? '지원서 제출' : '가입 신청'}
+            </button>
+          </div>
+        </form>
+      )}
+    </AuthShell>
   )
 }

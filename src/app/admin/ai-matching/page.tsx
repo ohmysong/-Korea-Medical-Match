@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import * as aiApi from '@/lib/api/ai'
+import { ApiError } from '@/lib/api/client'
 
 interface MatchForm {
   nationality: string
@@ -31,73 +33,6 @@ const PREFS = [
   '픽업 서비스',
 ]
 
-const MOCK_HOSPITALS = [
-  {
-    id: 'h1',
-    name: '세브란스병원',
-    type: '상급종합병원',
-    score: 95,
-    department: '신경외과 척추센터',
-    doctor: '박성훈 교수',
-    treatment: '최소침습 척추 수술 (MISS) / 비수술 신경성형술',
-    costRange: '$8,500 ~ $12,000',
-    features: ['JCI 국제인증', '러시아어 통역 지원', '국제진료센터'],
-    waitDays: 7,
-    costs: [
-      { item: '초진 · 정밀검사', amount: '$600' },
-      { item: '수술비 (MISS)', amount: '$8,500' },
-      { item: '입원비 (4박)', amount: '$1,200' },
-      { item: '통역 · 이동', amount: '$200' },
-    ],
-    total: '$10,500',
-  },
-  {
-    id: 'h2',
-    name: '서울아산병원',
-    type: '상급종합병원',
-    score: 88,
-    department: '정형외과 척추센터',
-    doctor: '김재훈 교수',
-    treatment: '로봇 보조 척추 수술 / 내시경 디스크 수술',
-    costRange: '$9,000 ~ $13,500',
-    features: ['로봇 수술 시스템', '국제진료팀', '최소침습 전문'],
-    waitDays: 10,
-    costs: [
-      { item: '초진 · 정밀검사', amount: '$700' },
-      { item: '수술비 (로봇)', amount: '$9,200' },
-      { item: '입원비 (5박)', amount: '$1,500' },
-      { item: '통역 · 이동', amount: '$200' },
-    ],
-    total: '$11,600',
-  },
-  {
-    id: 'h3',
-    name: '삼성서울병원',
-    type: '상급종합병원',
-    score: 79,
-    department: '신경외과',
-    doctor: '이민석 교수',
-    treatment: '경막외 신경성형술 (비수술) / 수술적 치료',
-    costRange: '$7,000 ~ $11,000',
-    features: ['JCI 국제인증', '다국어 지원', '빠른 예약'],
-    waitDays: 5,
-    costs: [
-      { item: '초진 · 정밀검사', amount: '$550' },
-      { item: '수술비 / 시술비', amount: '$7,800' },
-      { item: '입원비 (3박)', amount: '$1,000' },
-      { item: '통역 · 이동', amount: '$200' },
-    ],
-    total: '$9,550',
-  },
-]
-
-const MOCK_TREATMENTS = [
-  { name: '최소침습 척추 수술 (MISS)', hospitals: 3, costRange: '$7,000 ~ $9,500', recovery: '3~5일 입원', score: 94 },
-  { name: '내시경 디스크 수술', hospitals: 2, costRange: '$5,500 ~ $7,500', recovery: '1~2일 입원', score: 86 },
-  { name: '경막외 신경성형술', hospitals: 3, costRange: '$2,500 ~ $3,500', recovery: '당일 퇴원', score: 72 },
-  { name: '물리치료 + 도수치료 패키지', hospitals: 2, costRange: '$1,200 ~ $2,000', recovery: '외래 10회', score: 58 },
-]
-
 const INIT_FORM: MatchForm = {
   nationality: '',
   language: '',
@@ -108,7 +43,64 @@ const INIT_FORM: MatchForm = {
   preferences: [],
 }
 
-type Phase = 'idle' | 'loading' | 'done'
+interface AiResultItem {
+  raw: Record<string, unknown>
+  title: string
+  subtitle?: string
+  description?: string
+  score?: number
+}
+
+function pickString(obj: Record<string, unknown>, keys: string[]): string | undefined {
+  for (const k of keys) {
+    const v = obj[k]
+    if (typeof v === 'string' && v.trim()) return v
+  }
+  return undefined
+}
+
+function pickNumber(obj: Record<string, unknown>, keys: string[]): number | undefined {
+  for (const k of keys) {
+    const v = obj[k]
+    if (typeof v === 'number') return v
+  }
+  return undefined
+}
+
+function normalizeAiResults(raw: unknown): AiResultItem[] {
+  let list: unknown[] = []
+  if (Array.isArray(raw)) {
+    list = raw
+  } else if (raw && typeof raw === 'object') {
+    const obj = raw as Record<string, unknown>
+    const arrField = ['results', 'hospitals', 'data', 'items'].find((k) => Array.isArray(obj[k]))
+    list = arrField ? (obj[arrField] as unknown[]) : [obj]
+  }
+
+  return list
+    .filter((item): item is Record<string, unknown> => !!item && typeof item === 'object')
+    .map((item) => ({
+      raw: item,
+      title: pickString(item, ['name', 'hospitalName', 'title', 'nameKr', 'nameEn']) ?? '이름 미상',
+      subtitle: pickString(item, ['department', 'specialty', 'type', 'category']),
+      description: pickString(item, ['reason', 'matchReason', 'description', 'summary', 'content']),
+      score: pickNumber(item, ['score', 'matchScore', 'rank']),
+    }))
+}
+
+function buildAiQuery(form: MatchForm): string {
+  const parts: string[] = []
+  if (form.symptoms.trim()) parts.push(form.symptoms.trim())
+  if (form.conditions.length) parts.push(`진단명: ${form.conditions.join(', ')}`)
+  if (form.nationality) parts.push(`환자 국적: ${form.nationality}`)
+  if (form.language) parts.push(`선호 언어: ${form.language}`)
+  const budgetLabel = BUDGETS.find((b) => b.value === form.budget)?.label
+  if (budgetLabel) parts.push(`예산: ${budgetLabel}`)
+  if (form.preferences.length) parts.push(`선호 조건: ${form.preferences.join(', ')}`)
+  return parts.join('. ')
+}
+
+type Phase = 'idle' | 'loading' | 'done' | 'error'
 
 function ScoreBadge({ score }: { score: number }) {
   const color =
@@ -237,10 +229,14 @@ function LoadingState() {
 
 function ResultsState({
   form,
+  results,
+  query,
   selectedHospital,
   onSelect,
 }: {
   form: MatchForm
+  results: AiResultItem[]
+  query: string
   selectedHospital: string | null
   onSelect: (id: string) => void
 }) {
@@ -258,8 +254,8 @@ function ResultsState({
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1.5">
-              <h2 className="text-sm font-bold text-gray-900">AI 분석 완료</h2>
-              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">3개 병원 매칭</span>
+              <h2 className="text-sm font-bold text-gray-900">AI 검색 완료</h2>
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">{results.length}개 병원 매칭</span>
             </div>
             <p className="text-xs text-gray-500 mb-3">
               {form.nationality && <span className="font-medium text-gray-700">{form.nationality} 환자</span>}
@@ -286,171 +282,102 @@ function ResultsState({
                 ))}
               </div>
             )}
+            <details className="mt-3">
+              <summary className="text-xs text-gray-400 cursor-pointer hover:text-gray-600">AI에 전달된 검색어 보기</summary>
+              <p className="text-xs text-gray-500 mt-1.5 bg-gray-50 rounded-lg p-2.5 leading-relaxed">{query}</p>
+            </details>
           </div>
         </div>
       </div>
 
       {/* Recommended Hospitals */}
       <div>
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">추천 병원</p>
-        <div className="space-y-3">
-          {MOCK_HOSPITALS.map((h, i) => (
-            <div
-              key={h.id}
-              className={`bg-white border rounded-2xl p-5 transition-all ${
-                selectedHospital === h.id
-                  ? 'border-blue-400 shadow-sm ring-1 ring-blue-200'
-                  : 'border-gray-200 hover:border-gray-300'
-              }`}
-            >
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <div className="flex items-center gap-3 flex-1 min-w-0">
-                  <div
-                    className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-bold ${
-                      i === 0
-                        ? 'bg-blue-600 text-white'
-                        : i === 1
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-gray-100 text-gray-500'
-                    }`}
-                  >
-                    {i + 1}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-bold text-gray-900">{h.name}</h3>
-                      <span className="text-xs text-gray-400">{h.type}</span>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-0.5">{h.department} · {h.doctor}</p>
-                  </div>
-                </div>
-                <ScoreBadge score={h.score} />
-              </div>
-
-              <ScoreBar score={h.score} />
-
-              <div className="mt-3 grid grid-cols-2 gap-3">
-                <div className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-xs text-gray-400 mb-1">추천 시술</p>
-                  <p className="text-xs font-medium text-gray-800 leading-snug">{h.treatment}</p>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-xs text-gray-400 mb-1">예상 비용</p>
-                  <p className="text-sm font-bold text-blue-700">{h.costRange}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">예약 대기 {h.waitDays}일</p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                {h.features.map((f) => (
-                  <span key={f} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full border border-blue-100">
-                    {f}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-2 mt-4">
-                <button
-                  onClick={() => onSelect(h.id)}
-                  className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${
-                    selectedHospital === h.id
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-blue-50 text-blue-700 hover:bg-blue-100'
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">AI 추천 병원</p>
+        {results.length === 0 ? (
+          <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center text-sm text-gray-400">
+            조건에 맞는 병원을 찾지 못했습니다. 검색 조건을 조정해보세요.
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {results.map((h, i) => {
+              const key = pickString(h.raw, ['id', 'hospitalId']) ?? h.title
+              return (
+                <div
+                  key={key}
+                  className={`bg-white border rounded-2xl p-5 transition-all ${
+                    selectedHospital === key
+                      ? 'border-blue-400 shadow-sm ring-1 ring-blue-200'
+                      : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
-                  {selectedHospital === h.id ? '✓ 선택됨' : '이 병원 선택'}
-                </button>
-                <button className="px-4 py-2 border border-gray-200 text-gray-500 rounded-lg text-sm hover:bg-gray-50">
-                  상세 보기
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Treatment Recommendations */}
-      <div>
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">추천 시술</p>
-        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-          {MOCK_TREATMENTS.map((t, i) => (
-            <div
-              key={t.name}
-              className={`flex items-center gap-4 px-5 py-4 ${
-                i < MOCK_TREATMENTS.length - 1 ? 'border-b border-gray-100' : ''
-              }`}
-            >
-              <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold ${
-                i === 0 ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'
-              }`}>
-                {i + 1}
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-xs text-gray-400 mt-0.5">{t.hospitals}개 병원 매칭 · 회복 {t.recovery}</p>
-              </div>
-              <div className="text-right flex-shrink-0">
-                <p className="text-sm font-semibold text-gray-800">{t.costRange}</p>
-                <div className="flex items-center gap-1.5 mt-1 justify-end">
-                  <div className="w-14 bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-blue-500 h-1.5 rounded-full" style={{ width: `${t.score}%` }} />
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <div
+                        className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-bold ${
+                          i === 0 ? 'bg-blue-600 text-white' : i === 1 ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
+                        }`}
+                      >
+                        {i + 1}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-sm font-bold text-gray-900">{h.title}</h3>
+                          {h.subtitle && <span className="text-xs text-gray-400">{h.subtitle}</span>}
+                        </div>
+                      </div>
+                    </div>
+                    {typeof h.score === 'number' && <ScoreBadge score={h.score} />}
                   </div>
-                  <span className="text-xs text-gray-400 w-7 text-right">{t.score}%</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Cost Comparison */}
-      <div>
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">예상 비용 비교</p>
-        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-gray-50 border-b border-gray-100">
-                  <th className="text-left px-5 py-3 text-xs font-medium text-gray-500 w-40">항목</th>
-                  {MOCK_HOSPITALS.map((h, i) => (
-                    <th key={h.id} className="text-center px-5 py-3 text-xs font-semibold text-gray-700">
-                      <span className={i === 0 ? 'text-blue-600' : ''}>{h.name}</span>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {MOCK_HOSPITALS[0].costs.map((cost, ci) => (
-                  <tr key={cost.item} className="border-b border-gray-50 hover:bg-gray-50/50">
-                    <td className="px-5 py-3 text-xs text-gray-500">{cost.item}</td>
-                    {MOCK_HOSPITALS.map((h) => (
-                      <td key={h.id} className="px-5 py-3 text-center text-xs text-gray-700 tabular-nums">
-                        {h.costs[ci]?.amount}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-                <tr className="bg-blue-50 border-t border-blue-100">
-                  <td className="px-5 py-3.5 text-sm font-bold text-gray-800">합계</td>
-                  {MOCK_HOSPITALS.map((h, i) => (
-                    <td
-                      key={h.id}
-                      className={`px-5 py-3.5 text-center text-sm font-bold tabular-nums ${
-                        i === 0 ? 'text-blue-700' : 'text-gray-800'
+                  {typeof h.score === 'number' && <ScoreBar score={h.score} />}
+
+                  {h.description && (
+                    <div className="mt-3 bg-gray-50 rounded-xl p-3">
+                      <p className="text-xs text-gray-400 mb-1">AI 추천 사유</p>
+                      <p className="text-xs font-medium text-gray-800 leading-snug">{h.description}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-2 mt-4">
+                    <button
+                      onClick={() => onSelect(key)}
+                      className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        selectedHospital === key ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-700 hover:bg-blue-100'
                       }`}
                     >
-                      {h.total}
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
+                      {selectedHospital === key ? '✓ 선택됨' : '이 병원 선택'}
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
           </div>
-          <div className="px-5 py-2.5 bg-gray-50 border-t border-gray-100">
-            <p className="text-xs text-gray-400">* 예상 비용은 참고용이며, 실제 비용은 진료 후 확정됩니다.</p>
-          </div>
-        </div>
+        )}
       </div>
+
+      {results.length > 0 && (
+        <details>
+          <summary className="text-xs text-gray-400 cursor-pointer hover:text-gray-600">원본 응답(JSON) 보기</summary>
+          <pre className="mt-2 bg-gray-900 text-gray-100 text-xs rounded-xl p-4 overflow-x-auto">
+            {JSON.stringify(results.map((r) => r.raw), null, 2)}
+          </pre>
+        </details>
+      )}
+    </div>
+  )
+}
+
+function ErrorState({ message, onRetry }: { message: string; onRetry: () => void }) {
+  return (
+    <div className="h-full flex flex-col items-center justify-center text-center py-24">
+      <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-5">
+        <span className="text-red-600 text-2xl font-bold">!</span>
+      </div>
+      <h2 className="text-base font-bold text-gray-900 mb-2">AI 검색에 실패했습니다</h2>
+      <p className="text-sm text-gray-400 max-w-sm leading-relaxed whitespace-pre-line">{message}</p>
+      <button onClick={onRetry} className="mt-6 text-sm border border-gray-200 text-gray-600 px-4 py-2 rounded-lg hover:bg-gray-50">
+        다시 시도
+      </button>
     </div>
   )
 }
@@ -460,6 +387,9 @@ export default function AIMatchingPage() {
   const [phase, setPhase] = useState<Phase>('idle')
   const [selectedHospital, setSelectedHospital] = useState<string | null>(null)
   const [toast, setToast] = useState('')
+  const [results, setResults] = useState<AiResultItem[]>([])
+  const [lastQuery, setLastQuery] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
   function showToast(msg: string) {
     setToast(msg)
@@ -492,14 +422,34 @@ export default function AIMatchingPage() {
     if (!canSubmit) return
     setPhase('loading')
     setSelectedHospital(null)
-    await new Promise((r) => setTimeout(r, 2900))
-    setPhase('done')
+    const query = buildAiQuery(form)
+    setLastQuery(query)
+    try {
+      const raw = await aiApi.aiSearch({ query, limit: 5 })
+      setResults(normalizeAiResults(raw))
+      setPhase('done')
+    } catch (err) {
+      if (err instanceof ApiError) {
+        if (err.status === 503) {
+          setErrorMessage('서버에 LLM 연동 환경변수(LLM_API_KEY / LLM_MODEL)가 설정되지 않았습니다.\n백엔드 담당자에게 확인이 필요합니다.')
+        } else if (err.status === 502) {
+          setErrorMessage('LLM 서버와 통신 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.')
+        } else {
+          setErrorMessage(err.message)
+        }
+      } else {
+        setErrorMessage('알 수 없는 오류가 발생했습니다.')
+      }
+      setPhase('error')
+    }
   }
 
   function handleReset() {
     setForm(INIT_FORM)
     setPhase('idle')
     setSelectedHospital(null)
+    setResults([])
+    setErrorMessage('')
   }
 
   function handleSelect(id: string) {
@@ -529,9 +479,9 @@ export default function AIMatchingPage() {
           </div>
           <div className="flex items-center gap-2">
             <span className="text-xs bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full font-medium border border-amber-200">
-              UI 미리보기 · AI 연결 준비 중
+              실시간 AI 검색 연동 (POST /api/ai/search)
             </span>
-            {phase === 'done' && (
+            {(phase === 'done' || phase === 'error') && (
               <button
                 onClick={handleReset}
                 className="text-sm text-gray-500 border border-gray-200 px-3 py-1.5 rounded-lg hover:bg-gray-50"
@@ -691,8 +641,9 @@ export default function AIMatchingPage() {
         <div className="flex-1 overflow-y-auto bg-gray-50 p-6">
           {phase === 'idle' && <IdleState />}
           {phase === 'loading' && <LoadingState />}
+          {phase === 'error' && <ErrorState message={errorMessage} onRetry={handleAnalyze} />}
           {phase === 'done' && (
-            <ResultsState form={form} selectedHospital={selectedHospital} onSelect={handleSelect} />
+            <ResultsState form={form} results={results} query={lastQuery} selectedHospital={selectedHospital} onSelect={handleSelect} />
           )}
         </div>
       </div>

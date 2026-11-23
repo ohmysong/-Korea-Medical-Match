@@ -43,7 +43,7 @@ export default function AgentVideosPage() {
       <div className="grid grid-cols-2 gap-4">
         {filtered.map((v) => (
           <div key={v.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-            <div className="bg-gradient-to-br from-indigo-500 to-violet-600 h-32 flex items-center justify-center relative">
+            <div className="bg-gray-800 h-32 flex items-center justify-center relative">
               <span className="text-3xl">▶</span>
               <span className="absolute bottom-2 right-2 text-xs bg-black/50 text-white px-1.5 py-0.5 rounded">{v.duration}</span>
             </div>

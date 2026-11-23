@@ -11,12 +11,6 @@ type DetailTab = 'about' | 'doctors' | 'cost' | 'reviews' | 'interpreter'
 const CATEGORY_LABEL: Record<string, string> = {
   disease: '질환', procedure: '시술', surgery: '수술', checkup: '검진',
 }
-const CATEGORY_STYLE: Record<string, string> = {
-  disease: 'bg-orange-50 text-orange-700 border-orange-200',
-  procedure: 'bg-purple-50 text-purple-700 border-purple-200',
-  surgery: 'bg-red-50 text-red-700 border-red-200',
-  checkup: 'bg-green-50 text-green-700 border-green-200',
-}
 
 function formatPrice(n: number) {
   if (n >= 10000000) return `${(n / 10000000).toFixed(0)}천만원`
@@ -64,6 +58,8 @@ const INTERPRETER_POOL = [
   { id: 'i6', name: '김민준', language: '영어', flag: '🇺🇸', rating: 4.6, cases: 89, specialties: ['전 진료과'], available: true },
 ]
 
+const sectionTitle = 'text-[18px] font-bold tracking-[-0.02em] text-ink'
+
 // ── Quote Calculator ──────────────────────────────────────────────────────────
 function QuoteCalculator({ treatments, hospitalId }: { treatments: Treatment[]; hospitalId: string }) {
   const router = useRouter()
@@ -87,75 +83,102 @@ function QuoteCalculator({ treatments, hospitalId }: { treatments: Treatment[]; 
     router.push(`/checkout?hospitalId=${hospitalId}&treatments=${ids}`)
   }
 
+  const primaryBtn =
+    'h-11 rounded-md bg-brand text-[14px] font-semibold text-white transition-colors duration-150 hover:bg-brand-hover active:bg-brand-press disabled:cursor-not-allowed disabled:bg-line disabled:text-subtle'
+
   return (
-    <div className="flex gap-6 items-start">
+    <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-8">
       {/* Left: treatment list */}
-      <div className="flex-1 min-w-0">
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">시술 선택 (중복 가능)</h3>
-        <div className="space-y-2">
-          {treatments.map((t) => (
-            <label key={t.id} className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-colors ${
-              selected.has(t.id) ? 'border-blue-300 bg-blue-50' : 'border-gray-200 hover:border-gray-300 bg-white'
-            }`}>
-              <input
-                type="checkbox"
-                checked={selected.has(t.id)}
-                onChange={() => toggleTreatment(t.id)}
-                className="text-blue-600 rounded flex-shrink-0"
-              />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className={`text-xs px-1.5 py-0.5 rounded border ${CATEGORY_STYLE[t.category]}`}>
-                    {CATEGORY_LABEL[t.category]}
-                  </span>
-                  <span className="text-sm font-medium text-gray-900">{t.name}</span>
+      <div className="min-w-0">
+        <p className="mb-3 text-[13px] font-semibold text-muted">
+          시술 선택 <span className="font-normal text-subtle">(중복 가능)</span>
+        </p>
+        <div className="divide-y divide-line overflow-hidden rounded-lg border border-line">
+          {treatments.map((t) => {
+            const on = selected.has(t.id)
+            return (
+              <label
+                key={t.id}
+                className={`flex cursor-pointer items-center gap-3.5 px-4 py-3.5 transition-colors duration-150 ${
+                  on ? 'bg-brand-soft' : 'bg-surface hover:bg-canvas'
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  checked={on}
+                  onChange={() => toggleTreatment(t.id)}
+                  className="h-4 w-4 shrink-0 accent-brand"
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-baseline gap-2">
+                    <span className="shrink-0 text-[11px] font-semibold text-muted">{CATEGORY_LABEL[t.category]}</span>
+                    <span className={`text-[14px] font-medium ${on ? 'text-brand' : 'text-ink'}`}>{t.name}</span>
+                  </div>
+                  <p className="mt-0.5 text-[12px] text-subtle">{t.duration} · 회복 {t.recovery}</p>
                 </div>
-                <p className="text-xs text-gray-400 mt-0.5">{t.duration} · 회복 {t.recovery}</p>
-              </div>
-              <div className="text-right flex-shrink-0">
-                <p className="text-sm font-semibold text-blue-700">{formatPrice(t.priceMin)}</p>
-                <p className="text-xs text-gray-400">~ {formatPrice(t.priceMax)}</p>
-              </div>
-            </label>
-          ))}
+                <div className="shrink-0 text-right">
+                  <p className="tabular text-[14px] font-semibold text-ink">{formatPrice(t.priceMin)}</p>
+                  <p className="tabular text-[12px] text-subtle">~ {formatPrice(t.priceMax)}</p>
+                </div>
+              </label>
+            )
+          })}
         </div>
       </div>
 
-      {/* Right: summary */}
-      <div className="w-60 flex-shrink-0 sticky top-32">
-        <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-          <h3 className="text-sm font-bold text-gray-900 mb-4">견적 요약</h3>
-
+      {/* Right: summary (desktop) */}
+      <div className="sticky top-[8.5rem] hidden lg:block">
+        <div className="rounded-lg border border-line bg-surface p-5">
+          <h3 className="mb-3 text-[14px] font-semibold text-ink">견적 요약</h3>
           {!hasSelection ? (
-            <p className="text-xs text-gray-400 text-center py-6">시술을 선택하면<br />예상 비용을 볼 수 있습니다</p>
+            <p className="py-6 text-center text-[13px] leading-relaxed text-subtle">
+              시술을 선택하면<br />예상 비용을 볼 수 있습니다
+            </p>
           ) : (
-            <div className="space-y-2 mb-4">
-              {selectedTreatments.map((t) => (
-                <div key={t.id} className="flex justify-between gap-2 text-xs">
-                  <span className="text-gray-600 truncate">{t.name}</span>
-                  <span className="text-gray-800 whitespace-nowrap flex-shrink-0">{formatPrice(t.priceMin)}~</span>
-                </div>
-              ))}
-              <div className="border-t border-gray-100 pt-2 mt-2">
-                <div className="flex justify-between items-baseline">
-                  <span className="text-xs text-gray-500">예상 합계</span>
-                  <div className="text-right">
-                    <p className="text-base font-bold text-blue-700">{formatPrice(totalMin)}</p>
-                    <p className="text-xs text-gray-400">~ {formatPrice(totalMax)}</p>
-                  </div>
+            <div className="mb-4">
+              <ul className="space-y-1.5">
+                {selectedTreatments.map((t) => (
+                  <li key={t.id} className="flex justify-between gap-3 text-[13px]">
+                    <span className="truncate text-ink-2">{t.name}</span>
+                    <span className="tabular shrink-0 whitespace-nowrap text-ink">{formatPrice(t.priceMin)}~</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-3 flex items-baseline justify-between border-t border-line pt-3">
+                <span className="text-[13px] text-muted">예상 합계</span>
+                <div className="text-right">
+                  <p className="tabular text-[20px] font-bold tracking-[-0.02em] text-ink">{formatPrice(totalMin)}</p>
+                  <p className="tabular text-[12px] text-subtle">~ {formatPrice(totalMax)}</p>
                 </div>
               </div>
             </div>
           )}
-
-          <button
-            onClick={goToCheckout}
-            disabled={!hasSelection}
-            className="w-full bg-blue-600 text-white py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-          >
-            예약 · 결제 진행 →
+          <button onClick={goToCheckout} disabled={!hasSelection} className={`w-full ${primaryBtn}`}>
+            예약 · 결제 진행
           </button>
-          <p className="text-xs text-gray-400 text-center mt-2">통역·숙소·차량까지 한 번에</p>
+          <p className="mt-2 text-center text-[12px] text-subtle">통역·숙소·차량까지 한 번에</p>
+        </div>
+      </div>
+
+      {/* Summary bar (mobile) */}
+      <div className="sticky bottom-0 -mx-5 -mb-5 border-t border-line bg-surface px-5 py-3 sm:-mx-8 sm:-mb-8 sm:px-8 lg:hidden">
+        <div className="flex items-center gap-4">
+          <div className="min-w-0 flex-1">
+            {hasSelection ? (
+              <>
+                <p className="text-[12px] text-muted">예상 합계 · {selected.size}개 선택</p>
+                <p className="tabular text-[17px] font-bold text-ink">
+                  {formatPrice(totalMin)}{' '}
+                  <span className="text-[13px] font-normal text-subtle">~ {formatPrice(totalMax)}</span>
+                </p>
+              </>
+            ) : (
+              <p className="text-[13px] text-subtle">시술을 선택해 주세요</p>
+            )}
+          </div>
+          <button onClick={goToCheckout} disabled={!hasSelection} className={`shrink-0 px-5 ${primaryBtn}`}>
+            예약 · 결제 진행
+          </button>
         </div>
       </div>
     </div>
@@ -173,60 +196,56 @@ function ReviewsTab() {
 
   return (
     <div>
-      <h2 className="text-base font-bold text-gray-900 mb-5">환자 후기</h2>
+      <h2 className={`mb-5 ${sectionTitle}`}>환자 후기</h2>
 
       {/* Summary */}
-      <div className="flex items-center gap-8 p-5 bg-blue-50 rounded-2xl mb-6 border border-blue-100">
-        <div className="text-center">
-          <p className="text-5xl font-bold text-blue-700">{avg}</p>
-          <div className="flex gap-0.5 mt-1 justify-center">
+      <div className="grid gap-6 border-b border-line pb-6 sm:grid-cols-[auto_minmax(0,22rem)] sm:items-center sm:gap-12">
+        <div>
+          <p className="tabular text-[44px] font-bold leading-none tracking-[-0.03em] text-ink">{avg}</p>
+          <p className="mt-2 text-[14px]" aria-label={`평균 ${avg}점`}>
             {[1, 2, 3, 4, 5].map((i) => (
-              <span key={i} className={i <= Math.round(Number(avg)) ? 'text-yellow-400' : 'text-gray-200'}>★</span>
+              <span key={i} aria-hidden className={i <= Math.round(Number(avg)) ? 'text-accent' : 'text-line-strong'}>★</span>
             ))}
-          </div>
-          <p className="text-xs text-gray-500 mt-1">{MOCK_REVIEWS.length}개 리뷰</p>
+          </p>
+          <p className="mt-1 text-[12px] text-subtle">{MOCK_REVIEWS.length}개 리뷰</p>
         </div>
-        <div className="flex-1 space-y-1.5">
+        <div className="space-y-1.5">
           {dist.map((d) => (
-            <div key={d.star} className="flex items-center gap-2 text-xs">
-              <span className="text-gray-500 w-3">{d.star}</span>
-              <span className="text-yellow-400 text-xs">★</span>
-              <div className="flex-1 bg-gray-200 rounded-full h-1.5 overflow-hidden">
-                <div className="bg-yellow-400 h-1.5 rounded-full" style={{ width: `${d.pct}%` }} />
+            <div key={d.star} className="flex items-center gap-3 text-[12px]">
+              <span className="tabular w-6 text-muted">{d.star}점</span>
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-wash">
+                <div className="h-1.5 rounded-full bg-ink" style={{ width: `${d.pct}%` }} />
               </div>
-              <span className="text-gray-400 w-6 text-right">{d.count}</span>
+              <span className="tabular w-4 text-right text-subtle">{d.count}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Review list */}
-      <div className="space-y-4">
+      <ul className="divide-y divide-line">
         {MOCK_REVIEWS.map((r) => (
-          <div key={r.id} className="bg-white border border-gray-200 rounded-2xl p-5">
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-base flex-shrink-0">
-                  {r.flag}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">{r.name}</p>
-                  <p className="text-xs text-gray-400">{r.nationality} · {r.date}</p>
-                </div>
-              </div>
-              <div className="text-right flex-shrink-0">
-                <div className="flex gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <span key={i} className={i <= r.rating ? 'text-yellow-400 text-sm' : 'text-gray-200 text-sm'}>★</span>
-                  ))}
-                </div>
-                <p className="text-xs text-gray-400 mt-0.5">시술: {r.treatment}</p>
-              </div>
+          <li key={r.id} className="py-5">
+            <div className="mb-1.5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <p className="text-[14px] font-semibold text-ink">
+                {r.name}
+                <span className="ml-2 text-[13px] font-normal text-muted">
+                  <span aria-hidden>{r.flag}</span> {r.nationality}
+                </span>
+              </p>
+              <p className="tabular text-[12px] text-subtle">{r.date}</p>
             </div>
-            <p className="text-sm text-gray-700 leading-relaxed">{r.content}</p>
-          </div>
+            <p className="mb-2.5 text-[12px]">
+              <span className="text-accent" aria-label={`${r.rating}점`}>
+                {'★'.repeat(r.rating)}
+                <span className="text-line-strong">{'★'.repeat(5 - r.rating)}</span>
+              </span>
+              <span className="text-muted"> · 시술: {r.treatment}</span>
+            </p>
+            <p className="max-w-[44rem] text-[14px] leading-[1.7] text-ink-2">{r.content}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
@@ -264,28 +283,30 @@ function InterpreterTab() {
   return (
     <div>
       {toast && (
-        <div className="fixed top-4 right-4 z-50 bg-gray-900 text-white text-sm px-4 py-2.5 rounded-lg shadow-lg">
+        <div
+          role="status"
+          className="fixed bottom-6 left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 rounded-md bg-ink px-4 py-3 text-[14px] text-white shadow-raise"
+        >
           {toast}
         </div>
       )}
 
-      <h2 className="text-base font-bold text-gray-900 mb-1">통역 서비스</h2>
-      <p className="text-sm text-gray-500 mb-6">언어를 선택하면 AI가 최적의 통역사를 자동 매칭합니다</p>
+      <h2 className={sectionTitle}>통역 서비스</h2>
+      <p className="mb-6 mt-1 text-[14px] text-muted">언어를 선택하면 AI가 최적의 통역사를 자동 매칭합니다</p>
 
       {/* AI Matching */}
-      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-5 mb-6">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center">
-            <span className="text-white text-xs font-bold">AI</span>
-          </div>
-          <p className="text-sm font-bold text-gray-900">AI 통역사 자동 매칭</p>
-        </div>
+      <div className="mb-8 rounded-lg border border-line bg-canvas p-5">
+        <p className="mb-3 flex items-center gap-2 text-[14px] font-semibold text-ink">
+          <span className="rounded-sm bg-ink px-1.5 py-0.5 text-[11px] font-bold text-white">AI</span>
+          통역사 자동 매칭
+        </p>
 
-        <div className="flex gap-3 mb-4">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <select
+            aria-label="언어 선택"
             value={selectedLang}
             onChange={(e) => { setSelectedLang(e.target.value); setPhase('idle'); setMatchedId(null) }}
-            className="flex-1 border border-blue-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-blue-400 bg-white"
+            className="h-11 flex-1 rounded-md border border-line-strong bg-surface px-3 text-[14px] text-ink outline-none hover:border-subtle focus:border-brand focus:shadow-[0_0_0_3px_var(--color-brand-soft)]"
           >
             <option value="">언어 선택</option>
             {Array.from(new Set(INTERPRETER_POOL.map((i) => i.language))).map((l) => (
@@ -295,52 +316,51 @@ function InterpreterTab() {
           <button
             onClick={handleMatch}
             disabled={!selectedLang || phase === 'loading'}
-            className="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-brand px-5 text-[14px] font-semibold text-white transition-colors duration-150 hover:bg-brand-hover disabled:cursor-not-allowed disabled:bg-line disabled:text-subtle"
           >
-            {phase === 'loading' ? <><span className="animate-spin">◌</span> 매칭 중...</> : '통역사 매칭 요청'}
+            {phase === 'loading' ? (
+              <>
+                <span aria-hidden className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                매칭 중
+              </>
+            ) : '통역사 매칭 요청'}
           </button>
         </div>
 
         {phase === 'loading' && (
-          <div className="bg-white rounded-xl p-4 animate-pulse">
+          <div className="mt-4 animate-pulse rounded-md border border-line bg-surface p-4" aria-busy="true">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gray-200 rounded-full" />
+              <div className="h-11 w-11 rounded-full bg-wash" />
               <div className="flex-1 space-y-2">
-                <div className="h-4 bg-gray-200 rounded w-32" />
-                <div className="h-3 bg-gray-100 rounded w-48" />
+                <div className="h-3.5 w-32 rounded-sm bg-wash" />
+                <div className="h-3 w-48 rounded-sm bg-wash" />
               </div>
             </div>
           </div>
         )}
 
         {phase === 'matched' && matchedInterpreter && (
-          <div className="bg-white rounded-2xl p-4 border border-green-200">
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-xl">{matchedInterpreter.name[0]}</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <p className="font-bold text-gray-900">{matchedInterpreter.name}</p>
-                  <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium border border-green-200">
-                    ✓ AI 매칭
-                  </span>
-                  <span className="text-base">{matchedInterpreter.flag}</span>
-                </div>
-                <p className="text-sm text-blue-600 font-medium mb-1">{matchedInterpreter.language} 전문</p>
-                <div className="flex items-center gap-3 text-xs text-gray-500">
-                  <span>★ {matchedInterpreter.rating}</span>
-                  <span>담당 {matchedInterpreter.cases}건</span>
-                </div>
-                <div className="flex flex-wrap gap-1 mt-2">
-                  {matchedInterpreter.specialties.map((s) => (
-                    <span key={s} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">{s}</span>
-                  ))}
+          <div className="mt-4 rounded-md border border-line bg-surface p-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+              <div className="flex min-w-0 flex-1 items-start gap-3.5">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-soft text-[15px] font-semibold text-brand">
+                  {matchedInterpreter.name[0]}
+                </span>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-[15px] font-semibold text-ink">{matchedInterpreter.name}</p>
+                    <span className="rounded-sm bg-success-soft px-1.5 py-0.5 text-[11px] font-semibold text-success">AI 매칭</span>
+                  </div>
+                  <p className="mt-0.5 text-[13px] text-ink-2">
+                    <span aria-hidden>{matchedInterpreter.flag}</span> {matchedInterpreter.language} 전문
+                    <span className="tabular text-subtle"> · ★ {matchedInterpreter.rating} · 담당 {matchedInterpreter.cases}건</span>
+                  </p>
+                  <p className="mt-1.5 text-[12px] text-muted">{matchedInterpreter.specialties.join(' · ')}</p>
                 </div>
               </div>
               <button
                 onClick={() => handleRequest(matchedInterpreter.name)}
-                className="flex-shrink-0 bg-blue-600 text-white text-sm px-5 py-2.5 rounded-xl font-bold hover:bg-blue-700 transition-colors"
+                className="h-10 shrink-0 rounded-md bg-brand px-5 text-[14px] font-semibold text-white transition-colors duration-150 hover:bg-brand-hover"
               >
                 배정 요청
               </button>
@@ -349,52 +369,44 @@ function InterpreterTab() {
         )}
 
         {phase === 'matched' && !matchedInterpreter && (
-          <div className="bg-white rounded-xl p-4 text-center">
-            <p className="text-sm text-gray-500">해당 언어의 가용 통역사가 없습니다. 코디네이터에게 문의해 주세요.</p>
-          </div>
+          <p className="mt-4 rounded-md border border-line bg-surface p-4 text-center text-[14px] text-muted">
+            해당 언어의 가용 통역사가 없습니다. 코디네이터에게 문의해 주세요.
+          </p>
         )}
       </div>
 
       {/* All interpreters */}
-      <div>
-        <h3 className="text-sm font-semibold text-gray-700 mb-3">전체 통역사 목록</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {INTERPRETER_POOL.map((interpreter) => (
-            <div key={interpreter.id} className={`border rounded-2xl p-4 flex items-start gap-3 ${
-              interpreter.available ? 'border-gray-200 bg-white' : 'border-gray-100 bg-gray-50 opacity-60'
-            }`}>
-              <div className="w-11 h-11 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold">{interpreter.name[0]}</span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <p className="text-sm font-semibold text-gray-900">{interpreter.name}</p>
-                  <span className="text-base">{interpreter.flag}</span>
-                  <span className={`text-xs px-1.5 py-0.5 rounded-full ${
-                    interpreter.available ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'
-                  }`}>
-                    {interpreter.available ? '가용' : '예약중'}
-                  </span>
-                </div>
-                <p className="text-xs text-blue-600">{interpreter.language}</p>
-                <div className="flex items-center gap-2 mt-1 text-xs text-gray-400">
-                  <span>★ {interpreter.rating}</span>
-                  <span>·</span>
-                  <span>담당 {interpreter.cases}건</span>
-                </div>
-              </div>
-              {interpreter.available && (
-                <button
-                  onClick={() => handleRequest(interpreter.name)}
-                  className="text-xs border border-blue-200 text-blue-600 px-3 py-1.5 rounded-lg hover:bg-blue-50 flex-shrink-0"
-                >
-                  요청
-                </button>
-              )}
+      <h3 className="mb-2 text-[13px] font-semibold text-muted">전체 통역사 목록</h3>
+      <ul className="divide-y divide-line border-y border-line">
+        {INTERPRETER_POOL.map((interpreter) => (
+          <li key={interpreter.id} className={`flex items-center gap-3.5 py-3.5 ${interpreter.available ? '' : 'opacity-55'}`}>
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-wash text-[13px] font-semibold text-ink-2">
+              {interpreter.name[0]}
+            </span>
+            <div className="min-w-0 flex-1">
+              <p className="text-[14px] font-medium text-ink">
+                {interpreter.name}
+                <span className="ml-2 text-[13px] font-normal text-muted">
+                  <span aria-hidden>{interpreter.flag}</span> {interpreter.language}
+                </span>
+              </p>
+              <p className="tabular mt-0.5 text-[12px] text-subtle">★ {interpreter.rating} · 담당 {interpreter.cases}건</p>
             </div>
-          ))}
-        </div>
-      </div>
+            <span className={`inline-flex shrink-0 items-center gap-1.5 text-[12px] font-medium ${interpreter.available ? 'text-success' : 'text-subtle'}`}>
+              <span aria-hidden className={`h-1.5 w-1.5 rounded-full ${interpreter.available ? 'bg-success' : 'bg-line-strong'}`} />
+              {interpreter.available ? '가용' : '예약중'}
+            </span>
+            {interpreter.available && (
+              <button
+                onClick={() => handleRequest(interpreter.name)}
+                className="h-8 shrink-0 rounded-md border border-line-strong px-3 text-[13px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:bg-wash"
+              >
+                요청
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
@@ -406,10 +418,12 @@ export default function HospitalDetailClient({ id }: { id: string }) {
 
   if (!hospital) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex min-h-[60vh] items-center justify-center px-4">
         <div className="text-center">
-          <p className="text-gray-500 mb-2">병원 정보를 찾을 수 없습니다.</p>
-          <Link href="/hospitals" className="text-blue-600 text-sm hover:underline">병원 목록으로 돌아가기</Link>
+          <p className="text-[16px] font-semibold text-ink">병원 정보를 찾을 수 없습니다.</p>
+          <Link href="/hospitals" className="mt-3 inline-block text-[14px] font-medium text-brand hover:text-brand-hover">
+            병원 목록으로 돌아가기
+          </Link>
         </div>
       </div>
     )
@@ -423,190 +437,232 @@ export default function HospitalDetailClient({ id }: { id: string }) {
     { id: 'interpreter', label: '통역' },
   ]
 
+  const minPrice = hospital.treatments.length ? Math.min(...hospital.treatments.map((t) => t.priceMin)) : null
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/" className="hover:text-blue-600">홈</Link>
-          <span>/</span>
-          <Link href="/hospitals" className="hover:text-blue-600">병원 검색</Link>
-          <span>/</span>
-          <span className="text-gray-900 font-medium">{hospital.name}</span>
+    <div className="min-h-screen bg-canvas">
+      <div className="border-b border-line bg-surface">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <nav aria-label="경로" className="flex items-center gap-1.5 pt-5 text-[13px] text-subtle">
+            <Link href="/" className="hover:text-ink">홈</Link>
+            <span aria-hidden>/</span>
+            <Link href="/hospitals" className="hover:text-ink">병원 검색</Link>
+            <span aria-hidden>/</span>
+            <span className="truncate text-ink-2" aria-current="page">{hospital.name}</span>
+          </nav>
+
+          {/* Hospital header */}
+          <div className="grid gap-8 pb-8 pt-6 lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-12">
+            <div className="min-w-0">
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] font-medium text-muted">
+                {hospital.type}
+                <span aria-hidden className="text-line-strong">|</span>
+                {hospital.location} {hospital.district}
+                {hospital.internationalDept && (
+                  <>
+                    <span aria-hidden className="text-line-strong">|</span>
+                    <span className="inline-flex items-center gap-1.5 text-success">
+                      <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-success" />
+                      국제진료팀
+                    </span>
+                  </>
+                )}
+              </p>
+              <h1 className="mt-3 text-[28px] font-bold leading-tight tracking-[-0.03em] text-ink sm:text-[34px]">
+                {hospital.name}
+              </h1>
+              <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px]">
+                <span className="text-muted">{hospital.nameEn}</span>
+                <span className="tabular inline-flex items-center gap-1">
+                  <span aria-hidden className="text-accent">★</span>
+                  <span className="font-semibold text-ink">{hospital.rating}</span>
+                  <span className="text-subtle">· 리뷰 {hospital.reviewCount.toLocaleString()}개</span>
+                </span>
+              </div>
+
+              <dl className="mt-7 grid grid-cols-1 gap-x-8 gap-y-4 border-t border-line pt-5 text-[14px] sm:grid-cols-2 lg:grid-cols-[1.2fr_0.9fr_1.5fr_0.7fr]">
+                <div className="sm:col-span-2 lg:col-span-1">
+                  <dt className="text-[12px] text-subtle">주소</dt>
+                  <dd className="mt-1 leading-snug text-ink-2">{hospital.address}</dd>
+                </div>
+                <div>
+                  <dt className="text-[12px] text-subtle">전화</dt>
+                  <dd className="tabular mt-1 font-medium text-ink">{hospital.phone}</dd>
+                </div>
+                <div>
+                  <dt className="text-[12px] text-subtle">이메일</dt>
+                  <dd className="mt-1 break-all text-ink-2">{hospital.email}</dd>
+                </div>
+                <div>
+                  <dt className="text-[12px] text-subtle">{hospital.bedCount ? '병상 수' : '위치'}</dt>
+                  <dd className="tabular mt-1 font-medium text-ink">
+                    {hospital.bedCount ? `${hospital.bedCount.toLocaleString()}병상` : `${hospital.location} · ${hospital.district}`}
+                  </dd>
+                </div>
+                <div className="sm:col-span-2">
+                  <dt className="text-[12px] text-subtle">인증</dt>
+                  <dd className="mt-1 flex flex-wrap gap-1.5">
+                    {hospital.accreditations.map((acc) => (
+                      <span key={acc} className="rounded-sm border border-line px-1.5 py-0.5 text-[12px] font-medium text-ink-2">{acc}</span>
+                    ))}
+                  </dd>
+                </div>
+                <div className="sm:col-span-2">
+                  <dt className="text-[12px] text-subtle">지원 언어</dt>
+                  <dd className="mt-1 text-ink-2">{hospital.languages.join(' · ')}</dd>
+                </div>
+              </dl>
+            </div>
+
+            {/* Action column */}
+            <aside className="self-start rounded-lg border border-line p-5">
+              {minPrice !== null && (
+                <>
+                  <p className="text-[12px] text-subtle">최저 시술비</p>
+                  <p className="tabular mt-0.5 text-[24px] font-bold tracking-[-0.02em] text-ink">
+                    {formatPrice(minPrice)}
+                    <span className="ml-0.5 text-[15px] font-medium text-muted">~</span>
+                  </p>
+                  <p className="mt-1 text-[12px] text-subtle">실제 비용은 진료 후 확정됩니다</p>
+                </>
+              )}
+              <div className="mt-4 grid gap-2">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('cost')}
+                  className="h-11 rounded-md bg-brand text-[14px] font-semibold text-white transition-colors duration-150 hover:bg-brand-hover active:bg-brand-press"
+                >
+                  비용 · 견적 계산
+                </button>
+                <Link
+                  href={`/checkout?hospitalId=${hospital.id}`}
+                  className="inline-flex h-11 items-center justify-center rounded-md border border-line-strong text-[14px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:bg-wash"
+                >
+                  매칭하기
+                </Link>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-6">
-        {/* Hospital header */}
-        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden mb-6 shadow-sm">
-          {/* Banner */}
-          <div className="h-40 bg-gradient-to-br from-blue-600 to-blue-900 relative overflow-hidden flex items-end">
-            <span className="absolute right-8 top-1/2 -translate-y-1/2 text-white font-bold text-9xl opacity-10 select-none">
-              {hospital.name[0]}
-            </span>
-            <div className="relative z-10 p-6 w-full flex items-end justify-between">
-              <div>
-                <div className="flex items-center gap-2 flex-wrap mb-1">
-                  <h1 className="text-2xl font-bold text-white">{hospital.name}</h1>
-                  <span className="text-xs bg-white/20 text-white px-2 py-0.5 rounded-full border border-white/30">
-                    {hospital.type}
-                  </span>
-                  {hospital.internationalDept && (
-                    <span className="text-xs bg-green-400/80 text-white px-2 py-0.5 rounded-full">
-                      국제진료팀
-                    </span>
-                  )}
-                </div>
-                <p className="text-blue-200 text-sm">{hospital.nameEn}</p>
-              </div>
-              <div className="text-right flex-shrink-0">
-                <div className="flex items-center gap-1 justify-end">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <span key={i} className={i <= Math.floor(hospital.rating) ? 'text-yellow-300' : 'text-white/20'}>★</span>
-                  ))}
-                  <span className="font-bold text-white ml-1">{hospital.rating}</span>
-                </div>
-                <p className="text-sm text-blue-200">리뷰 {hospital.reviewCount.toLocaleString()}개</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Info grid */}
-          <div className="p-5">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-4 border-b border-gray-100 mb-4">
-              <div>
-                <p className="text-xs text-gray-400 mb-1">주소</p>
-                <p className="text-sm text-gray-700 leading-snug">{hospital.address}</p>
-              </div>
-              <div>
-                <p className="text-xs text-gray-400 mb-1">전화</p>
-                <p className="text-sm text-gray-800 font-medium">{hospital.phone}</p>
-              </div>
-              <div>
-                <p className="text-xs text-gray-400 mb-1">이메일</p>
-                <p className="text-sm text-blue-600 break-all">{hospital.email}</p>
-              </div>
-              <div>
-                <p className="text-xs text-gray-400 mb-1">{hospital.bedCount ? '병상 수' : '위치'}</p>
-                <p className="text-sm text-gray-700 font-medium">
-                  {hospital.bedCount ? `${hospital.bedCount.toLocaleString()}병상` : `${hospital.location} · ${hospital.district}`}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-xs text-gray-400 font-medium">인증</span>
-                {hospital.accreditations.map((acc) => (
-                  <span key={acc} className="text-xs bg-green-50 border border-green-200 text-green-700 px-2 py-0.5 rounded">
-                    ✓ {acc}
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-xs text-gray-400 font-medium">지원 언어</span>
-                {hospital.languages.map((lang) => (
-                  <span key={lang} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">{lang}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-          <div className="flex border-b border-gray-200 overflow-x-auto">
-            {TABS.map((tab) => (
+      {/* Tabs */}
+      <div className="z-30 border-b border-line bg-surface lg:sticky lg:top-16">
+        <div role="tablist" aria-label="병원 정보" className="scroll-row mx-auto flex max-w-6xl overflow-x-auto px-4 sm:px-6 lg:px-8">
+          {TABS.map((tab, i) => {
+            const selected = activeTab === tab.id
+            return (
               <button
                 key={tab.id}
+                role="tab"
+                aria-selected={selected}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-6 py-4 text-sm font-medium border-b-2 whitespace-nowrap transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-blue-600 text-blue-600 bg-blue-50/30'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                className={`relative shrink-0 whitespace-nowrap px-4 py-3.5 text-[14px] font-medium transition-colors duration-150 first:pl-0 ${
+                  selected ? 'text-ink' : 'text-muted hover:text-ink'
                 }`}
               >
                 {tab.label}
+                <span
+                  aria-hidden
+                  className={`absolute bottom-0 right-4 h-[2px] bg-ink transition-opacity duration-150 ${i === 0 ? 'left-0' : 'left-4'} ${
+                    selected ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
               </button>
-            ))}
-          </div>
+            )
+          })}
+        </div>
+      </div>
 
-          <div className="p-6">
-            {/* 소개 */}
-            {activeTab === 'about' && (
+      <div className="mx-auto max-w-6xl px-4 pb-20 pt-6 sm:px-6 lg:px-8 lg:pt-10">
+        <div className="rounded-lg border border-line bg-surface p-5 sm:p-8">
+          {/* 소개 */}
+          {activeTab === 'about' && (
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_16rem] lg:gap-16">
               <div>
-                <h2 className="text-base font-bold text-gray-900 mb-3">병원 소개</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">{hospital.description}</p>
-
-                <h3 className="text-sm font-semibold text-gray-900 mb-3">주요 진료과목</h3>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {hospital.specialties.map((s) => (
-                    <Link key={s} href={`/hospitals?specialty=${encodeURIComponent(s)}`}
-                      className="bg-blue-50 text-blue-700 border border-blue-200 text-sm px-3 py-1 rounded-full hover:bg-blue-100">
-                      {s}
-                    </Link>
-                  ))}
-                </div>
-
-                <h3 className="text-sm font-semibold text-gray-900 mb-3">인증 현황</h3>
-                <div className="flex flex-wrap gap-2">
-                  {hospital.accreditations.map((acc) => (
-                    <div key={acc} className="flex items-center gap-2 bg-green-50 border border-green-200 rounded-xl px-3 py-2">
-                      <span className="text-green-600">✓</span>
-                      <span className="text-sm text-green-800 font-medium">{acc}</span>
-                    </div>
-                  ))}
-                </div>
+                <h2 className={sectionTitle}>병원 소개</h2>
+                <p className="mt-3 max-w-[42rem] text-[15px] leading-[1.8] text-ink-2">{hospital.description}</p>
               </div>
-            )}
+              <div className="space-y-8">
+                <section>
+                  <h3 className="border-b border-line pb-2 text-[13px] font-semibold text-muted">주요 진료과목</h3>
+                  <ul className="divide-y divide-line">
+                    {hospital.specialties.map((s) => (
+                      <li key={s}>
+                        <Link
+                          href={`/hospitals?specialty=${encodeURIComponent(s)}`}
+                          className="group flex items-center justify-between py-2.5 text-[14px] text-ink transition-colors duration-150 hover:text-brand"
+                        >
+                          {s}
+                          <span aria-hidden className="text-subtle transition-transform duration-150 group-hover:translate-x-0.5 group-hover:text-brand">→</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+                <section>
+                  <h3 className="border-b border-line pb-2 text-[13px] font-semibold text-muted">인증 현황</h3>
+                  <ul className="divide-y divide-line">
+                    {hospital.accreditations.map((acc) => (
+                      <li key={acc} className="flex items-center gap-2.5 py-2.5 text-[14px] text-ink">
+                        <svg aria-hidden width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-success">
+                          <path d="m3 8.5 3 3 7-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        {acc}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            </div>
+          )}
 
-            {/* 의료진 */}
-            {activeTab === 'doctors' && (
-              <div>
-                <h2 className="text-base font-bold text-gray-900 mb-4">의료진</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {hospital.doctors.map((doctor, i) => (
-                    <div key={i} className="border border-gray-200 rounded-2xl p-5 hover:border-gray-300 transition-colors">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                          {doctor.name[0]}
-                        </div>
-                        <div>
-                          <p className="font-bold text-gray-900">{doctor.name}</p>
-                          <p className="text-sm text-blue-600">{doctor.specialty}</p>
-                        </div>
+          {/* 의료진 */}
+          {activeTab === 'doctors' && (
+            <div>
+              <h2 className={`mb-2 ${sectionTitle}`}>의료진</h2>
+              <ul className="divide-y divide-line">
+                {hospital.doctors.map((doctor, i) => (
+                  <li key={i} className="grid gap-3 py-5 sm:grid-cols-[14rem_minmax(0,1fr)] sm:gap-8">
+                    <div className="flex items-center gap-3">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-wash text-[14px] font-semibold text-ink-2">
+                        {doctor.name[0]}
+                      </span>
+                      <div>
+                        <p className="text-[15px] font-semibold text-ink">{doctor.name}</p>
+                        <p className="text-[13px] text-muted">{doctor.specialty}</p>
                       </div>
-                      <p className="text-sm text-gray-600 mb-3 leading-relaxed">{doctor.career}</p>
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-xs text-gray-400">언어:</span>
-                        {doctor.languages.map((lang) => (
-                          <span key={lang} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded">{lang}</span>
-                        ))}
-                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                    <div>
+                      <p className="text-[14px] leading-[1.7] text-ink-2">{doctor.career}</p>
+                      <p className="mt-2 text-[12px] text-subtle">
+                        진료 언어 <span className="ml-1 text-ink-2">{doctor.languages.join(', ')}</span>
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-            {/* 비용·견적 */}
-            {activeTab === 'cost' && (
-              <div>
-                <h2 className="text-base font-bold text-gray-900 mb-1">비용 · 견적 계산기</h2>
-                <p className="text-xs text-gray-400 mb-5">
-                  시술을 선택하고 부가 서비스를 추가하면 예상 총 비용을 확인할 수 있습니다.
-                  ※ 실제 비용은 진료 후 확정됩니다.
-                </p>
-                <QuoteCalculator treatments={hospital.treatments} hospitalId={id} />
-              </div>
-            )}
+          {/* 비용·견적 */}
+          {activeTab === 'cost' && (
+            <div>
+              <h2 className={sectionTitle}>비용 · 견적 계산기</h2>
+              <p className="mb-6 mt-1 text-[13px] text-muted">
+                시술을 선택하고 부가 서비스를 추가하면 예상 총 비용을 확인할 수 있습니다.
+                <span className="text-subtle"> ※ 실제 비용은 진료 후 확정됩니다.</span>
+              </p>
+              <QuoteCalculator treatments={hospital.treatments} hospitalId={id} />
+            </div>
+          )}
 
-            {/* 후기 */}
-            {activeTab === 'reviews' && <ReviewsTab />}
+          {/* 후기 */}
+          {activeTab === 'reviews' && <ReviewsTab />}
 
-            {/* 통역 */}
-            {activeTab === 'interpreter' && <InterpreterTab />}
-          </div>
+          {/* 통역 */}
+          {activeTab === 'interpreter' && <InterpreterTab />}
         </div>
       </div>
     </div>
